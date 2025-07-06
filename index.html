@@ -659,6 +659,10 @@
     }
     .vision {
       background: #e8ffee;
+      padding: 1.2rem;
+      border-radius: var(--border-radius-md);
+      flex: 1;
+      min-width: 220px;
       border: 1px solid #d7f7dd;
     }
     .mission h3, .vision h3 {
@@ -954,11 +958,7 @@
             <select class="form-control" id="serviceNeeded">
               <option value="">Selecione uma opção</option>
               <option value="celular">Manutenção de Celulares</option>
-              <option value="informatica">Informática/Computadores</option>
-              <option value="redes">Redes/Internet</option>
-              <option value="cameras">Câmeras de Segurança</option>
-              <option value="sites">Criação de Sites</option>
-              <option value="outro">Outro</option>
+              <option value="informatica">Informática</option>
             </select>
           </div>
           
@@ -1309,14 +1309,14 @@
       updateProgress();
     }
     
-    function submitForm() {
+    async function submitForm() {
       const clientType = document.getElementById('clientType').value;
       const clientName = document.getElementById('clientName').value;
       const clientPhone = document.getElementById('clientPhone').value;
       const clientEmail = document.getElementById('clientEmail').value;
       const serviceNeeded = document.getElementById('serviceNeeded').value;
-      const problemDescription = document.getElementById('problemDescription').value;
-      
+      const problemDescription = document.getElementById('problemDescription').value; // CORRIGIDO AQUI: use document.getElementById
+
       const clientData = {
         type: clientType,
         name: clientName,
@@ -1328,6 +1328,35 @@
       };
       
       localStorage.setItem('clientInfo', JSON.stringify(clientData));
+
+      const formDataToSend = new FormData();
+      formDataToSend.append('Tipo de Cliente', clientType);
+      formDataToSend.append('Nome Completo', clientName);
+      formDataToSend.append('Telefone', clientPhone);
+      formDataToSend.append('Email', clientEmail);
+      formDataToSend.append('Servico Necessario', serviceNeeded);
+      formDataToSend.append('Descricao do Problema', problemDescription);
+
+      // SUBSTITUA O URL ABAIXO PELO URL DO SEU NOVO FORMULÁRIO DO FORMSPREE: https://formspree.io/f/mjkrqpnr
+      const FORMSPREE_WELCOME_FORM_URL = 'https://formspree.io/f/mjkrqpnr'; 
+
+      try {
+        const response = await fetch(FORMSPREE_WELCOME_FORM_URL, {
+          method: 'POST',
+          body: formDataToSend,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          console.log('Dados do questionário enviados para o Formspree com sucesso!');
+        } else {
+          console.error('Erro ao enviar dados do questionário para o Formspree.');
+        }
+      } catch (error) {
+        console.error('Erro de rede ao enviar questionário:', error);
+      }
       
       document.getElementById('welcome-screen').style.opacity = '0';
       document.getElementById('welcome-screen').style.transform = 'translateY(-20px)';
