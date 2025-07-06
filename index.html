@@ -370,6 +370,7 @@
     }
     
     .services-grid {
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2.5rem;
     }
@@ -523,8 +524,16 @@
     }
 
     .back-top, .whatsapp {
+      position: fixed;
       right: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       box-shadow: var(--shadow-light);
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      z-index: 90;
       opacity: 1;
     }
     .back-top {
@@ -817,12 +826,14 @@
         bottom: 15px;
         width: 48px;
         height: 48px;
+        border-radius: 50%;
         font-size: 1.1rem;
       }
       .whatsapp {
         bottom: 75px;
         width: 58px;
         height: 58px;
+        border-radius: 50%;
         font-size: 1.6rem;
       }
       .testimonials {
@@ -957,7 +968,6 @@
           </div>
           
           <div class="btn-group">
-            <button class="btn btn-secondary" onclick="prevStep()">Voltar</button>
             <button class="btn" onclick="submitForm()">Acessar Soluções</button>
           </div>
         </div>
