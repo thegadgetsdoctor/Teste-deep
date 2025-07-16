@@ -1,350 +1,1497 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="description" content="Técnico em Sertanópolis-PR: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites. Atendimento rápido e especializado."/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <meta name="keywords" content="manutenção celulares Sertanópolis, técnico informática PR, redes computadores, câmeras segurança, criação sites"/>
-  <meta name="author" content="Técnico Soluções Inteligentes"/>
-  <link rel="canonical" href="https://www.tecnicotisolucoes.com"/>
-  
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Técnico Soluções Inteligentes | Manutenção e Tecnologia em Sertanópolis-PR">
-  <meta property="og:description" content="Soluções técnicas completas: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites.">
-  
-  <title>Técnico Soluções Inteligentes | Manutenção e Tecnologia em Sertanópolis-PR</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Técnico em Sertanópolis-PR: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites. Atendimento rápido e especializado.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="manutenção celulares Sertanópolis, técnico informática PR, redes computadores, câmeras segurança, criação sites">
+    <meta name="author" content="Técnico Soluções Inteligentes">
+    <link rel="canonical" href="https://www.tecnicotisolucoes.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Técnico Soluções Inteligentes | Manutenção e Tecnologia em Sertanópolis-PR">
+    <meta property="og:description" content="Soluções técnicas completas: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites.">
+    <meta property="og:image" content="https://www.tecnicotisolucoes.com/og-image.jpg">
+    <title>Técnico Soluções Inteligentes | Manutenção e Tecnologia em Sertanópolis-PR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+    <style>
+        :root {
+            --clr-primary: #1a3a7a;
+            --clr-secondary: #2c5cc5;
+            --clr-accent: #ffb300;
+            --clr-dark: #2d3748;
+            --clr-light: #f8f9fa;
+            --clr-text: #4a5568;
+            --clr-border: #e2e8f0;
+            --clr-card: #ffffff;
+            --font-sans: 'Inter', sans-serif;
+            --font-heading: 'Playfair Display', serif;
+            --transition: .3s ease-in-out;
+            --shadow: 0 6px 18px rgba(0,0,0,0.08);
+            --shadow-light: 0 4px 12px rgba(0,0,0,0.05);
+            --border-radius: 12px;
+        }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"></noscript>
+        [data-theme="dark"] {
+            --clr-primary: #4a6bd8;
+            --clr-secondary: #5e81f4;
+            --clr-accent: #ffca28;
+            --clr-dark: #edf2f7;
+            --clr-light: #1a202c;
+            --clr-text: #a0aec0;
+            --clr-border: #4a5568;
+            --clr-card: #2d3748;
+            --footer-bg: #1a202c;
+            --footer-text: #e2e8f0;
+            --footer-border: rgba(226, 232, 240, 0.2);
+        }
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
-  <meta name="theme-color" content="#2150C3">
-  
-  <link rel="stylesheet" href="style.css"> 
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'"/>
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/></noscript>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+            background: var(--clr-light);
+            color: var(--clr-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background var(--transition), color var(--transition);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--clr-dark);
+            transition: color var(--transition);
+        }
+
+        a {
+            color: var(--clr-secondary);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        a:hover {
+            color: var(--clr-primary);
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--clr-accent);
+            outline-offset: 2px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--clr-secondary);
+            color: white;
+            border: none;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--clr-primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .btn-accent {
+            background: var(--clr-accent);
+            color: var(--clr-dark);
+        }
+
+        .btn-accent:hover {
+            background: #e9a800;
+            color: var(--clr-dark);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--clr-card);
+            border: 1px solid var(--clr-border);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: background var(--transition), border-color var(--transition);
+        }
+
+        .theme-toggle:hover {
+            background: var(--clr-secondary);
+            color: white;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--clr-card);
+            box-shadow: var(--shadow);
+            padding: 1.2rem 0;
+            transition: background var(--transition), box-shadow var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            background: var(--clr-primary);
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: background var(--transition);
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--clr-dark);
+            transition: color var(--transition);
+        }
+
+        .logo-text span {
+            color: var(--clr-secondary);
+            transition: color var(--transition);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            position: relative;
+            font-weight: 500;
+            color: var(--clr-dark);
+            padding: 0.5rem 0;
+            transition: color var(--transition);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--clr-secondary);
+            transition: width var(--transition);
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+
+        .hero {
+            padding: 6rem 0 4rem;
+            background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-secondary) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="none" width="200" height="200"/><path fill="rgba(255,255,255,0.1)" d="M42.8,-42.8C54.6,-31.1,63.1,-15.5,64.8,1.9C66.6,19.3,61.5,38.6,49.7,49.7C37.9,60.8,19,63.8,2.4,61.4C-14.3,59,-28.5,51.2,-39.8,40.1C-51,29,-59.2,14.5,-59.8,-0.4C-60.4,-15.3,-53.5,-30.6,-42.3,-42.3C-31.1,-54,-15.5,-62.1,0.6,-62.7C16.8,-63.3,33.6,-56.4,42.8,-42.8Z" transform="translate(100 100)"/></svg>') no-repeat;
+            background-size: cover;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .section {
+            padding: 5rem 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            transition: color var(--transition);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--clr-accent);
+            border-radius: 2px;
+            transition: background var(--transition);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--clr-text);
+            max-width: 600px;
+            margin: 0 auto;
+            transition: color var(--transition);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--clr-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: all var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--clr-border);
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+        }
+
+        .service-icon {
+            background: rgba(26, 58, 122, 0.05);
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--clr-primary);
+            transition: background var(--transition), color var(--transition);
+        }
+
+        .service-content {
+            padding: 1.8rem;
+            flex-grow: 1;
+            transition: color var(--transition);
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            transition: color var(--transition);
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-list li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            transition: color var(--transition);
+        }
+
+        .service-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--clr-secondary);
+            transition: color var(--transition);
+        }
+
+        .about {
+            background: var(--clr-light);
+            transition: background var(--transition);
+        }
+
+        .about-container {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: #eef2f7;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr-primary);
+            font-size: 5rem;
+            transition: background var(--transition), color var(--transition);
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            transition: color var(--transition);
+        }
+
+        .about-text {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            transition: color var(--transition);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: var(--clr-card);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--clr-border);
+            transition: background var(--transition), color var(--transition);
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--clr-primary);
+            margin-bottom: 0.5rem;
+            transition: color var(--transition);
+        }
+
+        .stat-text {
+            font-size: 0.95rem;
+            color: var(--clr-text);
+            transition: color var(--transition);
+        }
+
+        .testimonials {
+            background: var(--clr-card);
+            transition: background var(--transition);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--clr-card);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            position: relative;
+            border: 1px solid var(--clr-border);
+            transition: all var(--transition);
+            transform: translateY(0);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--clr-primary);
+            opacity: 0.1;
+            font-family: serif;
+            line-height: 1;
+            transition: color var(--transition);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            transition: color var(--transition);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--clr-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: background var(--transition);
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            transition: color var(--transition);
+        }
+
+        .author-info p {
+            color: var(--clr-text);
+            font-size: 0.9rem;
+            transition: color var(--transition);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: var(--clr-card);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--clr-border);
+            transition: background var(--transition), box-shadow var(--transition);
+        }
+
+        .contact-title {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+            transition: color var(--transition);
+        }
+
+        .contact-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--clr-accent);
+            transition: background var(--transition);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            background: rgba(26, 58, 122, 0.1);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr-primary);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            transition: background var(--transition), color var(--transition);
+        }
+
+        .contact-text {
+            flex-grow: 1;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--clr-dark);
+            transition: color var(--transition);
+        }
+
+        .contact-text a, .contact-text p {
+            color: var(--clr-text);
+            font-size: 1rem;
+            transition: color var(--transition);
+        }
+
+        .contact-form {
+            background: var(--clr-card);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--clr-border);
+            position: relative;
+            transition: background var(--transition), box-shadow var(--transition);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--clr-dark);
+            transition: color var(--transition);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 1px solid var(--clr-border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--clr-secondary);
+            box-shadow: 0 0 0 3px rgba(44, 92, 197, 0.15);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .error-message {
+            display: none;
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+            transition: color var(--transition);
+        }
+
+        .form-group.invalid .form-control {
+            border-color: #dc3545;
+        }
+
+        .form-group.invalid .error-message {
+            display: block;
+        }
+
+        .form-feedback {
+            display: none;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            transition: all var(--transition);
+        }
+
+        .form-feedback.success {
+            background: #28a745;
+            color: white;
+        }
+
+        .form-feedback.error {
+            background: #dc3545;
+            color: white;
+        }
+
+        footer {
+            background: var(--clr-dark);
+            color: white;
+            padding: 4rem 0 2rem;
+            transition: background var(--transition), color var(--transition);
+        }
+
+        [data-theme="dark"] footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            border-top: 1px solid var(--footer-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.4rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+            transition: color var(--transition);
+        }
+
+        [data-theme="dark"] .footer-col h3 {
+            color: var(--footer-text);
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--clr-accent);
+            transition: background var(--transition);
+        }
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+            color: #cbd5e0;
+            transition: color var(--transition);
+        }
+
+        [data-theme="dark"] .footer-about p {
+            color: var(--footer-text);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e0;
+            transition: color var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        [data-theme="dark"] .footer-links a {
+            color: var(--footer-text);
+        }
+
+        .footer-links a:hover {
+            color: var(--clr-accent);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: #cbd5e0;
+            transition: color var(--transition);
+        }
+
+        [data-theme="dark"] .footer-contact p {
+            color: var(--footer-text);
+        }
+
+        .footer-contact i {
+            color: var(--clr-accent);
+            width: 20px;
+            transition: color var(--transition);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--clr-secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0aec0;
+            font-size: 0.9rem;
+            transition: color var(--transition), border-color var(--transition);
+        }
+
+        [data-theme="dark"] .copyright {
+            color: var(--footer-text);
+            border-top: 1px solid var(--footer-border);
+        }
+
+        .floating-btns {
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 90;
+        }
+
+        .floating-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .floating-btn.whatsapp {
+            background: #25D366;
+        }
+
+        .floating-btn.whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-5px);
+        }
+
+        .floating-btn.back-top {
+            background: var(--clr-primary);
+            display: none;
+        }
+
+        .floating-btn.back-top:hover {
+            background: var(--clr-secondary);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+            }
+            .about-image {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            nav ul {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero {
+                padding: 4rem 0;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .section {
+                padding: 4rem 0;
+            }
+            .floating-btns {
+                right: 1rem;
+                bottom: 1rem;
+            }
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-btns {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div id="welcome-screen">
-    <div class="welcome-container">
-      <div class="welcome-header">
-        <h1>Bem-vindo ao Técnico Soluções Inteligentes</h1>
-        <p>Vamos conhecer você melhor para oferecer o melhor atendimento</p>
-      </div>
-      
-      <div class="progress-bar">
-        <div class="progress" id="progress"></div>
-      </div>
-      
-      <div class="welcome-body">
-        <div class="step active" id="step1">
-          <div class="form-group">
-            <label for="clientType">Você é um:</label>
-            <select class="form-control" id="clientType">
-              <option value="">Selecione uma opção</option>
-              <option value="pessoa">Pessoa física</option>
-              <option value="empresa">Empresa/Comércio</option>
-            </select>
-          </div>
-          
-          <div class="btn-group">
-            <button class="btn" onclick="nextStep()">Próximo</button>
-          </div>
-        </div>
-        
-        <div class="step" id="step2">
-          <div class="form-group">
-            <label id="nameLabel" for="clientName">Seu nome completo</label>
-            <input type="text" class="form-control" id="clientName" placeholder="Digite seu nome">
-          </div>
-          
-          <div class="btn-group">
-            <button class="btn btn-secondary" onclick="prevStep()">Voltar</button>
-            <button class="btn" onclick="nextStep()">Próximo</button>
-          </div>
-        </div>
-        
-        <div class="step" id="step3">
-          <div class="form-group">
-            <label for="clientPhone">Seu melhor telefone</label>
-            <input type="tel" class="form-control" id="clientPhone" placeholder="(43) 99999-9999">
-          </div>
-          
-          <div class="form-group">
-            <label for="clientEmail">Seu e-mail</label>
-            <input type="email" class="form-control" id="clientEmail" placeholder="seu@email.com">
-          </div>
-          
-          <div class="btn-group">
-            <button class="btn btn-secondary" onclick="prevStep()">Voltar</button>
-            <button class="btn" onclick="nextStep()">Próximo</button>
-          </div>
-        </div>
-        
-        <div class="step" id="step4">
-          <div class="form-group">
-            <label for="serviceNeeded">Qual serviço você precisa?</label>
-            <select class="form-control" id="serviceNeeded">
-              <option value="">Selecione uma opção</option>
-              <option value="celular">Manutenção de Celulares</option>
-              <option value="informatica">Informática</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="problemDescription">Descreva brevemente seu problema ou necessidade:</label>
-            <textarea class="form-control" id="problemDescription" rows="3" placeholder="Ex.: Meu celular quebrou a tela..."></textarea>
-          </div>
-          
-          <div class="btn-group">
-            <button class="btn" onclick="submitForm()">Acessar Soluções</button>
-          </div>
-        </div>
-        
-        <a href="javascript:void(0)" class="skip-link" onclick="skipQuestionnaire()">Pular e acessar o site diretamente</a>
-      </div>
-    </div>
-  </div>
-
-  <div id="main-site">
+    <button class="theme-toggle" aria-label="Alternar modo escuro" onclick="toggleTheme()">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </button>
     <header>
-      <h1>Técnico Soluções Inteligentes</h1>
-      <nav aria-label="Menu principal">
-        <a href="#servicos" class="active">Serviços</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#depoimentos">Depoimentos</a>
-        <a href="#contato">Contato</a>
-      </nav>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-tools" aria-hidden="true"></i>
+                </div>
+                <div class="logo-text">Técnico <span>Soluções</span></div>
+            </div>
+            <nav aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#servicos" class="active">Serviços</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-      <section class="hero" id="hero">
-        <h2>Sua Solução Técnica Completa em Sertanópolis</h2>
-        <p>Especialistas em manutenção de celulares, informática, redes, câmeras de segurança e criação de sites. Qualidade e atendimento personalizado para resolver seus problemas técnicos.</p>
-        <a href="https://wa.me/5543991678501?text=Olá%20Técnico,%20gostaria%20de%20informações%20sobre%20seus%20serviços!"
-           class="btn" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
-          <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
-        </a>
-      </section>
-
-      <section id="servicos">
-        <h2>Portfólio de Serviços Técnicos</h2>
-        <div class="services-grid">
-          <article>
-            <h3><i class="fas fa-mobile-alt" aria-hidden="true"></i> Manutenção de Celulares</h3>
-            <ul>
-              <li>Troca de telas (celulares e tablets)</li>
-              <li>Aplicação de películas protetoras</li>
-              <li>Substituição de conectores, botões e baterias</li>
-              <li>Limpeza e manutenção interna</li>
-              <li>Diagnóstico completo e orientações técnicas</li>
-            </ul>
-          </article>
-          <article>
-            <h3><i class="fas fa-laptop" aria-hidden="true"></i> Suporte Técnico em Informática</h3>
-            <ul>
-              <li>Formatação e reinstalação de sistemas operacionais</li>
-              <li>Instalação e configuração de programas</li>
-              <li>Otimização de desempenho e remoção de vírus</li>
-              <li>Configuração de impressoras e periféricos</li>
-              <li>Suporte técnico presencial e remoto</li>
-            </ul>
-          </article>
-          <article>
-            <h3><i class="fas fa-network-wired" aria-hidden="true"></i> Redes e Infraestrutura</h3>
-            <ul>
-              <li>Crimpagem e organização de cabos de rede</li>
-              <li>Instalação e configuração de roteadores</li>
-              <li>Montagem de redes residenciais e corporativas</li>
-              <li>Gerenciamento de redes locais</li>
-              <li>Soluções Wi-Fi para grandes áreas</li>
-            </ul>
-          </article>
-          <article>
-            <h3><i class="fas fa-video" aria-hidden="true"></i> Segurança Eletrônica</h3>
-            <ul>
-              <li>Instalação de câmeras de segurança</li>
-              <li>Configuração de acesso remoto</li>
-              <li>Cabeamento profissional e manutenção</li>
-              <li>Otimização de sistemas de gravação</li>
-              <li>Monitoramento 24 horas</li>
-            </ul>
-          </article>
-          <article>
-            <h3><i class="fas fa-puzzle-piece" aria-hidden="true"></i> Soluções Multidisciplinares</h3>
-            <ul>
-              <li>Atendimento como central de soluções técnicas</li>
-              <li>Coordenação com profissionais de outras áreas</li>
-              <li>Acompanhamento completo do serviço</li>
-              <li>Solução completa para seus problemas técnicos</li>
-              <li>Consultoria especializada</li>
-            </ul>
-          </article>
-          <article>
-            <h3><i class="fas fa-globe" aria-hidden="true"></i> Sites e Sistemas Web</h3>
-            <ul>
-              <li>Criação de sites institucionais</li>
-              <li>Integração com bancos de dados</li>
-              <li>Sistemas personalizados</li>
-              <li>Manutenção mensal e suporte</li>
-              <li>Otimização para buscadores (SEO)</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <div class="about-container">
-          <div class="about-content">
-            <p>Somos especialistas em tecnologia com mais de 10 anos de experiência em manutenção, segurança eletrônica e soluções digitais. Atuamos em Sertanópolis e região com comprometimento e foco em resultados.</p>
-            <p>Nossa missão é oferecer soluções técnicas inteligentes que resolvam seus problemas de forma eficiente, com transparência e preços justos.</p>
-            <div class="mission-vision">
-              <div class="mission">
-                <h3>Missão</h3>
-                <p>Resolver problemas técnicos com eficiência e excelência.</p>
-              </div>
-              <div class="vision">
-                <h3>Visão</h3>
-                <p>Ser referência em soluções técnicas na região.</p>
-              </div>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Soluções Técnicas de Excelência em Sertanópolis</h1>
+                <p>Especialistas em manutenção de celulares, informática, redes, câmeras de segurança e desenvolvimento web. Conectando tecnologia e soluções para sua necessidade.</p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/5543991678501" class="btn btn-accent" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Fale Conosco
+                    </a>
+                    <a href="#servicos" class="btn" aria-label="Veja nossos serviços">
+                        <i class="fas fa-laptop-code" aria-hidden="true"></i> Nossos Serviços
+                    </a>
+                </div>
             </div>
-          </div>
-          <div class="values-container">
-            <h3>Nossos Valores</h3>
-            <ul>
-              <li>Qualidade em todos os serviços</li>
-              <li>Transparência nos processos</li>
-              <li>Atendimento personalizado</li>
-              <li>Inovação constante</li>
-              <li>Compromisso com resultados</li>
-              <li>Ética profissional</li>
-            </ul>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <section id="depoimentos" class="testimonials">
-        <h2>O que nossos clientes dizem</h2>
-        <div class="testimonial-grid">
-          <div class="testimonial">
-            <p>"Serviço excelente! Resolveu meu problema de rede em menos de 1 hora. Profissionalismo e conhecimento técnico impressionantes."</p>
-            <div class="client">
-              <i class="fas fa-user-circle fa-2x" style="color: var(--clr-base);"></i>
-              <div class="client-info">
-                <h4>Carlos Silva</h4>
-                <span>Empresário</span>
-              </div>
+    <section id="servicos" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nossos Serviços</h2>
+                <p class="section-subtitle">Oferecemos soluções técnicas completas para atender todas as suas necessidades tecnológicas com excelência e profissionalismo.</p>
             </div>
-          </div>
-          <div class="testimonial">
-            <p>"Troquei a tela do meu celular e ficou perfeito! Preço justo e atendimento rápido. Recomendo para todos em Sertanópolis."</p>
-            <div class="client">
-              <i class="fas fa-user-circle fa-2x" style="color: var(--clr-base);"></i>
-              <div class="client-info">
-                <h4>Mariana Oliveira</h4>
-                <span>Professora</span>
-              </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Manutenção de Celulares</h3>
+                        <p>Soluções completas para seu dispositivo móvel.</p>
+                        <ul class="service-list">
+                            <li>Troca de telas e baterias</li>
+                            <li>Reparo em conectores e botões</li>
+                            <li>Limpeza e manutenção interna</li>
+                            <li>Diagnóstico técnico completo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop" aria-hidden="true"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Suporte em Informática</h3>
+                        <p>Soluções para seu computador e periféricos.</p>
+                        <ul class="service-list">
+                            <li>Formatação e instalação de sistemas</li>
+                            <li>Remoção de vírus e otimização</li>
+                            <li>Configuração de impressoras</li>
+                            <li>Suporte técnico presencial e remoto</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired" aria-hidden="true"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Redes e Infraestrutura</h3>
+                        <p>Soluções de conectividade para sua casa ou empresa.</p>
+                        <ul class="service-list">
+                            <li>Instalação e configuração de redes</li>
+                            <li>Cabeamento estruturado</li>
+                            <li>Otimização de Wi-Fi</li>
+                            <li>Soluções para grandes áreas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video" aria-hidden="true"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Câmeras de Segurança</h3>
+                        <p>Soluções de monitoramento para sua segurança.</p>
+                        <ul class="service-list">
+                            <li>Instalação profissional de câmeras</li>
+                            <li>Configuração de acesso remoto</li>
+                            <li>Manutenção preventiva</li>
+                            <li>Sistemas de gravação e armazenamento</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe" aria-hidden="true"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Desenvolvimento Web</h3>
+                        <p>Soluções digitais para sua presença online.</p>
+                        <ul class="service-list">
+                            <li>Criação de sites institucionais</li>
+                            <li>Sistemas web personalizados</li>
+                            <li>Otimização para buscadores (SEO)</li>
+                            <li>Manutenção e suporte contínuo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Soluções Personalizadas</h3>
+                        <p>Atendimento técnico completo para suas necessidades.</p>
+                        <ul class="service-list">
+                            <li>Consultoria especializada</li>
+                            <li>Soluções multidisciplinares</li>
+                            <li>Coordenação com profissionais</li>
+                            <li>Acompanhamento completo</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="testimonial">
-            <p>"Instalou meu sistema de câmeras com perfeição. Agora posso monitorar meu comércio de qualquer lugar. Atendimento de primeira!"</p>
-            <div class="client">
-              <i class="fas fa-user-circle fa-2x" style="color: var(--clr-base);"></i>
-              <div class="client-info">
-                <h4>Roberto Santos</h4>
-                <span>Comerciante</span>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <section id="contato">
-        <h2>Entre em Contato</h2>
-        <div class="contact-info">
-          <p><i class="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+5543991678501">(43) 99167-8501</a></p>
-          <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:contato@tecnicotisolucoes.com">contato@tecnicotisolucoes.com</a></p>
-          <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Atendemos em Sertanópolis e região</p>
-          <p><i class="fas fa-clock" aria-hidden="true"></i> Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h</p>
+    <section id="sobre" class="section about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image">
+                    <i class="fas fa-building" aria-hidden="true"></i>
+                </div>
+                <div class="about-content">
+                    <h2 class="about-title">Sobre a Técnico Soluções Inteligentes</h2>
+                    <p class="about-text">Com mais de 10 anos de experiência no mercado, somos referência em soluções técnicas em Sertanópolis e região. Nossa missão é oferecer serviços de qualidade que resolvam seus problemas de forma eficiente, com transparência e preços justos.</p>
+                    <p class="about-text">Nossa equipe é composta por profissionais qualificados e comprometidos com a excelência em cada serviço prestado. Trabalhamos com as melhores ferramentas e tecnologias para garantir resultados superiores.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-text">Anos de Experiência</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2000+</div>
+                            <div class="stat-text">Clientes Atendidos</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-text">Satisfação dos Clientes</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">6</div>
+                            <div class="stat-text">Serviços Especializados</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <form class="contact-form" action="https://formspree.io/f/xeokwpdd" method="POST" aria-label="Formulário de contato">
-          <label for="nome">Nome Completo:</label>
-          <input id="nome" name="nome" type="text" placeholder="Seu nome" required/>
-          
-          <label for="email">E-mail:</label>
-          <input id="email" name="email" type="email" placeholder="seu@email.com" required/>
-          
-          <label for="telefone">Telefone:</label>
-          <input id="telefone" name="telefone" type="tel" placeholder="(43) 99999-9999" required/>
-          
-          <label for="servico">Serviço de interesse:</label>
-          <select id="servico" name="servico" required>
-            <option value="">Selecione uma opção</option>
-            <option value="manutencao">Manutenção de Celulares</option>
-            <option value="informatica">Informática</option>
-            <option value="redes">Redes</option>
-            <option value="cameras">Câmeras de Segurança</option>
-            <option value="sites">Criação de Sites</option>
-            <option value="outro">Outro</option>
-          </select>
-          
-          <label for="mensagem">Mensagem:</label>
-          <textarea id="mensagem" name="mensagem" placeholder="Descreva como podemos ajudar" rows="5" required></textarea>
-          
-          <button type="submit">
-            <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Mensagem
-          </button>
-        </form>
-      </section>
-    </main>
+    </section>
+
+    <section id="depoimentos" class="section testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Depoimentos de Clientes</h2>
+                <p class="section-subtitle">Veja o que nossos clientes têm a dizer sobre a qualidade dos nossos serviços e atendimento.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Serviço excelente! Resolveu meu problema de rede em menos de 1 hora. Profissionalismo e conhecimento técnico impressionantes."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Carlos Silva</h4>
+                            <p>Empresário</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Troquei a tela do meu celular e ficou perfeito! Preço justo e atendimento rápido. Recomendo para todos em Sertanópolis."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Mariana Oliveira</h4>
+                            <p>Professora</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Instalou meu sistema de câmeras com perfeição. Agora posso monitorar meu comércio de qualquer lugar. Atendimento de primeira!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Roberto Santos</h4>
+                            <p>Comerciante</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Entre em Contato</h2>
+                <p class="section-subtitle">Estamos prontos para atender suas necessidades técnicas. Entre em contato e solicite um orçamento.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 class="contact-title">Informações de Contato</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Telefone</h4>
+                                <a href="tel:+5543991678501" aria-label="Ligar para (43) 99167-8501">(43) 99167-8501</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>E-mail</h4>
+                                <a href="mailto:contato@tecnicotisolucoes.com" aria-label="Enviar e-mail para contato@tecnicotisolucoes.com">contato@tecnicotisolucoes.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Localização</h4>
+                                <p>Atendemos em Sertanópolis e região</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Horário de Atendimento</h4>
+                                <p>Segunda a Sexta: 8h às 18h</p>
+                                <p>Sábado: 8h às 12h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 class="contact-title">Envie uma Mensagem</h3>
+                    <form action="https://formspree.io/f/xeokwpdd" method="POST" aria-label="Formulário de contato">
+                        <div class="form-group" data-validate="nome">
+                            <label class="form-label" for="nome">Nome Completo</label>
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome" required aria-describedby="nome-error">
+                            <span id="nome-error" class="error-message">Por favor, insira seu nome completo.</span>
+                        </div>
+                        <div class="form-group" data-validate="email">
+                            <label class="form-label" for="email">E-mail</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="seu@email.com" required aria-describedby="email-error">
+                            <span id="email-error" class="error-message">Por favor, insira um e-mail válido.</span>
+                        </div>
+                        <div class="form-group" data-validate="telefone">
+                            <label class="form-label" for="telefone">Telefone</label>
+                            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(43) 99999-9999" pattern="^\(\d{2}\)\s?\d{4,5}-\d{4}$" required aria-describedby="telefone-error" oninput="formatPhone(this)">
+                            <span id="telefone-error" class="error-message">Por favor, insira um telefone válido (ex.: (43) 99999-9999).</span>
+                        </div>
+                        <div class="form-group" data-validate="servico">
+                            <label class="form-label" for="servico">Serviço de Interesse</label>
+                            <select class="form-control" id="servico" name="servico" required aria-describedby="servico-error">
+                                <option value="">Selecione uma opção</option>
+                                <option value="manutencao">Manutenção de Celulares</option>
+                                <option value="informatica">Informática</option>
+                                <option value="redes">Redes</option>
+                                <option value="cameras">Câmeras de Segurança</option>
+                                <option value="sites">Criação de Sites</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                            <span id="servico-error" class="error-message">Por favor, selecione um serviço.</span>
+                        </div>
+                        <div class="form-group" data-validate="mensagem">
+                            <label class="form-label" for="mensagem">Mensagem</label>
+                            <textarea class="form-control" id="mensagem" name="mensagem" placeholder="Descreva como podemos ajudar" rows="5" required aria-describedby="mensagem-error"></textarea>
+                            <span id="mensagem-error" class="error-message">Por favor, insira uma mensagem.</span>
+                        </div>
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Mensagem
+                        </button>
+                        <div id="form-feedback" class="form-feedback" role="alert"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Técnico Soluções Inteligentes</h3>
-          <p>Sua solução completa em tecnologia e serviços técnicos em Sertanópolis e região.</p>
-          <p><i class="fas fa-map-marker-alt"></i> Sertanópolis - PR</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Técnico Soluções Inteligentes</h3>
+                    <div class="footer-about">
+                        <p>Sua solução completa em tecnologia e serviços técnicos em Sertanópolis e região. Qualidade, profissionalismo e atendimento personalizado.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/5543991678501" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <div class="footer-links">
+                        <a href="#servicos"><i class="fas fa-chevron-right" aria-hidden="true"></i> Serviços</a>
+                        <a href="#sobre"><i class="fas fa-chevron-right" aria-hidden="true"></i> Sobre Nós</a>
+                        <a href="#depoimentos"><i class="fas fa-chevron-right" aria-hidden="true"></i> Depoimentos</a>
+                        <a href="#contato"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contato</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone-alt" aria-hidden="true"></i> (43) 99167-8501</p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> contato@tecnicotisolucoes.com</p>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Sertanópolis - PR</p>
+                        <p><i class="fas fa-clock" aria-hidden="true"></i> Seg-Sex: 8h-18h | Sáb: 8h-12h</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Técnico Soluções Inteligentes. Todos os direitos reservados.</p>
+            </div>
         </div>
-        
-        <div class="footer-section">
-          <h3>Links Rápidos</h3>
-          <div class="footer-links">
-            <a href="#servicos"><i class="fas fa-chevron-right"></i> Serviços</a>
-            <a href="#sobre"><i class="fas fa-chevron-right"></i> Sobre Nós</a>
-            <a href="#depoimentos"><i class="fas fa-chevron-right"></i> Depoimentos</a>
-            <a href="#contato"><i class="fas fa-chevron-right"></i> Contato</a>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Contato</h3>
-          <div class="footer-links">
-            <a href="tel:+5543991678501"><i class="fas fa-phone"></i> (43) 99167-8501</a>
-            <a href="mailto:contato@tecnicotisolucoes.com"><i class="fas fa-envelope"></i> contato@tecnicotisolucoes.com</a>
-            <a href="https://wa.me/5543991678501"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="copyright">
-        <p>&copy; 2023 Técnico Soluções Inteligentes. Todos os direitos reservados.</p>
-      </div>
     </footer>
 
-    <a href="https://wa.me/5543991678501?text=Olá%20Técnico,%20gostaria%20de%20informações%20sobre%20seus%20serviços!"
-       class="whatsapp" aria-label="Fale conosco pelo WhatsApp" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    </a>
-    <button class="back-top" aria-label="Voltar ao topo"
-            onclick="window.scrollTo({top:0,behavior:'smooth'});">
-      <i class="fas fa-chevron-up" aria-hidden="true"></i>
-    </button>
-  </div>
+    <div class="floating-btns">
+        <a href="https://wa.me/5543991678501" class="floating-btn whatsapp" aria-label="Fale conosco pelo WhatsApp" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <button class="floating-btn back-top" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'});">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </button>
+    </div>
 
-  <script src="script.js" defer></script>
+    <script>
+        // Intersection Observer for section animations
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            document.querySelectorAll('.section').forEach(section => observer.observe(section));
+        } else {
+            document.querySelectorAll('.section').forEach(section => section.classList.add('visible'));
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Add active class to nav links on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Back to top button visibility
+        window.addEventListener('scroll', () => {
+            const backTopBtn = document.querySelector('.back-top');
+            if (window.scrollY > 300) {
+                backTopBtn.style.display = 'flex';
+            } else {
+                backTopBtn.style.display = 'none';
+            }
+        });
+
+        // Theme toggle
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeIcon.className = 'fas fa-moon';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fas fa-sun';
+            }
+        }
+
+        // Form validation and submission
+        const contactForm = document.querySelector('.contact-form form');
+        if (contactForm) {
+            const formGroups = contactForm.querySelectorAll('.form-group');
+            const formFeedback = document.getElementById('form-feedback');
+
+            // Real-time validation
+            formGroups.forEach(group => {
+                const input = group.querySelector('.form-control');
+                input.addEventListener('input', () => {
+                    validateField(group, input);
+                });
+            });
+
+            // Phone number mask
+            function formatPhone(input) {
+                let value = input.value.replace(/\D/g, '');
+                if (value.length > 10) value = value.substring(0, 11);
+                if (value.length > 2) {
+                    value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
+                }
+                if (value.length > 9) {
+                    value = value.replace(/(\(\d{2}\)\s\d{4,5})(\d{4})/, '$1-$2');
+                }
+                input.value = value;
+                validateField(group, input);
+            }
+
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                let isValid = true;
+                formGroups.forEach(group => {
+                    const input = group.querySelector('.form-control');
+                    if (!validateField(group, input)) isValid = false;
+                });
+
+                if (isValid) {
+                    const formData = new FormData(contactForm);
+                    try {
+                        const response = await fetch('https://formspree.io/f/xeokwpdd', {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        if (response.ok) {
+                            formFeedback.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
+                            formFeedback.className = 'form-feedback success';
+                            formFeedback.style.display = 'block';
+                            contactForm.reset();
+                        } else {
+                            throw new Error('Erro ao enviar o formulário.');
+                        }
+                    } catch (error) {
+                        formFeedback.textContent = 'Erro ao enviar. Tente novamente ou entre em contato diretamente.';
+                        formFeedback.className = 'form-feedback error';
+                        formFeedback.style.display = 'block';
+                    }
+                    setTimeout(() => formFeedback.style.display = 'none', 5000);
+                }
+            });
+
+            function validateField(group, input) {
+                const fieldName = group.dataset.validate;
+                let isValid = true;
+                switch (fieldName) {
+                    case 'nome':
+                        isValid = input.value.trim().length > 0;
+                        break;
+                    case 'email':
+                        isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+                        break;
+                    case 'telefone':
+                        isValid = /^\(\d{2}\)\s?\d{4,5}-\d{4}$/.test(input.value.trim());
+                        break;
+                    case 'servico':
+                        isValid = input.value !== '';
+                        break;
+                    case 'mensagem':
+                        isValid = input.value.trim().length > 0;
+                        break;
+                }
+                group.classList.toggle('invalid', !isValid);
+                return isValid;
+            }
+        }
+
+        // Schema.org markup
+        const schemaScript = document.createElement('script');
+        schemaScript.type = 'application/ld+json';
+        schemaScript.text = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Técnico Soluções Inteligentes",
+            "image": "https://www.tecnicotisolucoes.com/og-image.jpg",
+            "telephone": "+5543991678501",
+            "email": "contato@tecnicotisolucoes.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Sertanópolis",
+                "addressRegion": "PR",
+                "addressCountry": "BR"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Saturday"],
+                    "opens": "08:00",
+                    "closes": "12:00"
+                }
+            ],
+            "priceRange": "$$",
+            "serviceArea": {
+                "@type": "Place",
+                "name": "Sertanópolis e região"
+            }
+        });
+        document.head.appendChild(schemaScript);
+    </script>
 </body>
 </html>
