@@ -12,14 +12,27 @@
     <meta property="og:description" content="Soluções técnicas completas: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites.">
     <meta property="og:image" content="https://www.tecnicotisolucoes.com/og-image.jpg">
     <title>Técnico Soluções Inteligentes | Manutenção e Tecnologia em Sertanópolis-PR</title>
+    
+    <!-- SEO Adicional -->
+    <link rel="alternate" hreflang="pt-BR" href="https://www.tecnicotisolucoes.com" />
+    <meta name="geo.region" content="BR-PR" />
+    <meta name="geo.placename" content="Sertanópolis" />
+    
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"></noscript>
+    
+    <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+    
     <style>
+        /* Variáveis CSS */
         :root {
             --clr-primary: #1a3a7a;
             --clr-secondary: #2c5cc5;
@@ -40,10 +53,10 @@
         [data-theme="dark"] {
             --clr-primary: #4a6bd8;
             --clr-secondary: #5e81f4;
-            --clr-accent: #ffca28;
+            --clr-accent: #ffca28; /* Melhor contraste */
             --clr-dark: #edf2f7;
             --clr-light: #1a202c;
-            --clr-text: #a0aec0;
+            --clr-text: #e2e8f0; /* Melhor contraste */
             --clr-border: #4a5568;
             --clr-card: #2d3748;
             --footer-bg: #1a202c;
@@ -51,6 +64,7 @@
             --footer-border: rgba(226, 232, 240, 0.2);
         }
 
+        /* Reset e Estilos Base */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
@@ -59,6 +73,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
@@ -92,6 +107,22 @@
             outline-offset: 2px;
         }
 
+        /* Acessibilidade - Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--clr-primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            z-index: 9999;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
         .container {
             width: 100%;
             max-width: 1200px;
@@ -121,6 +152,11 @@
             box-shadow: var(--shadow-light);
         }
 
+        .btn:focus-visible {
+            outline: 2px solid var(--clr-accent);
+            outline-offset: 2px;
+        }
+
         .btn-accent {
             background: var(--clr-accent);
             color: var(--clr-dark);
@@ -131,6 +167,7 @@
             color: var(--clr-dark);
         }
 
+        /* Botão Tema */
         .theme-toggle {
             position: fixed;
             top: 1rem;
@@ -153,6 +190,12 @@
             color: white;
         }
 
+        .theme-toggle:focus-visible {
+            outline: 2px solid var(--clr-accent);
+            outline-offset: 2px;
+        }
+
+        /* Header */
         header {
             position: sticky;
             top: 0;
@@ -230,6 +273,7 @@
             width: 100%;
         }
 
+        /* Hero Section */
         .hero {
             padding: 6rem 0 4rem;
             background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-secondary) 100%);
@@ -276,6 +320,7 @@
             flex-wrap: wrap;
         }
 
+        /* Seções Gerais */
         .section {
             padding: 5rem 0;
             opacity: 0;
@@ -323,6 +368,7 @@
             transition: color var(--transition);
         }
 
+        /* Serviços */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -393,6 +439,7 @@
             transition: color var(--transition);
         }
 
+        /* Sobre */
         .about {
             background: var(--clr-light);
             transition: background var(--transition);
@@ -467,15 +514,22 @@
             transition: color var(--transition);
         }
 
+        /* Depoimentos - Carrossel */
         .testimonials {
             background: var(--clr-card);
             transition: background var(--transition);
         }
 
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease;
         }
 
         .testimonial-card {
@@ -487,6 +541,8 @@
             border: 1px solid var(--clr-border);
             transition: all var(--transition);
             transform: translateY(0);
+            min-width: 100%;
+            box-sizing: border-box;
         }
 
         .testimonial-card:hover {
@@ -546,6 +602,91 @@
             transition: color var(--transition);
         }
 
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-nav button {
+            background: var(--clr-secondary);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition);
+        }
+
+        .testimonial-nav button:hover {
+            background: var(--clr-primary);
+            transform: translateY(-3px);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--clr-light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--clr-border);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            background: var(--clr-card);
+            transition: all var(--transition);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--clr-dark);
+            background: var(--clr-card);
+            transition: all var(--transition);
+        }
+
+        .faq-question:hover {
+            background: rgba(44, 92, 197, 0.05);
+        }
+
+        .faq-question::after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: transform var(--transition);
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        /* Contato */
         .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -703,6 +844,22 @@
             color: white;
         }
 
+        /* Mapa */
+        .contact-map {
+            margin-top: 2rem;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 300px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
         footer {
             background: var(--clr-dark);
             color: white;
@@ -835,6 +992,7 @@
             border-top: 1px solid var(--footer-border);
         }
 
+        /* Botões Flutuantes */
         .floating-btns {
             position: fixed;
             right: 2rem;
@@ -879,6 +1037,148 @@
             transform: translateY(-5px);
         }
 
+        .floating-btn.chat {
+            background: var(--clr-accent);
+            color: var(--clr-dark);
+        }
+
+        .floating-btn.chat:hover {
+            background: #e9a800;
+            transform: translateY(-5px);
+        }
+
+        /* Modal de Agendamento */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--clr-card);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--clr-text);
+        }
+
+        .modal-title {
+            margin-bottom: 1.5rem;
+            color: var(--clr-primary);
+        }
+
+        /* Chatbot */
+        .chatbot {
+            position: fixed;
+            right: 2rem;
+            bottom: 7rem;
+            width: 350px;
+            max-height: 70vh;
+            background: var(--clr-card);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot.active {
+            transform: translateY(0);
+            opacity: 1;
+            display: flex;
+        }
+
+        .chat-header {
+            background: var(--clr-primary);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            max-height: 300px;
+        }
+
+        .message {
+            padding: 0.8rem;
+            border-radius: 12px;
+            max-width: 80%;
+        }
+
+        .bot-message {
+            background: rgba(44, 92, 197, 0.1);
+            align-self: flex-start;
+        }
+
+        .user-message {
+            background: var(--clr-secondary);
+            color: white;
+            align-self: flex-end;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 1rem;
+            border-top: 1px solid var(--clr-border);
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid var(--clr-border);
+            border-radius: 20px 0 0 20px;
+        }
+
+        .chat-input button {
+            background: var(--clr-secondary);
+            color: white;
+            border: none;
+            padding: 0 1.2rem;
+            border-radius: 0 20px 20px 0;
+            cursor: pointer;
+        }
+
+        /* Responsividade */
         @media (max-width: 992px) {
             .about-container {
                 flex-direction: column;
@@ -916,6 +1216,12 @@
                 height: 50px;
                 font-size: 1.3rem;
             }
+            .chatbot {
+                width: 90%;
+                right: 1rem;
+                left: 1rem;
+                margin: 0 auto;
+            }
         }
 
         @media (max-width: 480px) {
@@ -926,13 +1232,77 @@
                 width: 100%;
                 justify-content: center;
             }
+            .modal-content {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Skip Link para Acessibilidade -->
+    <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
+    
+    <!-- Chatbot -->
+    <div class="chatbot" id="chatbot">
+        <div class="chat-header">
+            <h3>Como podemos ajudar?</h3>
+            <button class="close-chat" aria-label="Fechar chat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages">
+            <div class="message bot-message">
+                Olá! Sou o assistente virtual da Técnico Soluções. Como posso ajudar?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Digite sua mensagem..." id="chat-input">
+            <button aria-label="Enviar mensagem">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Modal de Agendamento -->
+    <div class="modal" id="appointmentModal">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Fechar modal">&times;</button>
+            <h2 class="modal-title">Agendar Serviço</h2>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label class="form-label" for="appointment-name">Nome</label>
+                    <input type="text" class="form-control" id="appointment-name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="appointment-phone">Telefone</label>
+                    <input type="tel" class="form-control" id="appointment-phone" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="appointment-service">Serviço</label>
+                    <select class="form-control" id="appointment-service" required>
+                        <option value="">Selecione um serviço</option>
+                        <option value="manutencao">Manutenção de Celulares</option>
+                        <option value="informatica">Informática</option>
+                        <option value="redes">Redes</option>
+                        <option value="cameras">Câmeras de Segurança</option>
+                        <option value="sites">Criação de Sites</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="appointment-date">Data Preferencial</label>
+                    <input type="date" class="form-control" id="appointment-date" required>
+                </div>
+                <button type="submit" class="btn">
+                    <i class="fas fa-calendar-check"></i> Agendar
+                </button>
+            </form>
+        </div>
+    </div>
+    
     <button class="theme-toggle" aria-label="Alternar modo escuro" onclick="toggleTheme()">
         <i class="fas fa-moon" id="theme-icon"></i>
     </button>
+    
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -946,304 +1316,386 @@
                     <li><a href="#servicos" class="active">Serviços</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Soluções Técnicas de Excelência em Sertanópolis</h1>
-                <p>Especialistas em manutenção de celulares, informática, redes, câmeras de segurança e desenvolvimento web. Conectando tecnologia e soluções para sua necessidade.</p>
-                <div class="hero-btns">
-                    <a href="https://wa.me/5543991678501" class="btn btn-accent" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Fale Conosco
-                    </a>
-                    <a href="#servicos" class="btn" aria-label="Veja nossos serviços">
-                        <i class="fas fa-laptop-code" aria-hidden="true"></i> Nossos Serviços
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="servicos" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Nossos Serviços</h2>
-                <p class="section-subtitle">Oferecemos soluções técnicas completas para atender todas as suas necessidades tecnológicas com excelência e profissionalismo.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Manutenção de Celulares</h3>
-                        <p>Soluções completas para seu dispositivo móvel.</p>
-                        <ul class="service-list">
-                            <li>Troca de telas e baterias</li>
-                            <li>Reparo em conectores e botões</li>
-                            <li>Limpeza e manutenção interna</li>
-                            <li>Diagnóstico técnico completo</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop" aria-hidden="true"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Suporte em Informática</h3>
-                        <p>Soluções para seu computador e periféricos.</p>
-                        <ul class="service-list">
-                            <li>Formatação e instalação de sistemas</li>
-                            <li>Remoção de vírus e otimização</li>
-                            <li>Configuração de impressoras</li>
-                            <li>Suporte técnico presencial e remoto</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-network-wired" aria-hidden="true"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Redes e Infraestrutura</h3>
-                        <p>Soluções de conectividade para sua casa ou empresa.</p>
-                        <ul class="service-list">
-                            <li>Instalação e configuração de redes</li>
-                            <li>Cabeamento estruturado</li>
-                            <li>Otimização de Wi-Fi</li>
-                            <li>Soluções para grandes áreas</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-video" aria-hidden="true"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Câmeras de Segurança</h3>
-                        <p>Soluções de monitoramento para sua segurança.</p>
-                        <ul class="service-list">
-                            <li>Instalação profissional de câmeras</li>
-                            <li>Configuração de acesso remoto</li>
-                            <li>Manutenção preventiva</li>
-                            <li>Sistemas de gravação e armazenamento</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-globe" aria-hidden="true"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Desenvolvimento Web</h3>
-                        <p>Soluções digitais para sua presença online.</p>
-                        <ul class="service-list">
-                            <li>Criação de sites institucionais</li>
-                            <li>Sistemas web personalizados</li>
-                            <li>Otimização para buscadores (SEO)</li>
-                            <li>Manutenção e suporte contínuo</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Soluções Personalizadas</h3>
-                        <p>Atendimento técnico completo para suas necessidades.</p>
-                        <ul class="service-list">
-                            <li>Consultoria especializada</li>
-                            <li>Soluções multidisciplinares</li>
-                            <li>Coordenação com profissionais</li>
-                            <li>Acompanhamento completo</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="sobre" class="section about">
-        <div class="container">
-            <div class="about-container">
-                <div class="about-image">
-                    <i class="fas fa-building" aria-hidden="true"></i>
-                </div>
-                <div class="about-content">
-                    <h2 class="about-title">Sobre a Técnico Soluções Inteligentes</h2>
-                    <p class="about-text">Com mais de 10 anos de experiência no mercado, somos referência em soluções técnicas em Sertanópolis e região. Nossa missão é oferecer serviços de qualidade que resolvam seus problemas de forma eficiente, com transparência e preços justos.</p>
-                    <p class="about-text">Nossa equipe é composta por profissionais qualificados e comprometidos com a excelência em cada serviço prestado. Trabalhamos com as melhores ferramentas e tecnologias para garantir resultados superiores.</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-text">Anos de Experiência</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">2000+</div>
-                            <div class="stat-text">Clientes Atendidos</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">98%</div>
-                            <div class="stat-text">Satisfação dos Clientes</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">6</div>
-                            <div class="stat-text">Serviços Especializados</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="depoimentos" class="section testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Depoimentos de Clientes</h2>
-                <p class="section-subtitle">Veja o que nossos clientes têm a dizer sobre a qualidade dos nossos serviços e atendimento.</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Serviço excelente! Resolveu meu problema de rede em menos de 1 hora. Profissionalismo e conhecimento técnico impressionantes."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user" aria-hidden="true"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Carlos Silva</h4>
-                            <p>Empresário</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Troquei a tela do meu celular e ficou perfeito! Preço justo e atendimento rápido. Recomendo para todos em Sertanópolis."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user" aria-hidden="true"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Mariana Oliveira</h4>
-                            <p>Professora</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Instalou meu sistema de câmeras com perfeição. Agora posso monitorar meu comércio de qualquer lugar. Atendimento de primeira!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user" aria-hidden="true"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Roberto Santos</h4>
-                            <p>Comerciante</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contato" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Entre em Contato</h2>
-                <p class="section-subtitle">Estamos prontos para atender suas necessidades técnicas. Entre em contato e solicite um orçamento.</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3 class="contact-title">Informações de Contato</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Telefone</h4>
-                                <a href="tel:+5543991678501" aria-label="Ligar para (43) 99167-8501">(43) 99167-8501</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope" aria-hidden="true"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>E-mail</h4>
-                                <a href="mailto:contato@tecnicotisolucoes.com" aria-label="Enviar e-mail para contato@tecnicotisolucoes.com">contato@tecnicotisolucoes.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Localização</h4>
-                                <p>Atendemos em Sertanópolis e região</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock" aria-hidden="true"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Horário de Atendimento</h4>
-                                <p>Segunda a Sexta: 8h às 18h</p>
-                                <p>Sábado: 8h às 12h</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3 class="contact-title">Envie uma Mensagem</h3>
-                    <form action="https://formspree.io/f/xeokwpdd" method="POST" aria-label="Formulário de contato">
-                        <div class="form-group" data-validate="nome">
-                            <label class="form-label" for="nome">Nome Completo</label>
-                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome" required aria-describedby="nome-error">
-                            <span id="nome-error" class="error-message">Por favor, insira seu nome completo.</span>
-                        </div>
-                        <div class="form-group" data-validate="email">
-                            <label class="form-label" for="email">E-mail</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="seu@email.com" required aria-describedby="email-error">
-                            <span id="email-error" class="error-message">Por favor, insira um e-mail válido.</span>
-                        </div>
-                        <div class="form-group" data-validate="telefone">
-                            <label class="form-label" for="telefone">Telefone</label>
-                            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(43) 99999-9999" pattern="^\(\d{2}\)\s?\d{4,5}-\d{4}$" required aria-describedby="telefone-error" oninput="formatPhone(this)">
-                            <span id="telefone-error" class="error-message">Por favor, insira um telefone válido (ex.: (43) 99999-9999).</span>
-                        </div>
-                        <div class="form-group" data-validate="servico">
-                            <label class="form-label" for="servico">Serviço de Interesse</label>
-                            <select class="form-control" id="servico" name="servico" required aria-describedby="servico-error">
-                                <option value="">Selecione uma opção</option>
-                                <option value="manutencao">Manutenção de Celulares</option>
-                                <option value="informatica">Informática</option>
-                                <option value="redes">Redes</option>
-                                <option value="cameras">Câmeras de Segurança</option>
-                                <option value="sites">Criação de Sites</option>
-                                <option value="outro">Outro</option>
-                            </select>
-                            <span id="servico-error" class="error-message">Por favor, selecione um serviço.</span>
-                        </div>
-                        <div class="form-group" data-validate="mensagem">
-                            <label class="form-label" for="mensagem">Mensagem</label>
-                            <textarea class="form-control" id="mensagem" name="mensagem" placeholder="Descreva como podemos ajudar" rows="5" required aria-describedby="mensagem-error"></textarea>
-                            <span id="mensagem-error" class="error-message">Por favor, insira uma mensagem.</span>
-                        </div>
-                        <button type="submit" class="btn">
-                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Mensagem
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Soluções Técnicas de Excelência em Sertanópolis</h1>
+                    <p>Especialistas em manutenção de celulares, informática, redes, câmeras de segurança e desenvolvimento web. Conectando tecnologia e soluções para sua necessidade.</p>
+                    <div class="hero-btns">
+                        <a href="https://wa.me/5543991678501" class="btn btn-accent" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> Fale Conosco
+                        </a>
+                        <a href="#servicos" class="btn" aria-label="Veja nossos serviços">
+                            <i class="fas fa-laptop-code" aria-hidden="true"></i> Nossos Serviços
+                        </a>
+                        <button class="btn btn-accent" onclick="openAppointmentModal()" aria-label="Agendar serviço">
+                            <i class="fas fa-calendar-alt" aria-hidden="true"></i> Agendar Serviço
                         </button>
-                        <div id="form-feedback" class="form-feedback" role="alert"></div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="servicos" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nossos Serviços</h2>
+                    <p class="section-subtitle">Oferecemos soluções técnicas completas para atender todas as suas necessidades tecnológicas com excelência e profissionalismo.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Manutenção de Celulares</h3>
+                            <p>Soluções completas para seu dispositivo móvel.</p>
+                            <ul class="service-list">
+                                <li>Troca de telas e baterias</li>
+                                <li>Reparo em conectores e botões</li>
+                                <li>Limpeza e manutenção interna</li>
+                                <li>Diagnóstico técnico completo</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop" aria-hidden="true"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Suporte em Informática</h3>
+                            <p>Soluções para seu computador e periféricos.</p>
+                            <ul class="service-list">
+                                <li>Formatação e instalação de sistemas</li>
+                                <li>Remoção de vírus e otimização</li>
+                                <li>Configuração de impressoras</li>
+                                <li>Suporte técnico presencial e remoto</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-network-wired" aria-hidden="true"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Redes e Infraestrutura</h3>
+                            <p>Soluções de conectividade para sua casa ou empresa.</p>
+                            <ul class="service-list">
+                                <li>Instalação e configuração de redes</li>
+                                <li>Cabeamento estruturado</li>
+                                <li>Otimização de Wi-Fi</li>
+                                <li>Soluções para grandes áreas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-video" aria-hidden="true"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Câmeras de Segurança</h3>
+                            <p>Soluções de monitoramento para sua segurança.</p>
+                            <ul class="service-list">
+                                <li>Instalação profissional de câmeras</li>
+                                <li>Configuração de acesso remoto</li>
+                                <li>Manutenção preventiva</li>
+                                <li>Sistemas de gravação e armazenamento</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-globe" aria-hidden="true"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Desenvolvimento Web</h3>
+                            <p>Soluções digitais para sua presença online.</p>
+                            <ul class="service-list">
+                                <li>Criação de sites institucionais</li>
+                                <li>Sistemas web personalizados</li>
+                                <li>Otimização para buscadores (SEO)</li>
+                                <li>Manutenção e suporte contínuo</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Soluções Personalizadas</h3>
+                            <p>Atendimento técnico completo para suas necessidades.</p>
+                            <ul class="service-list">
+                                <li>Consultoria especializada</li>
+                                <li>Soluções multidisciplinares</li>
+                                <li>Coordenação com profissionais</li>
+                                <li>Acompanhamento completo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="section about">
+            <div class="container">
+                <div class="about-container">
+                    <div class="about-image">
+                        <i class="fas fa-building" aria-hidden="true"></i>
+                    </div>
+                    <div class="about-content">
+                        <h2 class="about-title">Sobre a Técnico Soluções Inteligentes</h2>
+                        <p class="about-text">Com mais de 10 anos de experiência no mercado, somos referência em soluções técnicas em Sertanópolis e região. Nossa missão é oferecer serviços de qualidade que resolvam seus problemas de forma eficiente, com transparência e preços justos.</p>
+                        <p class="about-text">Nossa equipe é composta por profissionais qualificados e comprometidos com a excelência em cada serviço prestado. Trabalhamos com as melhores ferramentas e tecnologias para garantir resultados superiores.</p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-text">Anos de Experiência</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">2000+</div>
+                                <div class="stat-text">Clientes Atendidos</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">98%</div>
+                                <div class="stat-text">Satisfação dos Clientes</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">6</div>
+                                <div class="stat-text">Serviços Especializados</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="section testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Depoimentos de Clientes</h2>
+                    <p class="section-subtitle">Veja o que nossos clientes têm a dizer sobre a qualidade dos nossos serviços e atendimento.</p>
+                </div>
+                <div class="testimonial-container">
+                    <div class="testimonial-slider" id="testimonialSlider">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Serviço excelente! Resolveu meu problema de rede em menos de 1 hora. Profissionalismo e conhecimento técnico impressionantes."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user" aria-hidden="true"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Carlos Silva</h4>
+                                    <p>Empresário</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Troquei a tela do meu celular e ficou perfeito! Preço justo e atendimento rápido. Recomendo para todos em Sertanópolis."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user" aria-hidden="true"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Mariana Oliveira</h4>
+                                    <p>Professora</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Instalou meu sistema de câmeras com perfeição. Agora posso monitorar meu comércio de qualquer lugar. Atendimento de primeira!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user" aria-hidden="true"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Roberto Santos</h4>
+                                    <p>Comerciante</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Desenvolveram meu site profissional em tempo recorde. Agora meus clientes encontram meu negócio facilmente na internet. Serviço de alta qualidade!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user" aria-hidden="true"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Patrícia Mendes</h4>
+                                    <p>Empreendedora</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-nav">
+                        <button id="prevTestimonial" aria-label="Depoimento anterior">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button id="nextTestimonial" aria-label="Próximo depoimento">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Perguntas Frequentes</h2>
+                    <p class="section-subtitle">Tire suas dúvidas sobre nossos serviços e atendimento.</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Quanto tempo leva para consertar um celular?
+                        </div>
+                        <div class="faq-answer">
+                            <p>O tempo de reparo varia conforme o problema. Problemas simples como troca de tela ou bateria podem ser resolvidos em até 2 horas. Problemas mais complexos podem levar de 1 a 3 dias úteis. Sempre informamos o prazo estimado antes de iniciar o serviço.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Vocês oferecem garantia nos serviços?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sim, todos os nossos serviços têm garantia. Para manutenção de celulares e computadores, oferecemos 90 dias de garantia. Para instalação de câmeras e redes, a garantia é de 1 ano. Para desenvolvimento de sites, garantimos suporte técnico por 6 meses.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Atendem em domicílio?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sim, oferecemos atendimento domiciliar para serviços de informática, instalação de redes e câmeras de segurança em Sertanópolis e região. Para outros municípios, pode haver custo adicional de deslocamento. Entre em contato para verificar disponibilidade.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Aceitam quais formas de pagamento?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Aceitamos diversas formas de pagamento: dinheiro, cartão de crédito/débito, Pix e transferência bancária. Para serviços acima de R$ 500,00, oferecemos opções de parcelamento.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Como posso acompanhar o andamento do meu serviço?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Fornecemos um número de protocolo para cada serviço, pelo qual você pode acompanhar o status pelo WhatsApp ou pelo nosso site. Também enviamos atualizações por e-mail ou SMS conforme o serviço avança.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Entre em Contato</h2>
+                    <p class="section-subtitle">Estamos prontos para atender suas necessidades técnicas. Entre em contato e solicite um orçamento.</p>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3 class="contact-title">Informações de Contato</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Telefone</h4>
+                                    <a href="tel:+5543991678501" aria-label="Ligar para (43) 99167-8501">(43) 99167-8501</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>E-mail</h4>
+                                    <a href="mailto:contato@tecnicotisolucoes.com" aria-label="Enviar e-mail para contato@tecnicotisolucoes.com">contato@tecnicotisolucoes.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Localização</h4>
+                                    <p>Atendemos em Sertanópolis e região</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock" aria-hidden="true"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Horário de Atendimento</h4>
+                                    <p>Segunda a Sexta: 8h às 18h</p>
+                                    <p>Sábado: 8h às 12h</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3661.187038541328!2d-51.03737552495846!3d-23.42485337886013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ec2b4d0d5a1e8f%3A0x4d3a7f4a9d3a3e1d!2sSertan%C3%B3polis%2C%20PR!5e0!3m2!1spt-BR!2sbr!4v1691500000000!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3 class="contact-title">Envie uma Mensagem</h3>
+                        <form action="https://formspree.io/f/xeokwpdd" method="POST" aria-label="Formulário de contato">
+                            <div class="form-group" data-validate="nome">
+                                <label class="form-label" for="nome">Nome Completo</label>
+                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome" required aria-describedby="nome-error">
+                                <span id="nome-error" class="error-message">Por favor, insira seu nome completo.</span>
+                            </div>
+                            <div class="form-group" data-validate="email">
+                                <label class="form-label" for="email">E-mail</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="seu@email.com" required aria-describedby="email-error">
+                                <span id="email-error" class="error-message">Por favor, insira um e-mail válido.</span>
+                            </div>
+                            <div class="form-group" data-validate="telefone">
+                                <label class="form-label" for="telefone">Telefone</label>
+                                <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(43) 99999-9999" pattern="^\(\d{2}\)\s?\d{4,5}-\d{4}$" required aria-describedby="telefone-error" oninput="formatPhone(this)">
+                                <span id="telefone-error" class="error-message">Por favor, insira um telefone válido (ex.: (43) 99999-9999).</span>
+                            </div>
+                            <div class="form-group" data-validate="servico">
+                                <label class="form-label" for="servico">Serviço de Interesse</label>
+                                <select class="form-control" id="servico" name="servico" required aria-describedby="servico-error">
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="manutencao">Manutenção de Celulares</option>
+                                    <option value="informatica">Informática</option>
+                                    <option value="redes">Redes</option>
+                                    <option value="cameras">Câmeras de Segurança</option>
+                                    <option value="sites">Criação de Sites</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                                <span id="servico-error" class="error-message">Por favor, selecione um serviço.</span>
+                            </div>
+                            <div class="form-group" data-validate="mensagem">
+                                <label class="form-label" for="mensagem">Mensagem</label>
+                                <textarea class="form-control" id="mensagem" name="mensagem" placeholder="Descreva como podemos ajudar" rows="5" required aria-describedby="mensagem-error"></textarea>
+                                <span id="mensagem-error" class="error-message">Por favor, insira uma mensagem.</span>
+                            </div>
+                            <button type="submit" class="btn">
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Mensagem
+                            </button>
+                            <div id="form-feedback" class="form-feedback" role="alert"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
@@ -1266,6 +1718,7 @@
                         <a href="#servicos"><i class="fas fa-chevron-right" aria-hidden="true"></i> Serviços</a>
                         <a href="#sobre"><i class="fas fa-chevron-right" aria-hidden="true"></i> Sobre Nós</a>
                         <a href="#depoimentos"><i class="fas fa-chevron-right" aria-hidden="true"></i> Depoimentos</a>
+                        <a href="#faq"><i class="fas fa-chevron-right" aria-hidden="true"></i> FAQ</a>
                         <a href="#contato"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contato</a>
                     </div>
                 </div>
@@ -1281,6 +1734,7 @@
             </div>
             <div class="copyright">
                 <p>© 2023 Técnico Soluções Inteligentes. Todos os direitos reservados.</p>
+                <p><a href="#" style="color: #cbd5e0;">Política de Privacidade</a> | <a href="#" style="color: #cbd5e0;">Termos de Serviço</a></p>
             </div>
         </div>
     </footer>
@@ -1289,13 +1743,16 @@
         <a href="https://wa.me/5543991678501" class="floating-btn whatsapp" aria-label="Fale conosco pelo WhatsApp" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
         </a>
+        <button class="floating-btn chat" aria-label="Abrir chat" id="openChat">
+            <i class="fas fa-comments" aria-hidden="true"></i>
+        </button>
         <button class="floating-btn back-top" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'});">
             <i class="fas fa-arrow-up" aria-hidden="true"></i>
         </button>
     </div>
 
     <script>
-        // Intersection Observer for section animations
+        // Intersection Observer para animações de seções
         if ('IntersectionObserver' in window) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -1310,7 +1767,7 @@
             document.querySelectorAll('.section').forEach(section => section.classList.add('visible'));
         }
 
-        // Smooth scrolling for navigation links
+        // Navegação suave para links
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1325,7 +1782,7 @@
             });
         });
 
-        // Add active class to nav links on scroll
+        // Adicionar classe ativa aos links de navegação ao rolar
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('nav a');
@@ -1342,10 +1799,8 @@
                     link.classList.add('active');
                 }
             });
-        });
-
-        // Back to top button visibility
-        window.addEventListener('scroll', () => {
+            
+            // Botão "Voltar ao topo"
             const backTopBtn = document.querySelector('.back-top');
             if (window.scrollY > 300) {
                 backTopBtn.style.display = 'flex';
@@ -1354,26 +1809,35 @@
             }
         });
 
-        // Theme toggle
+        // Alternador de tema
         function toggleTheme() {
             const body = document.body;
             const themeIcon = document.getElementById('theme-icon');
             if (body.getAttribute('data-theme') === 'dark') {
                 body.removeAttribute('data-theme');
                 themeIcon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
             } else {
                 body.setAttribute('data-theme', 'dark');
                 themeIcon.className = 'fas fa-sun';
+                localStorage.setItem('theme', 'dark');
             }
         }
 
-        // Form validation and submission
+        // Carregar tema salvo
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            document.getElementById('theme-icon').className = 'fas fa-sun';
+        }
+
+        // Validação e envio de formulário
         const contactForm = document.querySelector('.contact-form form');
         if (contactForm) {
             const formGroups = contactForm.querySelectorAll('.form-group');
             const formFeedback = document.getElementById('form-feedback');
 
-            // Real-time validation
+            // Validação em tempo real
             formGroups.forEach(group => {
                 const input = group.querySelector('.form-control');
                 input.addEventListener('input', () => {
@@ -1381,7 +1845,7 @@
                 });
             });
 
-            // Phone number mask
+            // Máscara de telefone
             function formatPhone(input) {
                 let value = input.value.replace(/\D/g, '');
                 if (value.length > 10) value = value.substring(0, 11);
@@ -1395,6 +1859,7 @@
                 validateField(group, input);
             }
 
+            // Envio do formulário
             contactForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 let isValid = true;
@@ -1430,6 +1895,7 @@
                 }
             });
 
+            // Função de validação de campo
             function validateField(group, input) {
                 const fieldName = group.dataset.validate;
                 let isValid = true;
@@ -1452,6 +1918,122 @@
                 }
                 group.classList.toggle('invalid', !isValid);
                 return isValid;
+            }
+        }
+
+        // Carrossel de depoimentos
+        const testimonialSlider = document.getElementById('testimonialSlider');
+        const prevBtn = document.getElementById('prevTestimonial');
+        const nextBtn = document.getElementById('nextTestimonial');
+        let currentSlide = 0;
+        const slideCount = testimonialSlider.children.length;
+
+        function showSlide(index) {
+            if (index < 0) index = slideCount - 1;
+            if (index >= slideCount) index = 0;
+            
+            testimonialSlider.style.transform = `translateX(-${index * 100}%)`;
+            currentSlide = index;
+        }
+
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+
+        // Alternar slides automaticamente
+        setInterval(() => showSlide(currentSlide + 1), 5000);
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Modal de agendamento
+        const appointmentModal = document.getElementById('appointmentModal');
+        const appointmentForm = document.getElementById('appointmentForm');
+        
+        function openAppointmentModal() {
+            appointmentModal.style.display = 'flex';
+        }
+        
+        function closeAppointmentModal() {
+            appointmentModal.style.display = 'none';
+        }
+        
+        document.querySelector('.close-modal').addEventListener('click', closeAppointmentModal);
+        appointmentModal.addEventListener('click', (e) => {
+            if (e.target === appointmentModal) closeAppointmentModal();
+        });
+        
+        appointmentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Aqui iria a lógica de envio real
+            alert('Agendamento enviado com sucesso! Entraremos em contato para confirmar.');
+            closeAppointmentModal();
+        });
+
+        // Chatbot
+        const chatbot = document.getElementById('chatbot');
+        const openChatBtn = document.getElementById('openChat');
+        const closeChatBtn = document.querySelector('.close-chat');
+        const chatInput = document.getElementById('chat-input');
+        
+        openChatBtn.addEventListener('click', () => {
+            chatbot.classList.add('active');
+        });
+        
+        closeChatBtn.addEventListener('click', () => {
+            chatbot.classList.remove('active');
+        });
+        
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        document.querySelector('.chat-input button').addEventListener('click', sendMessage);
+        
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                const messagesContainer = document.querySelector('.chat-messages');
+                
+                // Adicionar mensagem do usuário
+                const userMessage = document.createElement('div');
+                userMessage.className = 'message user-message';
+                userMessage.textContent = message;
+                messagesContainer.appendChild(userMessage);
+                
+                // Limpar entrada
+                chatInput.value = '';
+                
+                // Simular resposta do bot após um pequeno atraso
+                setTimeout(() => {
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'message bot-message';
+                    
+                    // Respostas pré-definidas
+                    if (message.toLowerCase().includes('agendar')) {
+                        botMessage.textContent = 'Para agendar um serviço, clique no botão "Agendar Serviço" no topo da página ou ligue para (43) 99167-8501.';
+                    } else if (message.toLowerCase().includes('preço') || message.toLowerCase().includes('custo') || message.toLowerCase().includes('valor')) {
+                        botMessage.textContent = 'Os preços variam conforme o serviço. Por favor, informe qual serviço você precisa para que possamos fornecer um orçamento.';
+                    } else if (message.toLowerCase().includes('endereço') || message.toLowerCase().includes('local')) {
+                        botMessage.textContent = 'Atendemos em Sertanópolis e região. Para serviços presenciais, podemos ir até você!';
+                    } else if (message.toLowerCase().includes('horário') || message.toLowerCase().includes('funciona')) {
+                        botMessage.textContent = 'Nosso horário de atendimento é de segunda a sexta, das 8h às 18h, e sábados das 8h às 12h.';
+                    } else {
+                        botMessage.textContent = 'Obrigado pela sua mensagem! Nossa equipe entrará em contato em breve. Enquanto isso, você pode nos chamar no WhatsApp: (43) 99167-8501.';
+                    }
+                    
+                    messagesContainer.appendChild(botMessage);
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                }, 1000);
+                
+                // Rolagem para baixo
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
             }
         }
 
