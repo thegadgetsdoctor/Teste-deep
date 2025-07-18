@@ -1,2 +1,85 @@
+// Funções JavaScript
+function redirectToWhatsApp(service) {
+  const message = `Olá, gostaria de informações sobre ${service}`;
+  window.open(`https://wa.me/5543991678501?text=${encodeURIComponent(message)}`, '_blank');
+}
 
-let currentStep=1;const totalSteps=4;function updateProgress(){const progress=(currentStep/totalSteps)*100;document.getElementById('progress').style.width=`${progress}%`;}function nextStep(){if(currentStep===1&&!document.getElementById('clientType').value){alert('Por favor, selecione se você é pessoa física ou empresa');return;}if(currentStep===2&&!document.getElementById('clientName').value){alert('Por favor, informe seu nome');return;}if(currentStep===3&&!document.getElementById('clientPhone').value){alert('Por favor, informe seu telefone');return;}document.getElementById(`step${currentStep}`).classList.remove('active');currentStep++;document.getElementById(`step${currentStep}`).classList.add('active');updateProgress();if(currentStep===2){const clientType=document.getElementById('clientType').value;document.getElementById('nameLabel').textContent=clientType==='empresa'?'Nome da sua empresa':'Seu nome completo';}}function prevStep(){document.getElementById(`step${currentStep}`).classList.remove('active');currentStep--;document.getElementById(`step${currentStep}`).classList.add('active');updateProgress();}async function submitForm(){const clientType=document.getElementById('clientType').value;const clientName=document.getElementById('clientName').value;const clientPhone=document.getElementById('clientPhone').value;const clientEmail=document.getElementById('clientEmail').value;const serviceNeeded=document.getElementById('serviceNeeded').value;const problemDescription=document.getElementById('problemDescription').value;const clientData={type:clientType,name:clientName,phone:clientPhone,email:clientEmail,service:serviceNeeded,problem:problemDescription,timestamp:new Date().toISOString()};localStorage.setItem('clientInfo',JSON.stringify(clientData));const formDataToSend=new FormData();formDataToSend.append('Tipo de Cliente',clientType);formDataToSend.append('Nome Completo',clientName);formDataToSend.append('Telefone',clientPhone);formDataToSend.append('Email',clientEmail);formDataToSend.append('Servico Necessario',serviceNeeded);formDataToSend.append('Descricao do Problema',problemDescription);const FORMSPREE_WELCOME_FORM_URL='https://formspree.io/f/mjkrqpnr';try{const response=await fetch(FORMSPREE_WELCOME_FORM_URL,{method:'POST',body:formDataToSend,headers:{'Accept':'application/json'}});if(response.ok){console.log('Dados do questionário enviados para o Formspree com sucesso!');}else{console.error('Erro ao enviar dados do questionário para o Formspree.');}}catch(error){console.error('Erro de rede ao enviar questionário:',error);}document.getElementById('welcome-screen').style.opacity='0';document.getElementById('welcome-screen').style.transform='translateY(-20px)';setTimeout(()=>{document.getElementById('welcome-screen').style.display='none';document.getElementById('main-site').classList.add('show');},800);}function skipQuestionnaire(){document.getElementById('welcome-screen').style.opacity='0';document.getElementById('welcome-screen').style.transform='scale(.9)';setTimeout(()=>{document.getElementById('welcome-screen').style.display='none';document.getElementById('main-site').classList.add('show');},600);}updateProgress();window.addEventListener('DOMContentLoaded',()=>{const clientInfo=localStorage.getItem('clientInfo');if(clientInfo){document.getElementById('welcome-screen').style.display='none';document.getElementById('main-site').classList.add('show');}});const schemaScript=document.createElement('script');schemaScript.type='application/ld+json';schemaScript.text=JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Técnico Soluções Inteligentes","image":"","telephone":"+5543991678501","email":"contato@tecnicotisolucoes.com","address":{"@type":"PostalAddress","addressLocality":"Sertanópolis","addressRegion":"PR","addressCountry":"BR"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},"sameAs":[],"priceRange":"$$","serviceArea":"Sertanópolis e região"});document.head.appendChild(schemaScript);const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:.1,rootMargin:'0px 0px -100px 0px'});document.querySelectorAll('main section').forEach(section=>{observer.observe(section);});window.addEventListener('scroll',function(){const sections=document.querySelectorAll('section');const navLinks=document.querySelectorAll('nav a');let current='';sections.forEach(section=>{const sectionTop=section.offsetTop;const sectionHeight=section.clientHeight;if(pageYOffset>=(sectionTop-200)){current=section.getAttribute('id');}});navLinks.forEach(link=>{link.classList.remove('active');if(link.getAttribute('href').substring(1)===current){link.classList.add('active');}});});
+// Observador de interseção para animações
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  
+  document.querySelectorAll('.section').forEach(section => observer.observe(section));
+} else {
+  document.querySelectorAll('.section').forEach(section => section.classList.add('visible'));
+}
+
+// Navegação suave
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    window.scrollTo({
+      top: targetElement.offsetTop - 80,
+      behavior: 'smooth'
+    });
+    document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// Controle de rolagem
+window.addEventListener('scroll', () => {
+  // Lógica de rolagem
+});
+
+// Alternador de tema
+function toggleTheme() {
+  // Lógica do tema
+}
+
+// Validação de formulário
+const contactForm = document.querySelector('.contact-form form');
+if (contactForm) {
+  // Lógica de validação
+}
+
+// Slider de depoimentos
+const testimonialSlider = document.getElementById('testimonialSlider');
+// Lógica do slider
+
+// FAQ - Acordeão
+document.querySelectorAll('.faq-item').forEach(item => {
+  // Lógica do acordeão
+});
+
+// Modal de agendamento
+const appointmentModal = document.getElementById('appointmentModal');
+// Lógica do modal
+
+// Chatbot
+const chatbot = document.getElementById('chatbot');
+// Lógica do chatbot
+
+// Toast notifications
+function showToast(message, type) {
+  // Lógica de notificação
+}
+
+// Schema markup
+const schemaScript = document.createElement('script');
+// Schema markup content
+document.head.appendChild(schemaScript);
+
+// Google Analytics
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX');
