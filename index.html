@@ -17,24 +17,20 @@
 <meta name="geo.placename" content="Sertanópolis">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"></noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
 <style>
 :root {
-  --clr-primary: #0a192f;
-  --clr-secondary: #172a45;
-  --clr-accent: #64ffda;
-  --clr-gold: #d4af37;
-  --clr-dark: #1e293b;
-  --clr-light: #f8f9fa;
+  --clr-primary: #1a365d;
+  --clr-secondary: #2c5282;
+  --clr-accent: #4299e1;
+  --clr-dark: #1a202c;
+  --clr-light: #f7fafc;
   --clr-text: #4a5568;
   --clr-border: #e2e8f0;
   --clr-card: #ffffff;
-  --clr-gradient: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
-  --clr-gradient-accent: linear-gradient(135deg, #0a192f 0%, #64ffda 100%);
+  --clr-gradient: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
   --font-sans: 'Inter', sans-serif;
   --font-heading: 'Playfair Display', serif;
   --transition: .3s ease-in-out;
@@ -44,22 +40,37 @@
 }
 
 [data-theme="dark"] {
-  --clr-primary: #1e293b;
-  --clr-secondary: #334155;
-  --clr-accent: #64ffda;
-  --clr-gold: #d4af37;
-  --clr-dark: #f1f5f9;
-  --clr-light: #0f172a;
+  --clr-primary: #1a202c;
+  --clr-secondary: #2d3748;
+  --clr-accent: #4299e1;
+  --clr-dark: #f7fafc;
+  --clr-light: #1a202c;
   --clr-text: #e2e8f0;
-  --clr-border: #334155;
-  --clr-card: #1e293b;
-  --clr-gradient: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  --clr-border: #4a5568;
+  --clr-card: #2d3748;
+  --clr-gradient: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
   --footer-bg: #0f172a;
   --footer-text: #e2e8f0;
-  --footer-border: rgba(226, 232, 240, 0.2);
+  --footer-border: rgba(226,232,240,0.2);
 }
 
-*, *::before, *::after {
+@keyframes gradientShift {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px) }
+  to { opacity: 1; transform: translateY(0) }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1) }
+  50% { transform: scale(1.02) }
+}
+
+*,*::before,*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -71,15 +82,15 @@ html {
 }
 
 body {
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans),system-ui,-apple-system,sans-serif;
   background: var(--clr-light);
   color: var(--clr-text);
   line-height: 1.6;
   overflow-x: hidden;
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition),color var(--transition);
 }
 
-h1, h2, h3, h4 {
+h1,h2,h3,h4 {
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--clr-dark);
@@ -93,7 +104,7 @@ a {
 }
 
 a:hover {
-  color: var(--clr-gold);
+  color: var(--clr-accent);
 }
 
 a:focus-visible {
@@ -128,7 +139,7 @@ a:focus-visible {
   align-items: center;
   gap: 0.75rem;
   background: var(--clr-accent);
-  color: var(--clr-primary);
+  color: white;
   border: none;
   padding: 0.9rem 2rem;
   border-radius: 50px;
@@ -140,25 +151,15 @@ a:focus-visible {
 }
 
 .btn:hover {
-  background: var(--clr-gold);
+  background: #3182ce;
   transform: translateY(-3px);
   box-shadow: var(--shadow-light);
-  color: var(--clr-primary);
+  color: white;
 }
 
 .btn:focus-visible {
   outline: 2px solid var(--clr-accent);
   outline-offset: 2px;
-}
-
-.btn-accent {
-  background: var(--clr-gold);
-  color: var(--clr-primary);
-}
-
-.btn-accent:hover {
-  background: #c9a227;
-  color: var(--clr-primary);
 }
 
 .theme-toggle {
@@ -175,7 +176,7 @@ a:focus-visible {
   justify-content: center;
   cursor: pointer;
   z-index: 1000;
-  transition: background var(--transition), border-color var(--transition);
+  transition: background var(--transition),border-color var(--transition);
   box-shadow: var(--shadow-light);
 }
 
@@ -196,7 +197,7 @@ header {
   background: var(--clr-card);
   box-shadow: var(--shadow);
   padding: 1.2rem 0;
-  transition: background var(--transition), box-shadow var(--transition);
+  transition: background var(--transition),box-shadow var(--transition);
 }
 
 .header-container {
@@ -213,7 +214,7 @@ header {
 
 .logo-icon {
   background: var(--clr-primary);
-  color: var(--clr-accent);
+  color: white;
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -262,13 +263,15 @@ nav a::after {
   transition: width var(--transition);
 }
 
-nav a:hover::after, nav a.active::after {
+nav a:hover::after,nav a.active::after {
   width: 100%;
 }
 
 .hero {
   padding: 6rem 0 4rem;
   background: var(--clr-gradient);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite alternate;
   color: white;
   position: relative;
   overflow: hidden;
@@ -290,6 +293,7 @@ nav a:hover::after, nav a.active::after {
   position: relative;
   z-index: 2;
   max-width: 700px;
+  animation: fadeInUp 1s ease;
 }
 
 .hero h1 {
@@ -376,6 +380,8 @@ nav a:hover::after, nav a.active::after {
   flex-direction: column;
   border: 1px solid var(--clr-border);
   transform: translateY(0);
+  cursor: pointer;
+  position: relative;
 }
 
 .service-card:hover {
@@ -385,14 +391,14 @@ nav a:hover::after, nav a.active::after {
 }
 
 .service-icon {
-  background: rgba(100, 255, 218, 0.05);
+  background: rgba(66,153,225,0.05);
   height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
   color: var(--clr-accent);
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition),color var(--transition);
 }
 
 .service-content {
@@ -430,6 +436,22 @@ nav a:hover::after, nav a.active::after {
   transition: color var(--transition);
 }
 
+.service-card:hover .service-icon {
+  background: rgba(66,153,225,0.1);
+}
+
+.price-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--clr-accent);
+  color: var(--clr-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
 .about {
   background: var(--clr-light);
   transition: background var(--transition);
@@ -447,15 +469,16 @@ nav a:hover::after, nav a.active::after {
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--shadow);
-  background: rgba(100, 255, 218, 0.05);
+  background: rgba(66,153,225,0.05);
   height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--clr-accent);
   font-size: 5rem;
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition),color var(--transition);
   position: relative;
+  animation: pulse 4s ease infinite;
 }
 
 .about-image::before {
@@ -465,7 +488,7 @@ nav a:hover::after, nav a.active::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--clr-gradient-accent);
+  background: var(--clr-gradient);
   opacity: 0.1;
 }
 
@@ -499,7 +522,7 @@ nav a:hover::after, nav a.active::after {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-light);
   border: 1px solid var(--clr-border);
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition),color var(--transition);
 }
 
 .stat-item:hover {
@@ -631,7 +654,7 @@ nav a:hover::after, nav a.active::after {
 }
 
 .testimonial-nav button:hover {
-  background: var(--clr-gold);
+  background: #3182ce;
   transform: translateY(-3px);
 }
 
@@ -670,7 +693,7 @@ nav a:hover::after, nav a.active::after {
 }
 
 .faq-question:hover {
-  background: rgba(100, 255, 218, 0.05);
+  background: rgba(66,153,225,0.05);
 }
 
 .faq-question::after {
@@ -688,7 +711,7 @@ nav a:hover::after, nav a.active::after {
   padding: 0 1.5rem;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.3s ease,padding 0.3s ease;
 }
 
 .faq-item.active .faq-answer {
@@ -708,7 +731,7 @@ nav a:hover::after, nav a.active::after {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-light);
   border: 1px solid var(--clr-border);
-  transition: background var(--transition), box-shadow var(--transition);
+  transition: background var(--transition),box-shadow var(--transition);
 }
 
 .contact-info:hover {
@@ -748,7 +771,7 @@ nav a:hover::after, nav a.active::after {
 }
 
 .contact-icon {
-  background: rgba(100, 255, 218, 0.1);
+  background: rgba(66,153,225,0.1);
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -758,7 +781,7 @@ nav a:hover::after, nav a.active::after {
   color: var(--clr-accent);
   font-size: 1.1rem;
   flex-shrink: 0;
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition),color var(--transition);
 }
 
 .contact-text {
@@ -772,7 +795,7 @@ nav a:hover::after, nav a.active::after {
   transition: color var(--transition);
 }
 
-.contact-text a, .contact-text p {
+.contact-text a,.contact-text p {
   color: var(--clr-text);
   font-size: 1rem;
   transition: color var(--transition);
@@ -785,7 +808,7 @@ nav a:hover::after, nav a.active::after {
   box-shadow: var(--shadow-light);
   border: 1px solid var(--clr-border);
   position: relative;
-  transition: background var(--transition), box-shadow var(--transition);
+  transition: background var(--transition),box-shadow var(--transition);
 }
 
 .contact-form:hover {
@@ -821,7 +844,7 @@ nav a:hover::after, nav a.active::after {
 .form-control:focus {
   outline: none;
   border-color: var(--clr-accent);
-  box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.15);
+  box-shadow: 0 0 0 3px rgba(66,153,225,0.15);
 }
 
 textarea.form-control {
@@ -885,7 +908,7 @@ footer {
   background: var(--clr-primary);
   color: white;
   padding: 4rem 0 2rem;
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition),color var(--transition);
 }
 
 [data-theme="dark"] footer {
@@ -989,7 +1012,7 @@ footer {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.1);
   color: white;
   transition: all var(--transition);
 }
@@ -1003,10 +1026,10 @@ footer {
 .copyright {
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255,255,255,0.1);
   color: #a0aec0;
   font-size: 0.9rem;
-  transition: color var(--transition), border-color var(--transition);
+  transition: color var(--transition),border-color var(--transition);
 }
 
 [data-theme="dark"] .copyright {
@@ -1060,12 +1083,12 @@ footer {
 }
 
 .floating-btn.chat {
-  background: var(--clr-gold);
+  background: var(--clr-accent);
   color: var(--clr-primary);
 }
 
 .floating-btn.chat:hover {
-  background: #c9a227;
+  background: #3182ce;
   transform: translateY(-5px);
 }
 
@@ -1076,7 +1099,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0,0,0,0.7);
   z-index: 2000;
   justify-content: center;
   align-items: center;
@@ -1090,6 +1113,7 @@ footer {
   width: 90%;
   position: relative;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.3s ease;
 }
 
 .close-modal {
@@ -1167,7 +1191,7 @@ footer {
 }
 
 .bot-message {
-  background: rgba(100, 255, 218, 0.1);
+  background: rgba(66,153,225,0.1);
   align-self: flex-start;
 }
 
@@ -1202,7 +1226,7 @@ footer {
 }
 
 .chat-input button:hover {
-  background: var(--clr-gold);
+  background: #3182ce;
 }
 
 .toast {
@@ -1234,27 +1258,6 @@ footer {
 
 .toast.info {
   background-color: #17a2b8;
-}
-
-/* New Features */
-.price-tag {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: var(--clr-accent);
-  color: var(--clr-primary);
-  padding: 0.25rem 0.75rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.service-card {
-  position: relative;
-}
-
-.service-card:hover .service-icon {
-  background: rgba(100, 255, 218, 0.1);
 }
 
 .partners {
@@ -1312,15 +1315,15 @@ footer {
   padding: 1rem 2rem;
   border: none;
   border-radius: 50px;
-  background: var(--clr-gold);
-  color: var(--clr-primary);
+  background: var(--clr-accent);
+  color: white;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition);
 }
 
 .newsletter-form button:hover {
-  background: #c9a227;
+  background: #3182ce;
   transform: translateY(-3px);
 }
 
@@ -1472,9 +1475,9 @@ footer {
 <h1>Soluções Técnicas de Excelência em Sertanópolis</h1>
 <p>Especialistas em manutenção de celulares, informática, redes, câmeras de segurança e desenvolvimento web. Conectando tecnologia e soluções para sua necessidade.</p>
 <div class="hero-btns">
-<a href="https://wa.me/5543991678501" class="btn btn-accent" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Fale Conosco</a>
+<a href="https://wa.me/5543991678501" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Fale Conosco</a>
 <a href="#servicos" class="btn" aria-label="Veja nossos serviços"><i class="fas fa-laptop-code" aria-hidden="true"></i> Nossos Serviços</a>
-<button class="btn btn-accent" onclick="openAppointmentModal()" aria-label="Agendar serviço"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Agendar Serviço</button>
+<button class="btn" onclick="openAppointmentModal()" aria-label="Agendar serviço"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Agendar Serviço</button>
 </div>
 </div>
 </div>
@@ -1486,7 +1489,7 @@ footer {
 <p class="section-subtitle">Oferecemos soluções técnicas completas para atender todas as suas necessidades tecnológicas com excelência e profissionalismo.</p>
 </div>
 <div class="services-grid">
-<div class="service-card">
+<div class="service-card" onclick="redirectToWhatsApp('Manutenção de Celulares')">
 <div class="service-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Manutenção de Celulares</h3>
@@ -1500,7 +1503,7 @@ footer {
 <span class="price-tag">A partir de R$ 120</span>
 </div>
 </div>
-<div class="service-card">
+<div class="service-card" onclick="redirectToWhatsApp('Suporte em Informática')">
 <div class="service-icon"><i class="fas fa-laptop" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Suporte em Informática</h3>
@@ -1514,7 +1517,7 @@ footer {
 <span class="price-tag">A partir de R$ 150</span>
 </div>
 </div>
-<div class="service-card">
+<div class="service-card" onclick="redirectToWhatsApp('Redes e Infraestrutura')">
 <div class="service-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Redes e Infraestrutura</h3>
@@ -1528,7 +1531,7 @@ footer {
 <span class="price-tag">A partir de R$ 300</span>
 </div>
 </div>
-<div class="service-card">
+<div class="service-card" onclick="redirectToWhatsApp('Câmeras de Segurança')">
 <div class="service-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Câmeras de Segurança</h3>
@@ -1542,7 +1545,7 @@ footer {
 <span class="price-tag">A partir de R$ 500</span>
 </div>
 </div>
-<div class="service-card">
+<div class="service-card" onclick="redirectToWhatsApp('Desenvolvimento Web')">
 <div class="service-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Desenvolvimento Web</h3>
@@ -1556,7 +1559,7 @@ footer {
 <span class="price-tag">A partir de R$ 1.200</span>
 </div>
 </div>
-<div class="service-card">
+<div class="service-card" onclick="redirectToWhatsApp('Soluções Personalizadas')">
 <div class="service-icon"><i class="fas fa-puzzle-piece" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Soluções Personalizadas</h3>
@@ -1722,7 +1725,7 @@ footer {
 </div>
 <form class="newsletter-form">
 <input type="email" placeholder="Seu melhor e-mail" required>
-<button type="submit" class="btn btn-accent">Assinar</button>
+<button type="submit" class="btn">Assinar</button>
 </form>
 </div>
 </section>
@@ -1861,6 +1864,11 @@ footer {
 <button class="floating-btn back-top" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'});"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
 </div>
 <script>
+function redirectToWhatsApp(service) {
+  const message = `Olá, gostaria de informações sobre ${service}`;
+  window.open(`https://wa.me/5543991678501?text=${encodeURIComponent(message)}`,'_blank');
+}
+
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -2186,7 +2194,6 @@ function showToast(message, type) {
   }, 5000);
 }
 
-// Newsletter subscription
 document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const email = this.querySelector('input').value;
@@ -2216,7 +2223,7 @@ schemaScript.text = JSON.stringify({
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
       "opens": "08:00",
       "closes": "18:00"
     },
