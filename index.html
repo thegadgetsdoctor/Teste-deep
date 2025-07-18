@@ -21,6 +21,101 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
 <style>
+/* Estilo da página de manutenção */
+.maintenance-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1a365d;
+  color: white;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+}
+
+.maintenance-content {
+  max-width: 600px;
+  padding: 2rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.5s ease;
+}
+
+.maintenance-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.maintenance-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.maintenance-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.maintenance-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.maintenance-btn.whatsapp {
+  background: #25D366;
+}
+
+.maintenance-btn.continue {
+  background: #4299e1;
+}
+
+.maintenance-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.maintenance-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: #4299e1;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Restante do CSS do site */
 :root {
   --clr-primary: #1a365d;
   --clr-secondary: #2c5282;
@@ -1382,6 +1477,23 @@ footer {
   .newsletter-form input {
     width: 100%;
   }
+  .maintenance-content {
+    padding: 1.5rem;
+  }
+  .maintenance-content h1 {
+    font-size: 1.8rem;
+  }
+  .maintenance-content p {
+    font-size: 1rem;
+  }
+  .maintenance-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .maintenance-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1399,6 +1511,27 @@ footer {
 </style>
 </head>
 <body>
+<!-- Página de manutenção -->
+<div class="maintenance-overlay" id="maintenanceOverlay">
+  <div class="maintenance-content">
+    <div class="maintenance-icon">
+      <i class="fas fa-tools"></i>
+    </div>
+    <h1>Estamos em manutenção!</h1>
+    <p>Pedimos desculpas pelo inconveniente, mas estamos trabalhando para trazer um site ainda melhor para você! Em breve, novas tecnologias e recursos estarão disponíveis.</p>
+    <p>Enquanto isso, você pode entrar em contato diretamente pelo WhatsApp ou continuar navegando no site em desenvolvimento.</p>
+    <div class="maintenance-buttons">
+      <a href="https://wa.me/5543991678501" class="maintenance-btn whatsapp" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> Fale pelo WhatsApp
+      </a>
+      <button class="maintenance-btn continue" onclick="hideMaintenance()">
+        <i class="fas fa-eye"></i> Continuar para o site
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Restante do conteúdo do site -->
 <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
 <div class="toast" id="toast" aria-live="polite"></div>
 <div class="chatbot" id="chatbot">
@@ -1864,6 +1997,24 @@ footer {
 <button class="floating-btn back-top" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'});"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
 </div>
 <script>
+// Função para esconder a página de manutenção
+function hideMaintenance() {
+  document.getElementById('maintenanceOverlay').style.display = 'none';
+  document.body.style.overflow = 'auto'; // Habilita o scroll novamente
+}
+
+// Verifica se o usuário já viu a mensagem de manutenção
+if (!localStorage.getItem('maintenanceSeen')) {
+  document.body.style.overflow = 'hidden'; // Desabilita o scroll
+} else {
+  document.getElementById('maintenanceOverlay').style.display = 'none';
+}
+
+// Quando o usuário clica para continuar, marca como visto
+document.querySelector('.maintenance-btn.continue').addEventListener('click', function() {
+  localStorage.setItem('maintenanceSeen', 'true');
+});
+
 function redirectToWhatsApp(service) {
   const message = `Olá, gostaria de informações sobre ${service}`;
   window.open(`https://wa.me/5543991678501?text=${encodeURIComponent(message)}`,'_blank');
