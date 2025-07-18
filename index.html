@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<!-- Meta tags básicas para SEO e configuração da página -->
 <meta charset="UTF-8">
 <meta name="description" content="Técnico em Sertanópolis-PR: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites. Atendimento rápido e especializado.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="keywords" content="manutenção celulares Sertanópolis, técnico informática PR, redes computadores, câmeras segurança, criação sites">
 <meta name="author" content="Técnico Soluções Inteligentes">
 <link rel="canonical" href="https://www.tecnicotisolucoes.com">
+
+<!-- Meta tags para redes sociais (Open Graph) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Técnico Soluções Inteligentes | Manutenção e Tecnologia em Sertanópolis-PR">
 <meta property="og:description" content="Soluções técnicas completas: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites.">
 <meta property="og:image" content="https://www.tecnicotisolucoes.com/og-image.jpg">
+
 <title>Técnico Soluções Inteligentes | Manutenção e Tecnologia em Sertanópolis-PR</title>
+
+<!-- Links para fontes e ícones -->
 <link rel="alternate" hreflang="pt-BR" href="https://www.tecnicotisolucoes.com">
 <meta name="geo.region" content="BR-PR">
 <meta name="geo.placename" content="Sertanópolis">
@@ -20,8 +26,66 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+
 <style>
-/* Estilo da página de manutenção */
+/* ========== ESTILOS GERAIS ========== */
+:root {
+  /* Cores principais */
+  --clr-primary: #1a365d;
+  --clr-secondary: #2c5282;
+  --clr-accent: #4299e1;
+  --clr-dark: #1a202c;
+  --clr-light: #f7fafc;
+  --clr-text: #4a5568;
+  --clr-border: #e2e8f0;
+  --clr-card: #ffffff;
+  --clr-gradient: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+  
+  /* Tipografia */
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  
+  /* Efeitos e transições */
+  --transition: .3s ease-in-out;
+  --shadow: 0 10px 30px rgba(0,0,0,0.15);
+  --shadow-light: 0 4px 12px rgba(0,0,0,0.08);
+  --border-radius: 16px;
+}
+
+/* Modo escuro - altera as cores quando ativado */
+[data-theme="dark"] {
+  --clr-primary: #1a202c;
+  --clr-secondary: #2d3748;
+  --clr-accent: #4299e1;
+  --clr-dark: #f7fafc;
+  --clr-light: #1a202c;
+  --clr-text: #e2e8f0;
+  --clr-border: #4a5568;
+  --clr-card: #2d3748;
+  --clr-gradient: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  --footer-bg: #0f172a;
+  --footer-text: #e2e8f0;
+  --footer-border: rgba(226,232,240,0.2);
+}
+
+/* ========== ANIMAÇÕES ========== */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* ========== ESTILOS DA PÁGINA DE MANUTENÇÃO ========== */
 .maintenance-overlay {
   position: fixed;
   top: 0;
@@ -104,68 +168,8 @@
   animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Restante do CSS do site */
-:root {
-  --clr-primary: #1a365d;
-  --clr-secondary: #2c5282;
-  --clr-accent: #4299e1;
-  --clr-dark: #1a202c;
-  --clr-light: #f7fafc;
-  --clr-text: #4a5568;
-  --clr-border: #e2e8f0;
-  --clr-card: #ffffff;
-  --clr-gradient: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
-  --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Playfair Display', serif;
-  --transition: .3s ease-in-out;
-  --shadow: 0 10px 30px rgba(0,0,0,0.15);
-  --shadow-light: 0 4px 12px rgba(0,0,0,0.08);
-  --border-radius: 16px;
-}
-
-[data-theme="dark"] {
-  --clr-primary: #1a202c;
-  --clr-secondary: #2d3748;
-  --clr-accent: #4299e1;
-  --clr-dark: #f7fafc;
-  --clr-light: #1a202c;
-  --clr-text: #e2e8f0;
-  --clr-border: #4a5568;
-  --clr-card: #2d3748;
-  --clr-gradient: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-  --footer-bg: #0f172a;
-  --footer-text: #e2e8f0;
-  --footer-border: rgba(226,232,240,0.2);
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50% }
-  50% { background-position: 100% 50% }
-  100% { background-position: 0% 50% }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px) }
-  to { opacity: 1; transform: translateY(0) }
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1) }
-  50% { transform: scale(1.02) }
-}
-
-*,*::before,*::after {
+/* ========== ESTILOS BASE ========== */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -177,15 +181,15 @@ html {
 }
 
 body {
-  font-family: var(--font-sans),system-ui,-apple-system,sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   background: var(--clr-light);
   color: var(--clr-text);
   line-height: 1.6;
   overflow-x: hidden;
-  transition: background var(--transition),color var(--transition);
+  transition: background var(--transition), color var(--transition);
 }
 
-h1,h2,h3,h4 {
+h1, h2, h3, h4 {
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--clr-dark);
@@ -207,6 +211,7 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
+/* Link para pular para o conteúdo (acessibilidade) */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -222,6 +227,7 @@ a:focus-visible {
   top: 0;
 }
 
+/* Container principal para centralizar o conteúdo */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -229,6 +235,7 @@ a:focus-visible {
   padding: 0 1.5rem;
 }
 
+/* Estilo base para botões */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -257,34 +264,7 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-.theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: var(--clr-card);
-  border: 1px solid var(--clr-border);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1000;
-  transition: background var(--transition),border-color var(--transition);
-  box-shadow: var(--shadow-light);
-}
-
-.theme-toggle:hover {
-  background: var(--clr-accent);
-  color: var(--clr-primary);
-}
-
-.theme-toggle:focus-visible {
-  outline: 2px solid var(--clr-accent);
-  outline-offset: 2px;
-}
-
+/* ========== CABEÇALHO ========== */
 header {
   position: sticky;
   top: 0;
@@ -292,7 +272,7 @@ header {
   background: var(--clr-card);
   box-shadow: var(--shadow);
   padding: 1.2rem 0;
-  transition: background var(--transition),box-shadow var(--transition);
+  transition: background var(--transition), box-shadow var(--transition);
 }
 
 .header-container {
@@ -301,6 +281,7 @@ header {
   align-items: center;
 }
 
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -333,6 +314,7 @@ header {
   transition: color var(--transition);
 }
 
+/* Navegação */
 nav ul {
   display: flex;
   gap: 2rem;
@@ -358,10 +340,11 @@ nav a::after {
   transition: width var(--transition);
 }
 
-nav a:hover::after,nav a.active::after {
+nav a:hover::after, nav a.active::after {
   width: 100%;
 }
 
+/* ========== SEÇÃO HERO (PRINCIPAL) ========== */
 .hero {
   padding: 6rem 0 4rem;
   background: var(--clr-gradient);
@@ -411,6 +394,7 @@ nav a:hover::after,nav a.active::after {
   flex-wrap: wrap;
 }
 
+/* ========== SEÇÕES GENÉRICAS ========== */
 .section {
   padding: 5rem 0;
   opacity: 0;
@@ -458,6 +442,7 @@ nav a:hover::after,nav a.active::after {
   transition: color var(--transition);
 }
 
+/* ========== SERVIÇOS ========== */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -493,7 +478,7 @@ nav a:hover::after,nav a.active::after {
   justify-content: center;
   font-size: 2.5rem;
   color: var(--clr-accent);
-  transition: background var(--transition),color var(--transition);
+  transition: background var(--transition), color var(--transition);
 }
 
 .service-content {
@@ -547,6 +532,7 @@ nav a:hover::after,nav a.active::after {
   font-size: 0.9rem;
 }
 
+/* ========== SOBRE NÓS ========== */
 .about {
   background: var(--clr-light);
   transition: background var(--transition);
@@ -571,7 +557,7 @@ nav a:hover::after,nav a.active::after {
   justify-content: center;
   color: var(--clr-accent);
   font-size: 5rem;
-  transition: background var(--transition),color var(--transition);
+  transition: background var(--transition), color var(--transition);
   position: relative;
   animation: pulse 4s ease infinite;
 }
@@ -603,6 +589,7 @@ nav a:hover::after,nav a.active::after {
   transition: color var(--transition);
 }
 
+/* Estatísticas */
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -617,7 +604,7 @@ nav a:hover::after,nav a.active::after {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-light);
   border: 1px solid var(--clr-border);
-  transition: background var(--transition),color var(--transition);
+  transition: background var(--transition), color var(--transition);
 }
 
 .stat-item:hover {
@@ -639,6 +626,7 @@ nav a:hover::after,nav a.active::after {
   transition: color var(--transition);
 }
 
+/* ========== DEPOIMENTOS ========== */
 .testimonials {
   background: var(--clr-card);
   transition: background var(--transition);
@@ -753,6 +741,7 @@ nav a:hover::after,nav a.active::after {
   transform: translateY(-3px);
 }
 
+/* ========== FAQ (PERGUNTAS FREQUENTES) ========== */
 .faq {
   background: var(--clr-light);
 }
@@ -806,7 +795,7 @@ nav a:hover::after,nav a.active::after {
   padding: 0 1.5rem;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease,padding 0.3s ease;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .faq-item.active .faq-answer {
@@ -814,6 +803,7 @@ nav a:hover::after,nav a.active::after {
   max-height: 500px;
 }
 
+/* ========== CONTATO ========== */
 .contact-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -826,7 +816,7 @@ nav a:hover::after,nav a.active::after {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-light);
   border: 1px solid var(--clr-border);
-  transition: background var(--transition),box-shadow var(--transition);
+  transition: background var(--transition), box-shadow var(--transition);
 }
 
 .contact-info:hover {
@@ -876,7 +866,7 @@ nav a:hover::after,nav a.active::after {
   color: var(--clr-accent);
   font-size: 1.1rem;
   flex-shrink: 0;
-  transition: background var(--transition),color var(--transition);
+  transition: background var(--transition), color var(--transition);
 }
 
 .contact-text {
@@ -890,12 +880,13 @@ nav a:hover::after,nav a.active::after {
   transition: color var(--transition);
 }
 
-.contact-text a,.contact-text p {
+.contact-text a, .contact-text p {
   color: var(--clr-text);
   font-size: 1rem;
   transition: color var(--transition);
 }
 
+/* Formulário de contato */
 .contact-form {
   background: var(--clr-card);
   padding: 2rem;
@@ -903,7 +894,7 @@ nav a:hover::after,nav a.active::after {
   box-shadow: var(--shadow-light);
   border: 1px solid var(--clr-border);
   position: relative;
-  transition: background var(--transition),box-shadow var(--transition);
+  transition: background var(--transition), box-shadow var(--transition);
 }
 
 .contact-form:hover {
@@ -983,6 +974,7 @@ textarea.form-control {
   color: white;
 }
 
+/* Mapa de localização */
 .contact-map {
   margin-top: 2rem;
   border-radius: var(--border-radius);
@@ -999,11 +991,12 @@ textarea.form-control {
   loading: lazy;
 }
 
+/* ========== RODAPÉ ========== */
 footer {
   background: var(--clr-primary);
   color: white;
   padding: 4rem 0 2rem;
-  transition: background var(--transition),color var(--transition);
+  transition: background var(--transition), color var(--transition);
 }
 
 [data-theme="dark"] footer {
@@ -1124,7 +1117,7 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.1);
   color: #a0aec0;
   font-size: 0.9rem;
-  transition: color var(--transition),border-color var(--transition);
+  transition: color var(--transition), border-color var(--transition);
 }
 
 [data-theme="dark"] .copyright {
@@ -1132,6 +1125,7 @@ footer {
   border-top: 1px solid var(--footer-border);
 }
 
+/* ========== BOTÕES FLUTUANTES ========== */
 .floating-btns {
   position: fixed;
   right: 2rem;
@@ -1140,6 +1134,16 @@ footer {
   flex-direction: column;
   gap: 1rem;
   z-index: 90;
+  /* Inicialmente escondido */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Classe que será adicionada quando o usuário rolar a página */
+.floating-btns.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .floating-btn {
@@ -1187,6 +1191,17 @@ footer {
   transform: translateY(-5px);
 }
 
+.floating-btn.appointment {
+  background: #9F7AEA;
+  display: none;
+}
+
+.floating-btn.appointment:hover {
+  background: #805AD5;
+  transform: translateY(-5px);
+}
+
+/* ========== MODAL DE AGENDAMENTO ========== */
 .modal {
   display: none;
   position: fixed;
@@ -1224,9 +1239,10 @@ footer {
 
 .modal-title {
   margin-bottom: 1.5rem;
-  color: var(--clr-accent);
+  color: var(--clr-text)
 }
 
+/* ========== CHATBOT ========== */
 .chatbot {
   position: fixed;
   right: 2rem;
@@ -1324,6 +1340,7 @@ footer {
   background: #3182ce;
 }
 
+/* ========== NOTIFICAÇÕES (TOAST) ========== */
 .toast {
   position: fixed;
   bottom: 20px;
@@ -1355,6 +1372,7 @@ footer {
   background-color: #17a2b8;
 }
 
+/* ========== PARCEIROS ========== */
 .partners {
   background: var(--clr-card);
   padding: 4rem 0;
@@ -1381,6 +1399,7 @@ footer {
   opacity: 1;
 }
 
+/* ========== NEWSLETTER ========== */
 .newsletter {
   background: var(--clr-gradient);
   color: white;
@@ -1422,6 +1441,36 @@ footer {
   transform: translateY(-3px);
 }
 
+/* ========== BOTÃO DE TEMA ========== */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background var(--transition), border-color var(--transition);
+  box-shadow: var(--shadow-light);
+}
+
+.theme-toggle:hover {
+  background: var(--clr-accent);
+  color: var(--clr-primary);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+
+/* ========== MEDIA QUERIES (RESPONSIVIDADE) ========== */
 @media (max-width: 992px) {
   .about-container {
     flex-direction: column;
@@ -1994,9 +2043,12 @@ footer {
 <div class="floating-btns">
 <a href="https://wa.me/5543991678501" class="floating-btn whatsapp" aria-label="Fale conosco pelo WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
 <button class="floating-btn chat" aria-label="Abrir chat" id="openChat"><i class="fas fa-comments" aria-hidden="true"></i></button>
+<button class="floating-btn appointment" aria-label="Agendar serviço" onclick="openAppointmentModal()"><i class="fas fa-calendar-alt" aria-hidden="true"></i></button>
 <button class="floating-btn back-top" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'});"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
 </div>
 <script>
+// ========== FUNÇÕES GERAIS ==========
+
 // Função para esconder a página de manutenção
 function hideMaintenance() {
   document.getElementById('maintenanceOverlay').style.display = 'none';
@@ -2015,11 +2067,13 @@ document.querySelector('.maintenance-btn.continue').addEventListener('click', fu
   localStorage.setItem('maintenanceSeen', 'true');
 });
 
+// Redireciona para o WhatsApp com mensagem pré-definida
 function redirectToWhatsApp(service) {
   const message = `Olá, gostaria de informações sobre ${service}`;
-  window.open(`https://wa.me/5543991678501?text=${encodeURIComponent(message)}`,'_blank');
+  window.open(`https://wa.me/5543991678501?text=${encodeURIComponent(message)}`, '_blank');
 }
 
+// ========== ANIMAÇÃO DE SCROLL ==========
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -2029,11 +2083,15 @@ if ('IntersectionObserver' in window) {
       }
     });
   }, { threshold: 0.2 });
+  
+  // Observa todas as seções
   document.querySelectorAll('.section').forEach(section => observer.observe(section));
 } else {
+  // Fallback para navegadores sem suporte a IntersectionObserver
   document.querySelectorAll('.section').forEach(section => section.classList.add('visible'));
 }
 
+// ========== NAVEGAÇÃO SUAVE ==========
 document.querySelectorAll('nav a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -2048,11 +2106,13 @@ document.querySelectorAll('nav a').forEach(anchor => {
   });
 });
 
+// ========== CONTROLE DOS BOTÕES FLUTUANTES ==========
 window.addEventListener('scroll', () => {
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('nav a');
   let current = '';
   
+  // Atualiza a navegação ativa conforme o scroll
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
     if (pageYOffset >= (sectionTop - 150)) {
@@ -2067,14 +2127,29 @@ window.addEventListener('scroll', () => {
     }
   });
   
-  const backTopBtn = document.querySelector('.back-top');
+  // Controle dos botões flutuantes
+  const floatingBtns = document.querySelector('.floating-btns');
+  const backTopBtn = document.querySelector('.floating-btn.back-top');
+  const appointmentBtn = document.querySelector('.floating-btn.appointment');
+  
+  // Mostra os botões flutuantes apenas após o usuário começar a rolar
+  if (window.scrollY > 100) {
+    floatingBtns.classList.add('visible');
+  } else {
+    floatingBtns.classList.remove('visible');
+  }
+  
+  // Mostra/oculta botões específicos conforme a posição do scroll
   if (window.scrollY > 300) {
     backTopBtn.style.display = 'flex';
+    appointmentBtn.style.display = 'flex';
   } else {
     backTopBtn.style.display = 'none';
+    appointmentBtn.style.display = 'none';
   }
 });
 
+// ========== ALTERNAR TEMA (CLARO/ESCURO) ==========
 function toggleTheme() {
   const body = document.body;
   const themeIcon = document.getElementById('theme-icon');
@@ -2089,17 +2164,20 @@ function toggleTheme() {
   }
 }
 
+// Verifica o tema salvo no localStorage
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark') {
   document.body.setAttribute('data-theme', 'dark');
   document.getElementById('theme-icon').className = 'fas fa-sun';
 }
 
+// ========== FORMULÁRIO DE CONTATO ==========
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
   const formGroups = contactForm.querySelectorAll('.form-group');
   const formFeedback = document.getElementById('form-feedback');
   
+  // Adiciona validação em tempo real para cada campo
   formGroups.forEach(group => {
     const input = group.querySelector('.form-control');
     input.addEventListener('input', () => {
@@ -2107,6 +2185,7 @@ if (contactForm) {
     });
   });
   
+  // Formata o número de telefone
   function formatPhone(input) {
     let value = input.value.replace(/\D/g, '');
     if (value.length > 10) value = value.substring(0, 11);
@@ -2120,10 +2199,12 @@ if (contactForm) {
     validateField(group, input);
   }
   
+  // Envio do formulário
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     let isValid = true;
     
+    // Valida todos os campos antes do envio
     formGroups.forEach(group => {
       const input = group.querySelector('.form-control');
       if (!validateField(group, input)) isValid = false;
@@ -2152,6 +2233,7 @@ if (contactForm) {
     }
   });
   
+  // Validação de campos individuais
   function validateField(group, input) {
     const fieldName = group.dataset.validate;
     let isValid = true;
@@ -2179,12 +2261,14 @@ if (contactForm) {
   }
 }
 
+// ========== SLIDER DE DEPOIMENTOS ==========
 const testimonialSlider = document.getElementById('testimonialSlider');
 const prevBtn = document.getElementById('prevTestimonial');
 const nextBtn = document.getElementById('nextTestimonial');
 let currentSlide = 0;
 const slideCount = testimonialSlider.children.length;
 
+// Mostra um slide específico
 function showSlide(index) {
   if (index < 0) index = slideCount - 1;
   if (index >= slideCount) index = 0;
@@ -2192,10 +2276,14 @@ function showSlide(index) {
   currentSlide = index;
 }
 
+// Navegação entre slides
 prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
 nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+
+// Auto-play (avança a cada 5 segundos)
 setInterval(() => showSlide(currentSlide + 1), 5000);
 
+// ========== FAQ (ACORDEÃO) ==========
 document.querySelectorAll('.faq-item').forEach(item => {
   const question = item.querySelector('.faq-question');
   question.addEventListener('click', () => {
@@ -2203,6 +2291,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
   });
 });
 
+// ========== MODAL DE AGENDAMENTO ==========
 const appointmentModal = document.getElementById('appointmentModal');
 const appointmentForm = document.getElementById('appointmentForm');
 
@@ -2214,11 +2303,13 @@ function closeAppointmentModal() {
   appointmentModal.style.display = 'none';
 }
 
+// Fecha o modal ao clicar no X ou fora do conteúdo
 document.querySelector('.close-modal').addEventListener('click', closeAppointmentModal);
 appointmentModal.addEventListener('click', (e) => {
   if (e.target === appointmentModal) closeAppointmentModal();
 });
 
+// Envio do formulário de agendamento
 appointmentForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const name = document.getElementById('appointment-name').value;
@@ -2226,6 +2317,7 @@ appointmentForm.addEventListener('submit', async (e) => {
   const service = document.getElementById('appointment-service').value;
   const date = document.getElementById('appointment-date').value;
   
+  // Validação básica
   if (!name || !phone || !service || !date) {
     showToast('Por favor, preencha todos os campos obrigatórios.', 'error');
     return;
@@ -2253,11 +2345,13 @@ appointmentForm.addEventListener('submit', async (e) => {
   }
 });
 
+// ========== CHATBOT ==========
 const chatbot = document.getElementById('chatbot');
 const openChatBtn = document.getElementById('openChat');
 const closeChatBtn = document.querySelector('.close-chat');
 const chatInput = document.getElementById('chat-input');
 
+// Abre/fecha o chatbot
 openChatBtn.addEventListener('click', () => {
   chatbot.classList.add('active');
 });
@@ -2266,14 +2360,17 @@ closeChatBtn.addEventListener('click', () => {
   chatbot.classList.remove('active');
 });
 
+// Envia mensagem ao pressionar Enter
 chatInput.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     sendMessage();
   }
 });
 
+// Envia mensagem ao clicar no botão
 document.querySelector('.chat-input button').addEventListener('click', sendMessage);
 
+// Função para enviar mensagem no chat
 function sendMessage() {
   const message = chatInput.value.trim();
   if (message) {
@@ -2284,12 +2381,14 @@ function sendMessage() {
     messagesContainer.appendChild(userMessageDiv);
     chatInput.value = '';
     
+    // Mostra indicador de "digitando"
     const typingIndicator = document.createElement('div');
     typingIndicator.className = 'message bot-message';
     typingIndicator.textContent = 'Digitando...';
     messagesContainer.appendChild(typingIndicator);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
     
+    // Simula resposta após 1.5 segundos
     setTimeout(() => {
       messagesContainer.removeChild(typingIndicator);
       const botMessage = generateBotResponse(message);
@@ -2302,6 +2401,7 @@ function sendMessage() {
   }
 }
 
+// Gera respostas automáticas baseadas nas mensagens do usuário
 function generateBotResponse(message) {
   const lowerMessage = message.toLowerCase();
   
@@ -2336,6 +2436,7 @@ function generateBotResponse(message) {
   return "Entendi sua solicitação. Para informações mais detalhadas, sugiro entrar em contato diretamente pelo WhatsApp ou preencher nosso formulário de contato.";
 }
 
+// ========== NOTIFICAÇÕES (TOAST) ==========
 function showToast(message, type) {
   const toast = document.getElementById('toast');
   toast.textContent = message;
@@ -2345,6 +2446,7 @@ function showToast(message, type) {
   }, 5000);
 }
 
+// ========== NEWSLETTER ==========
 document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const email = this.querySelector('input').value;
@@ -2356,6 +2458,7 @@ document.querySelector('.newsletter-form').addEventListener('submit', function(e
   }
 });
 
+// ========== SCHEMA MARKUP (SEO) ==========
 const schemaScript = document.createElement('script');
 schemaScript.type = 'application/ld+json';
 schemaScript.text = JSON.stringify({
@@ -2393,6 +2496,7 @@ schemaScript.text = JSON.stringify({
 });
 document.head.appendChild(schemaScript);
 
+// ========== GOOGLE ANALYTICS ==========
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
