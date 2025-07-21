@@ -1,26 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<!-- Meta tags básicas para SEO e configuração da página -->
 <meta charset="UTF-8">
-<meta name="description" content="Técnico em Sertanópolis-PR: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites. Atendimento rápido e especializado.">
+<meta name="description" content="Técnico em Sertanópolis-PR: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="manutenção celulares Sertanópolis, técnico informática PR, redes computadores, câmeras segurança, criação sites">
+<meta name="keywords" content="manutenção celulares Sertanópolis, técnico informática PR">
 <meta name="author" content="Técnico Soluções Inteligentes">
-<link rel="canonical" href="https://www.tecnicotisolucoes.com">
-
-<!-- Meta tags para redes sociais (Open Graph) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Técnico Soluções Inteligentes | Manutenção e Tecnologia em Sertanópolis-PR">
-<meta property="og:description" content="Soluções técnicas completas: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites.">
-<meta property="og:image" content="https://www.tecnicotisolucoes.com/og-image.jpg">
-
 <title>Técnico Soluções Inteligentes | Manutenção e Tecnologia em Sertanópolis-PR</title>
 
-<!-- Links para fontes e ícones -->
-<link rel="alternate" hreflang="pt-BR" href="https://www.tecnicotisolucoes.com">
-<meta name="geo.region" content="BR-PR">
-<meta name="geo.placename" content="Sertanópolis">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -52,7 +39,7 @@
   --border-radius: 16px;
 }
 
-/* Modo escuro - altera as cores quando ativado */
+/* Modo escuro */
 [data-theme="dark"] {
   --clr-primary: #1a202c;
   --clr-secondary: #2d3748;
@@ -85,7 +72,7 @@
   50% { transform: scale(1.02); }
 }
 
-/* ========== ESTILOS DA PÁGINA DE MANUTENÇÃO ========== */
+/* ========== PÁGINA DE MANUTENÇÃO ========== */
 .maintenance-overlay {
   position: fixed;
   top: 0;
@@ -211,7 +198,7 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* Link para pular para o conteúdo (acessibilidade) */
+/* Link para pular para o conteúdo */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -227,7 +214,7 @@ a:focus-visible {
   top: 0;
 }
 
-/* Container principal para centralizar o conteúdo */
+/* Container principal */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -235,7 +222,7 @@ a:focus-visible {
   padding: 0 1.5rem;
 }
 
-/* Estilo base para botões */
+/* Botões */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -344,7 +331,7 @@ nav a:hover::after, nav a.active::after {
   width: 100%;
 }
 
-/* ========== SEÇÃO HERO (PRINCIPAL) ========== */
+/* ========== SEÇÃO HERO ========== */
 .hero {
   padding: 6rem 0 4rem;
   background: var(--clr-gradient);
@@ -394,7 +381,7 @@ nav a:hover::after, nav a.active::after {
   flex-wrap: wrap;
 }
 
-/* ========== SEÇÕES GENÉRICAS ========== */
+/* ========== SEÇÕES ========== */
 .section {
   padding: 5rem 0;
   opacity: 0;
@@ -741,7 +728,7 @@ nav a:hover::after, nav a.active::after {
   transform: translateY(-3px);
 }
 
-/* ========== FAQ (PERGUNTAS FREQUENTES) ========== */
+/* ========== FAQ ========== */
 .faq {
   background: var(--clr-light);
 }
@@ -974,7 +961,7 @@ textarea.form-control {
   color: white;
 }
 
-/* Mapa de localização */
+/* Mapa */
 .contact-map {
   margin-top: 2rem;
   border-radius: var(--border-radius);
@@ -1134,13 +1121,11 @@ footer {
   flex-direction: column;
   gap: 1rem;
   z-index: 90;
-  /* Inicialmente escondido */
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Classe que será adicionada quando o usuário rolar a página */
 .floating-btns.visible {
   opacity: 1;
   transform: translateY(0);
@@ -1340,7 +1325,7 @@ footer {
   background: #3182ce;
 }
 
-/* ========== NOTIFICAÇÕES (TOAST) ========== */
+/* ========== NOTIFICAÇÕES ========== */
 .toast {
   position: fixed;
   bottom: 20px;
@@ -1470,7 +1455,221 @@ footer {
   outline-offset: 2px;
 }
 
-/* ========== MEDIA QUERIES (RESPONSIVIDADE) ========== */
+/* ========== MODAL DE DETALHES DO SERVIÇO ========== */
+.service-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-modal-content {
+  background: var(--clr-card);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.service-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.service-modal-title {
+  font-size: 1.8rem;
+  color: var(--clr-dark);
+}
+
+.service-modal-icon {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--clr-accent);
+  margin: 1rem 0;
+}
+
+.service-modal-body {
+  line-height: 1.8;
+}
+
+.service-modal-body h3 {
+  margin: 1.5rem 0 1rem;
+  color: var(--clr-dark);
+  border-bottom: 2px solid var(--clr-accent);
+  padding-bottom: 0.5rem;
+}
+
+.service-modal-pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.pricing-card {
+  background: rgba(66,153,225,0.05);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--clr-border);
+  transition: all var(--transition);
+}
+
+.pricing-card:hover {
+  border-color: var(--clr-accent);
+  transform: translateY(-5px);
+}
+
+.pricing-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--clr-dark);
+}
+
+.pricing-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr-accent);
+  margin-bottom: 1rem;
+}
+
+.pricing-features {
+  list-style: none;
+}
+
+.pricing-features li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-features li::before {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: var(--clr-accent);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.modal-actions .btn {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.whatsapp-btn {
+  background: #25D366 !important;
+}
+
+.whatsapp-btn:hover {
+  background: #128C7E !important;
+}
+
+/* ========== PÁGINA DE LOGIN ========== */
+.login-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-content {
+  background: var(--clr-card);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.3s ease;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-title {
+  font-size: 1.8rem;
+  color: var(--clr-dark);
+  margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+  color: var(--clr-text);
+}
+
+.login-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.user-type {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.user-type-btn {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  border: 2px solid var(--clr-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition);
+  background: var(--clr-card);
+}
+
+.user-type-btn.active {
+  border-color: var(--clr-accent);
+  background: rgba(66,153,225,0.1);
+}
+
+.user-type-btn i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--clr-accent);
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--clr-text);
+}
+
+.login-footer a {
+  color: var(--clr-accent);
+  font-weight: 600;
+}
+
+/* ========== MEDIA QUERIES ========== */
 @media (max-width: 992px) {
   .about-container {
     flex-direction: column;
@@ -1543,6 +1742,12 @@ footer {
     width: 100%;
     justify-content: center;
   }
+  .service-modal-content {
+    padding: 1.5rem;
+  }
+  .login-content {
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1555,6 +1760,12 @@ footer {
   }
   .modal-content {
     padding: 1.5rem;
+  }
+  .modal-actions .btn {
+    width: 100%;
+  }
+  .user-type {
+    flex-direction: column;
   }
 }
 </style>
@@ -1632,6 +1843,56 @@ footer {
 </form>
 </div>
 </div>
+<div class="service-modal" id="serviceModal">
+  <div class="service-modal-content">
+    <div class="service-modal-header">
+      <h2 class="service-modal-title" id="service-modal-title"></h2>
+      <button class="close-modal" aria-label="Fechar modal" onclick="closeServiceModal()">×</button>
+    </div>
+    <div class="service-modal-icon" id="service-modal-icon"></div>
+    <div class="service-modal-body" id="service-modal-content"></div>
+    <div class="modal-actions">
+      <button class="btn whatsapp-btn" onclick="redirectToWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Solicitar via WhatsApp
+      </button>
+      <button class="btn" onclick="closeServiceModal()">
+        <i class="fas fa-times"></i> Fechar
+      </button>
+    </div>
+  </div>
+</div>
+<div class="login-container" id="loginContainer">
+  <div class="login-content">
+    <div class="login-header">
+      <h2 class="login-title">Acesso ao Sistema</h2>
+      <p class="login-subtitle">Selecione seu tipo de usuário</p>
+    </div>
+    <div class="user-type">
+      <div class="user-type-btn" onclick="selectUserType('cliente')">
+        <i class="fas fa-user"></i>
+        <div>Cliente</div>
+      </div>
+      <div class="user-type-btn" onclick="selectUserType('tecnico')">
+        <i class="fas fa-tools"></i>
+        <div>Técnico</div>
+      </div>
+    </div>
+    <form class="login-form" id="loginForm">
+      <div class="form-group">
+        <label class="form-label" for="login-email">E-mail</label>
+        <input type="email" class="form-control" id="login-email" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="login-password">Senha</label>
+        <input type="password" class="form-control" id="login-password" required>
+      </div>
+      <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+    </form>
+    <div class="login-footer">
+      <p>Não tem conta? <a href="#" onclick="showRegister()">Cadastre-se</a></p>
+    </div>
+  </div>
+</div>
 <button class="theme-toggle" aria-label="Alternar modo escuro" onclick="toggleTheme()"><i class="fas fa-moon" id="theme-icon"></i></button>
 <header>
 <div class="container header-container">
@@ -1645,6 +1906,7 @@ footer {
 <li><a href="#depoimentos">Depoimentos</a></li>
 <li><a href="#faq">FAQ</a></li>
 <li><a href="#contato">Contato</a></li>
+<li><a href="#" onclick="openLoginModal()">Login</a></li>
 </ul>
 </nav>
 </div>
@@ -1670,7 +1932,7 @@ footer {
 <p class="section-subtitle">Oferecemos soluções técnicas completas para atender todas as suas necessidades tecnológicas com excelência e profissionalismo.</p>
 </div>
 <div class="services-grid">
-<div class="service-card" onclick="redirectToWhatsApp('Manutenção de Celulares')">
+<div class="service-card" onclick="openServiceModal('manutencao')">
 <div class="service-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Manutenção de Celulares</h3>
@@ -1681,10 +1943,10 @@ footer {
 <li>Limpeza e manutenção interna</li>
 <li>Diagnóstico técnico completo</li>
 </ul>
-<span class="price-tag">A partir de R$ 180</span>
+<span class="price-tag">A partir de R$ 100</span>
 </div>
 </div>
-<div class="service-card" onclick="redirectToWhatsApp('Suporte em Informática')">
+<div class="service-card" onclick="openServiceModal('informatica')">
 <div class="service-icon"><i class="fas fa-laptop" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Suporte em Informática</h3>
@@ -1695,10 +1957,10 @@ footer {
 <li>Configuração de impressoras</li>
 <li>Suporte técnico presencial e remoto</li>
 </ul>
-<span class="price-tag">A partir de R$ 180</span>
+<span class="price-tag">A partir de R$ 150</span>
 </div>
 </div>
-<div class="service-card" onclick="redirectToWhatsApp('Redes e Infraestrutura')">
+<div class="service-card" onclick="openServiceModal('redes')">
 <div class="service-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Redes e Infraestrutura</h3>
@@ -1709,10 +1971,10 @@ footer {
 <li>Otimização de Wi-Fi</li>
 <li>Soluções para grandes áreas</li>
 </ul>
-<span class="price-tag">A partir de R$ 800</span>
+<span class="price-tag">A partir de R$ 500</span>
 </div>
 </div>
-<div class="service-card" onclick="redirectToWhatsApp('Câmeras de Segurança')">
+<div class="service-card" onclick="openServiceModal('cameras')">
 <div class="service-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Câmeras de Segurança</h3>
@@ -1723,10 +1985,10 @@ footer {
 <li>Manutenção preventiva</li>
 <li>Sistemas de gravação e armazenamento</li>
 </ul>
-<span class="price-tag">A partir de R$ 900</span>
+<span class="price-tag">A partir de R$ 800</span>
 </div>
 </div>
-<div class="service-card" onclick="redirectToWhatsApp('Desenvolvimento Web')">
+<div class="service-card" onclick="openServiceModal('sites')">
 <div class="service-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Desenvolvimento Web</h3>
@@ -1737,10 +1999,10 @@ footer {
 <li>Otimização para buscadores (SEO)</li>
 <li>Manutenção e suporte contínuo</li>
 </ul>
-<span class="price-tag">A partir de R$ 2.200</span>
+<span class="price-tag">A partir de R$ 1.500</span>
 </div>
 </div>
-<div class="service-card" onclick="redirectToWhatsApp('Soluções Personalizadas')">
+<div class="service-card" onclick="openServiceModal('personalizado')">
 <div class="service-icon"><i class="fas fa-puzzle-piece" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Soluções Personalizadas</h3>
@@ -2051,12 +2313,12 @@ footer {
 // Função para esconder a página de manutenção
 function hideMaintenance() {
   document.getElementById('maintenanceOverlay').style.display = 'none';
-  document.body.style.overflow = 'auto'; // Habilita o scroll novamente
+  document.body.style.overflow = 'auto';
 }
 
 // Verifica se o usuário já viu a mensagem de manutenção
 if (!localStorage.getItem('maintenanceSeen')) {
-  document.body.style.overflow = 'hidden'; // Desabilita o scroll
+  document.body.style.overflow = 'hidden';
 } else {
   document.getElementById('maintenanceOverlay').style.display = 'none';
 }
@@ -2344,6 +2606,432 @@ appointmentForm.addEventListener('submit', async (e) => {
   }
 });
 
+// ========== MODAL DE DETALHES DO SERVIÇO ==========
+const serviceModal = document.getElementById('serviceModal');
+let currentService = '';
+
+// Dados detalhados dos serviços
+const servicesData = {
+  manutencao: {
+    title: "Manutenção de Celulares",
+    icon: '<i class="fas fa-mobile-alt" aria-hidden="true"></i>',
+    description: "Soluções completas para seu dispositivo móvel, desde reparos simples até problemas complexos.",
+    details: `
+      <p>Oferecemos serviços especializados para diversos modelos e marcas de celulares, com peças de qualidade e garantia de 90 dias.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Troca de telas e vidros</li>
+        <li>Substituição de baterias</li>
+        <li>Reparo de conectores de carga</li>
+        <li>Conserto de botões e microfones</li>
+        <li>Limpeza interna completa</li>
+        <li>Recuperação de dados</li>
+        <li>Desbloqueio e liberação</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Básico</div>
+          <div class="pricing-price">R$ 100 - R$ 300</div>
+          <ul class="pricing-features">
+            <li>Troca de bateria</li>
+            <li>Limpeza interna</li>
+            <li>Reparo de conectores</li>
+            <li>Garantia de 90 dias</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Intermediário</div>
+          <div class="pricing-price">R$ 200 - R$ 500</div>
+          <ul class="pricing-features">
+            <li>Troca de tela LCD</li>
+            <li>Substituição de módulo de câmera</li>
+            <li>Reparo de placa lógica básico</li>
+            <li>Garantia de 90 dias</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Avançado</div>
+          <div class="pricing-price">R$ 300 - R$ 800</div>
+          <ul class="pricing-features">
+            <li>Troca de tela OLED</li>
+            <li>Reparo avançado de placa lógica</li>
+            <li>Recuperação de dados</li>
+            <li>Garantia de 120 dias</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  informatica: {
+    title: "Suporte em Informática",
+    icon: '<i class="fas fa-laptop" aria-hidden="true"></i>',
+    description: "Soluções completas para computadores, notebooks e periféricos.",
+    details: `
+      <p>Oferecemos serviços especializados para diversos modelos e marcas de computadores e notebooks, com peças de qualidade e garantia de 90 dias.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Formatação e instalação de sistemas operacionais</li>
+        <li>Remoção de vírus e malware</li>
+        <li>Otimização de desempenho</li>
+        <li>Substituição de componentes</li>
+        <li>Recuperação de dados</li>
+        <li>Configuração de redes locais</li>
+        <li>Suporte remoto e presencial</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Básico</div>
+          <div class="pricing-price">R$ 150 - R$ 250</div>
+          <ul class="pricing-features">
+            <li>Formatação e instalação de SO</li>
+            <li>Remoção de vírus</li>
+            <li>Otimização básica</li>
+            <li>Garantia de 30 dias</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Intermediário</div>
+          <div class="pricing-price">R$ 200 - R$ 400</div>
+          <ul class="pricing-features">
+            <li>Substituição de HD/SSD</li>
+            <li>Upgrade de memória RAM</li>
+            <li>Limpeza interna completa</li>
+            <li>Garantia de 60 dias</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Avançado</div>
+          <div class="pricing-price">R$ 300 - R$ 600</div>
+          <ul class="pricing-features">
+            <li>Reparo de placa-mãe</li>
+            <li>Substituição de tela de notebook</li>
+            <li>Recuperação de dados</li>
+            <li>Garantia de 90 dias</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  redes: {
+    title: "Redes e Infraestrutura",
+    icon: '<i class="fas fa-network-wired" aria-hidden="true"></i>',
+    description: "Soluções completas para redes de computadores em residências e empresas.",
+    details: `
+      <p>Implementamos e configuramos redes eficientes para garantir conectividade estável e segura para seu negócio ou residência.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Projeto e implementação de redes</li>
+        <li>Cabeamento estruturado</li>
+        <li>Configuração de roteadores e switches</li>
+        <li>Otimização de Wi-Fi</li>
+        <li>Soluções para grandes áreas</li>
+        <li>Segurança de rede</li>
+        <li>Monitoramento e manutenção contínua</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Residencial</div>
+          <div class="pricing-price">R$ 500 - R$ 1.500</div>
+          <ul class="pricing-features">
+            <li>Instalação básica de rede</li>
+            <li>Configuração de roteador</li>
+            <li>Otimização de Wi-Fi</li>
+            <li>Garantia de 1 ano</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Pequena Empresa</div>
+          <div class="pricing-price">R$ 1.000 - R$ 3.000</div>
+          <ul class="pricing-features">
+            <li>Cabeamento estruturado</li>
+            <li>Configuração de rede local</li>
+            <li>Segurança básica</li>
+            <li>Garantia de 1 ano</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Empresarial</div>
+          <div class="pricing-price">R$ 2.500 - R$ 8.000</div>
+          <ul class="pricing-features">
+            <li>Infraestrutura completa</li>
+            <li>Roteadores profissionais</li>
+            <li>Sistemas de segurança avançada</li>
+            <li>Monitoramento 24/7</li>
+            <li>Garantia de 2 anos</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  cameras: {
+    title: "Câmeras de Segurança",
+    icon: '<i class="fas fa-video" aria-hidden="true"></i>',
+    description: "Sistemas completos de vigilância para sua segurança.",
+    details: `
+      <p>Instalamos e configuramos sistemas de segurança com câmeras de alta qualidade para proteger seu patrimônio.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Projeto personalizado de segurança</li>
+        <li>Instalação de câmeras IP e analógicas</li>
+        <li>Configuração de DVR/NVR</li>
+        <li>Acesso remoto via smartphone</li>
+        <li>Sistemas de gravação em nuvem</li>
+        <li>Manutenção preventiva</li>
+        <li>Atualizações de firmware</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Kit Básico</div>
+          <div class="pricing-price">R$ 800 - R$ 1.500</div>
+          <ul class="pricing-features">
+            <li>2 câmeras HD</li>
+            <li>DVR básico</li>
+            <li>Instalação básica</li>
+            <li>Garantia de 1 ano</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Kit Intermediário</div>
+          <div class="pricing-price">R$ 1.500 - R$ 3.000</div>
+          <ul class="pricing-features">
+            <li>4 câmeras Full HD</li>
+            <li>DVR com armazenamento</li>
+            <li>Acesso remoto</li>
+            <li>Garantia de 2 anos</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Kit Premium</div>
+          <div class="pricing-price">R$ 3.000 - R$ 8.000</div>
+          <ul class="pricing-features">
+            <li>8+ câmeras 4K</li>
+            <li>NVR profissional</li>
+            <li>Armazenamento em nuvem</li>
+            <li>Monitoramento inteligente</li>
+            <li>Garantia de 3 anos</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  sites: {
+    title: "Desenvolvimento Web",
+    icon: '<i class="fas fa-globe" aria-hidden="true"></i>',
+    description: "Soluções digitais completas para sua presença online.",
+    details: `
+      <p>Criamos sites e sistemas web personalizados para atender às necessidades específicas do seu negócio.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Desenvolvimento de sites institucionais</li>
+        <li>Lojas virtuais (e-commerce)</li>
+        <li>Sistemas web personalizados</li>
+        <li>Otimização para buscadores (SEO)</li>
+        <li>Design responsivo</li>
+        <li>Hospedagem e domínio</li>
+        <li>Manutenção e suporte</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Site Institucional</div>
+          <div class="pricing-price">R$ 1.500 - R$ 3.000</div>
+          <ul class="pricing-features">
+            <li>Até 5 páginas</li>
+            <li>Design responsivo</li>
+            <li>Formulário de contato</li>
+            <li>Otimização básica SEO</li>
+            <li>Suporte por 3 meses</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">E-commerce</div>
+          <div class="pricing-price">R$ 3.000 - R$ 8.000</div>
+          <ul class="pricing-features">
+            <li>Catálogo de produtos</li>
+            <li>Carrinho de compras</li>
+            <li>Integração com pagamentos</li>
+            <li>Painel administrativo</li>
+            <li>Suporte por 6 meses</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Sistema Personalizado</div>
+          <div class="pricing-price">R$ 5.000 - R$ 15.000+</div>
+          <ul class="pricing-features">
+            <li>Desenvolvimento sob medida</li>
+            <li>Integrações com APIs</li>
+            <li>Banco de dados personalizado</li>
+            <li>Treinamento de uso</li>
+            <li>Suporte por 1 ano</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  personalizado: {
+    title: "Soluções Personalizadas",
+    icon: '<i class="fas fa-puzzle-piece" aria-hidden="true"></i>',
+    description: "Serviços técnicos sob medida para necessidades específicas.",
+    details: `
+      <p>Desenvolvemos soluções técnicas personalizadas para atender demandas específicas que não se encaixam em categorias tradicionais.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Consultoria técnica especializada</li>
+        <li>Soluções integradas multidisciplinares</li>
+        <li>Desenvolvimento de projetos customizados</li>
+        <li>Implantação de sistemas complexos</li>
+        <li>Coordenação com outros profissionais</li>
+        <li>Acompanhamento contínuo</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Consultoria</div>
+          <div class="pricing-price">R$ 150/hora</div>
+          <ul class="pricing-features">
+            <li>Análise de necessidades</li>
+            <li>Proposta de solução</li>
+            <li>Plano de implementação</li>
+            <li>Relatório técnico</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Projeto Personalizado</div>
+          <div class="pricing-price">Sob consulta</div>
+          <ul class="pricing-features">
+            <li>Levantamento de requisitos</li>
+            <li>Desenvolvimento de solução</li>
+            <li>Implantação completa</li>
+            <li>Treinamento de usuários</li>
+            <li>Suporte pós-implantação</li>
+          </ul>
+        </div>
+      </div>
+      
+      <p><strong>Entre em contato</strong> para discutir sua necessidade específica e receber um orçamento personalizado.</p>
+    `
+  }
+};
+
+function openServiceModal(serviceId) {
+  const service = servicesData[serviceId];
+  if (!service) return;
+  
+  document.getElementById('service-modal-title').textContent = service.title;
+  document.getElementById('service-modal-icon').innerHTML = service.icon;
+  document.getElementById('service-modal-content').innerHTML = `
+    <p>${service.description}</p>
+    ${service.details}
+  `;
+  
+  // Armazenar o serviço atual para o botão do WhatsApp
+  currentService = service.title;
+  
+  // Exibir o modal
+  serviceModal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  
+  // Rolar para o topo do modal
+  document.querySelector('.service-modal-content').scrollTop = 0;
+}
+
+function closeServiceModal() {
+  serviceModal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Fechar modal ao clicar fora
+window.addEventListener('click', (e) => {
+  if (e.target === serviceModal) closeServiceModal();
+});
+
+// Redirecionar para o WhatsApp com o serviço atual
+function redirectToWhatsApp() {
+  const message = `Olá, gostaria de solicitar um orçamento para ${currentService}`;
+  window.open(`https://wa.me/5543991678501?text=${encodeURIComponent(message)}`, '_blank');
+  closeServiceModal();
+}
+
+// ========== PÁGINA DE LOGIN ==========
+const loginContainer = document.getElementById('loginContainer');
+const loginForm = document.getElementById('loginForm');
+
+function openLoginModal() {
+  loginContainer.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLoginModal() {
+  loginContainer.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function selectUserType(type) {
+  document.querySelectorAll('.user-type-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.closest('.user-type-btn').classList.add('active');
+}
+
+function showRegister() {
+  showToast('Funcionalidade de cadastro em desenvolvimento!', 'info');
+}
+
+loginForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
+  
+  // Validação básica
+  if (!email || !password) {
+    showToast('Por favor, preencha todos os campos.', 'error');
+    return;
+  }
+  
+  // Simulação de login
+  showToast('Login realizado com sucesso!', 'success');
+  setTimeout(() => {
+    closeLoginModal();
+  }, 2000);
+});
+
+// Fechar modal ao clicar fora
+window.addEventListener('click', (e) => {
+  if (e.target === loginContainer) closeLoginModal();
+});
+
+// ========== NOTIFICAÇÕES (TOAST) ==========
+function showToast(message, type) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.className = `toast ${type} show`;
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 5000);
+}
+
 // ========== CHATBOT ==========
 const chatbot = document.getElementById('chatbot');
 const openChatBtn = document.getElementById('openChat');
@@ -2435,16 +3123,6 @@ function generateBotResponse(message) {
   return "Entendi sua solicitação. Para informações mais detalhadas, sugiro entrar em contato diretamente pelo WhatsApp ou preencher nosso formulário de contato.";
 }
 
-// ========== NOTIFICAÇÕES (TOAST) ==========
-function showToast(message, type) {
-  const toast = document.getElementById('toast');
-  toast.textContent = message;
-  toast.className = `toast ${type} show`;
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 5000);
-}
-
 // ========== NEWSLETTER ==========
 document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -2457,49 +3135,14 @@ document.querySelector('.newsletter-form').addEventListener('submit', function(e
   }
 });
 
-// ========== SCHEMA MARKUP (SEO) ==========
-const schemaScript = document.createElement('script');
-schemaScript.type = 'application/ld+json';
-schemaScript.text = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Técnico Soluções Inteligentes",
-  "image": "https://www.tecnicotisolucoes.com/og-image.jpg",
-  "telephone": "+5543991678501",
-  "email": "contato@tecnicotisolucoes.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Sertanópolis",
-    "addressRegion": "PR",
-    "addressCountry": "BR"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "08:00",
-      "closes": "18:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Saturday"],
-      "opens": "08:00",
-      "closes": "12:00"
-    }
-  ],
-  "priceRange": "$$",
-  "serviceArea": {
-    "@type": "Place",
-    "name": "Sertanópolis e região"
-  }
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+  // Atribuir evento de clique aos cards de serviço
+  document.querySelectorAll('.service-card').forEach(card => {
+    const serviceId = card.dataset.service;
+    card.addEventListener('click', () => openServiceModal(serviceId));
+  });
 });
-document.head.appendChild(schemaScript);
-
-// ========== GOOGLE ANALYTICS ==========
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');
 </script>
 </body>
 </html>
