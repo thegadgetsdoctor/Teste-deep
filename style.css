@@ -1474,4 +1474,235 @@ footer {
 }
 
 .service-modal-title {
-  font-size: 1.
+  font-size: 1.8rem;
+  color: var(--clr-dark);
+  transition: color var(--transition);
+}
+
+.service-modal-icon {
+  font-size: 4rem;
+  color: var(--clr-accent);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  transition: color var(--transition);
+}
+
+.service-modal-body {
+  font-size: 1.1rem;
+  color: var(--clr-text);
+  line-height: 1.6;
+  transition: color var(--transition);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+  color: white;
+}
+
+.whatsapp-btn:hover {
+  background: #128C7E;
+  transform: translateY(-3px);
+}
+
+/* ========== LOGIN MODAL ========== */
+.login-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-content {
+  background: var(--clr-card);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  box-shadow: var(--shadow);
+  text-align: center;
+  animation: fadeInUp 0.3s ease;
+}
+
+.login-header {
+  margin-bottom: 2rem;
+}
+
+.login-title {
+  font-size: 1.8rem;
+  color: var(--clr-dark);
+  margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+  color: var(--clr-text);
+  font-size: 1rem;
+}
+
+.user-type {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.user-type-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 2px solid var(--clr-border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.user-type-btn:hover {
+  border-color: var(--clr-accent);
+  transform: translateY(-3px);
+}
+
+.user-type-btn i {
+  font-size: 2rem;
+  color: var(--clr-accent);
+  transition: color var(--transition);
+}
+
+.user-type-btn div {
+  font-weight: 500;
+  color: var(--clr-dark);
+  transition: color var(--transition);
+}
+
+.user-type-btn.active {
+  border-color: var(--clr-accent);
+  background: rgba(66,153,225,0.1);
+}
+
+.login-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.login-footer {
+  margin-top: 1.5rem;
+}
+
+.login-footer a {
+  color: var(--clr-accent);
+  text-decoration: underline;
+}
+
+.login-footer a:hover {
+  color: #3182ce;
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    min-width: 100%;
+    height: 300px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-btns {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .chatbot {
+    width: 90%;
+    right: 5%;
+    bottom: 5%;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+  }
+
+  .service-modal-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 4rem 0 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .service-card {
+    padding: 1rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-nav {
+    gap: 0.5rem;
+  }
+
+  .testimonial-nav button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .contact-map {
+    height: 200px;
+  }
+}
