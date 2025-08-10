@@ -2,18 +2,1923 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Técnico em Sertanópolis-PR: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites.">
+<meta name="description" content="Hard Tech em Sertanópolis-PR: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites profissionais.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="manutenção celulares Sertanópolis, técnico informática PR">
-<meta name="author" content="Técnico Soluções Inteligentes">
-<title>Técnico Soluções Inteligentes | Manutenção e Tecnologia em Sertanópolis-PR</title>
+<meta name="keywords" content="manutenção celulares Sertanópolis, técnico informática PR, câmeras segurança, criação sites">
+<meta name="author" content="Hard Tech">
+<meta property="og:title" content="Hard Tech - Sertanópolis PR">
+<meta property="og:description" content="Especialistas em tecnologia: manutenção de celulares, informática, redes e segurança eletrônica">
+<meta property="og:type" content="website">
+<title>Hard Tech | Tecnologia e Inovação em Sertanópolis-PR</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
-<link rel="stylesheet" href="style.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --accent-color: #f093fb;
+  --text-dark: #2d3748;
+  --text-light: #718096;
+  --white: #ffffff;
+  --gray-50: #f7fafc;
+  --gray-100: #edf2f7;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e0;
+  --success: #48bb78;
+  --warning: #ed8936;
+  --error: #f56565;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header and Navigation */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar {
+  padding: 1rem 0;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.nav-logo i {
+  font-size: 2rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-dark);
+  margin: 3px 0;
+  transition: var(--transition);
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+.hero-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-20px) rotate(1deg); }
+  66% { transform: translateY(10px) rotate(-1deg); }
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+  z-index: 2;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.1;
+}
+
+.hero-highlight {
+  display: block;
+  background: linear-gradient(45deg, #fff, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle-text {
+  display: block;
+  font-size: 3rem;
+  opacity: 0.9;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-hero {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 200px;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-hero.primary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.btn-hero.primary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-hero.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-hero.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Section Styling */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Services Section */
+.services-section {
+  padding: 6rem 0;
+  background: var(--white);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.service-card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  position: relative;
+  border: 1px solid var(--gray-200);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card.featured {
+  border: 2px solid var(--primary-color);
+  transform: scale(1.05);
+}
+
+.service-card.featured:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.featured-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.service-icon {
+  font-size: 4rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.service-description {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.service-features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.service-features i {
+  color: var(--success);
+  font-size: 0.8rem;
+}
+
+.service-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.btn-service {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-service:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* About Section */
+.about-section {
+  padding: 6rem 0;
+  background: var(--gray-50);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text .section-title {
+  text-align: left;
+}
+
+.about-text .section-title::after {
+  left: 0;
+  transform: none;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.about-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.feature-item i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-top: 0.5rem;
+}
+
+.feature-item h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+  color: var(--text-light);
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-placeholder {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+}
+
+.image-placeholder i {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.image-placeholder p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: 6rem 0;
+  background: var(--white);
+}
+
+.portfolio-filter {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--gray-300);
+  background: transparent;
+  color: var(--text-light);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.portfolio-item {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.portfolio-image {
+  height: 200px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+}
+
+.portfolio-content {
+  padding: 1.5rem;
+}
+
+.portfolio-content h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-content p {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.portfolio-tag {
+  display: inline-block;
+  background: var(--gray-100);
+  color: var(--text-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 6rem 0;
+  background: var(--gray-50);
+}
+
+.testimonials-slider {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial-item {
+  display: none;
+  text-align: center;
+}
+
+.testimonial-item.active {
+  display: block;
+}
+
+.testimonial-content {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.stars i {
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+
+.testimonial-content p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.author-info h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.25rem;
+}
+
+.author-info span {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.testimonial-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.nav-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gray-300);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-dot.active,
+.nav-dot:hover {
+  background: var(--primary-color);
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 6rem 0;
+  background: var(--white);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.contact-details h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.contact-details p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  background: var(--gray-100);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.social-link:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.contact-form {
+  background: var(--gray-50);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  outline: none;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Footer */
+.footer {
+  background: var(--text-dark);
+  color: white;
+  padding: 3rem 0 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-logo i {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+}
+
+.footer-section p {
+  color: var(--gray-300);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: var(--gray-300);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-section ul li a:hover {
+  color: var(--accent-color);
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-social a:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-contact i {
+  color: var(--accent-color);
+  width: 20px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  text-align: center;
+  color: var(--gray-300);
+}
+
+.footer-bottom p {
+  margin-bottom: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Maintenance Overlay */
+.maintenance-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+}
+
+.maintenance-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 500px;
+  margin: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.maintenance-icon {
+  font-size: 4rem;
+  color: #667eea;
+  margin-bottom: 1.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.maintenance-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.maintenance-content p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.maintenance-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.maintenance-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.maintenance-btn.whatsapp {
+  background: #25D366;
+  color: white;
+}
+
+.maintenance-btn.whatsapp:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+}
+
+.maintenance-btn.continue {
+  background: #667eea;
+  color: white;
+}
+
+.maintenance-btn.continue:hover {
+  background: #5a67d8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Main Content */
+.main-content {
+  display: none;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.hero-section {
+  text-align: center;
+  color: white;
+  padding: 4rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.service-description {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.btn-service {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-service:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Toast Notifications */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #333;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  transform: translateX(400px);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast.success {
+  background: #10B981;
+}
+
+.toast.error {
+  background: #EF4444;
+}
+
+/* Chatbot */
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.chat-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.close-chat {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.close-chat:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message {
+  padding: 0.75rem 1rem;
+  border-radius: 15px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.bot-message {
+  background: #f3f4f6;
+  color: #333;
+  align-self: flex-start;
+}
+
+.user-message {
+  background: #667eea;
+  color: white;
+  align-self: flex-end;
+}
+
+.chat-input {
+  padding: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 25px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.chat-input input:focus {
+  border-color: #667eea;
+}
+
+.chat-input button {
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chat-input button:hover {
+  background: #5a67d8;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: #333;
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Floating Action Buttons */
+.fab-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 999;
+}
+
+.fab {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab:hover {
+  transform: scale(1.1);
+}
+
+.fab-chat {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.fab-whatsapp {
+  background: #25D366;
+  color: white;
+}
+
+.fab-phone {
+  background: #3B82F6;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-stats {
+    gap: 2rem;
+  }
+  
+  .about-content {
+    gap: 3rem;
+  }
+  
+  .contact-content {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  /* Navigation */
+  .nav-menu {
+    display: none;
+  }
+  
+  .nav-toggle {
+    display: flex;
+  }
+  
+  /* Maintenance */
+  .maintenance-content {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  
+  .maintenance-content h1 {
+    font-size: 2rem;
+  }
+  
+  .maintenance-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .maintenance-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Hero */
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle-text {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-stats {
+    gap: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-hero {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Sections */
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  /* Services */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service-card {
+    padding: 2rem;
+  }
+  
+  .service-card.featured {
+    transform: none;
+  }
+  
+  .service-card.featured:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* About */
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .about-text .section-title {
+    text-align: center;
+  }
+  
+  .about-text .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .image-placeholder {
+    width: 300px;
+    height: 300px;
+  }
+  
+  /* Portfolio */
+  .portfolio-filter {
+    gap: 0.5rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Contact */
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Footer */
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  /* Chat */
+  .chatbot {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+  }
+  
+  /* Modal */
+  .modal-content {
+    margin: 1rem;
+    padding: 1.5rem;
+    max-height: calc(100vh - 2rem);
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+  }
+  
+  /* FAB */
+  .fab-container {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .fab {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  /* Hero */
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle-text {
+    font-size: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  /* Sections */
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  /* Services */
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .service-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 3rem;
+  }
+  
+  .service-title {
+    font-size: 1.3rem;
+  }
+  
+  /* About */
+  .image-placeholder {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .image-placeholder i {
+    font-size: 4rem;
+  }
+  
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .stat-card {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .stat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  /* Process */
+  .process-timeline::before {
+    display: none;
+  }
+  
+  .process-step {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .process-step:nth-child(even) .step-content {
+    text-align: center;
+  }
+  
+  .step-number {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .step-content {
+    padding: 1.5rem;
+  }
+  
+  /* Portfolio */
+  .portfolio-filter {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filter-btn {
+    width: 200px;
+  }
+  
+  /* Testimonials */
+  .testimonial-content {
+    padding: 2rem;
+  }
+  
+  .testimonial-content p {
+    font-size: 1.1rem;
+  }
+  
+  /* Contact */
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-icon {
+    align-self: center;
+  }
+  
+  /* Maintenance */
+  .maintenance-content {
+    padding: 1.5rem;
+  }
+  
+  .maintenance-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .maintenance-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle-text {
+    font-size: 1.5rem;
+  }
+  
+  .hero-stats {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-particles {
+    background-size: 50% 50%;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .hero-particles {
+    animation: none;
+  }
+  
+  .typing-indicator span {
+    animation: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-dark: #f7fafc;
+    --text-light: #a0aec0;
+    --gray-50: #2d3748;
+    --gray-100: #4a5568;
+    --gray-200: #718096;
+    --gray-300: #a0aec0;
+  }
+}
+
+/* Hidden class */
+.hidden {
+  display: none !important;
+}
+
+/* Loading animation */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+</style>
 </head>
 <body>
 <!-- Página de manutenção -->
@@ -22,11 +1927,11 @@
     <div class="maintenance-icon">
       <i class="fas fa-tools"></i>
     </div>
-    <h1>Estamos em manutenção!</h1>
+    <h1>Hard Tech - Em manutenção!</h1>
     <p>Pedimos desculpas pelo inconveniente, mas estamos trabalhando para trazer um site ainda melhor para você! Em breve, novas tecnologias e recursos estarão disponíveis.</p>
     <p>Enquanto isso, você pode entrar em contato diretamente pelo WhatsApp ou continuar navegando no site em desenvolvimento.</p>
     <div class="maintenance-buttons">
-      <a href="https://wa.me/5543991678501" class="maintenance-btn whatsapp" target="_blank" rel="noopener noreferrer">
+      <a href="https://wa.me/5543999999999" class="maintenance-btn whatsapp" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i> Fale pelo WhatsApp
       </a>
       <button class="maintenance-btn continue" onclick="hideMaintenance()">
@@ -36,522 +1941,1061 @@
   </div>
 </div>
 
-<!-- Restante do conteúdo do site -->
-<a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
+<!-- Conteúdo principal do site -->
+<div class="main-content" id="mainContent">
+  <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
+  
+  <!-- Header e Navegação -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-microchip"></i>
+          <span>Hard Tech</span>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link">Início</a></li>
+          <li><a href="#services" class="nav-link">Serviços</a></li>
+          <li><a href="#about" class="nav-link">Sobre</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#testimonials" class="nav-link">Depoimentos</a></li>
+          <li><a href="#contact" class="nav-link">Contato</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+  
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="hero-background">
+        <div class="hero-particles"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hero-highlight">Hard</span>
+          <span class="hero-subtitle-text">Tech</span>
+        </h1>
+        <p class="hero-subtitle">Transformando problemas tecnológicos em soluções inovadoras em Sertanópolis-PR</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Clientes Atendidos</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Anos de Experiência</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Satisfação</span>
+          </div>
+        </div>
+        <div class="hero-buttons">
+          <button class="btn-hero primary" onclick="openAppointmentModal()">
+            <i class="fas fa-calendar-alt"></i>
+            Agendar Serviço
+          </button>
+          <a href="#services" class="btn-hero secondary">
+            <i class="fas fa-arrow-down"></i>
+            Ver Serviços
+          </a>
+        </div>
+      </div>
+    </section>
+      
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nossos Serviços</h2>
+          <p class="section-subtitle">Soluções completas em tecnologia para você e sua empresa</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card" data-aos="fade-up">
+            <div class="service-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="service-title">Manutenção de Celulares</h3>
+            <p class="service-description">Conserto especializado de smartphones e tablets com garantia e peças originais.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Troca de telas e displays</li>
+              <li><i class="fas fa-check"></i> Substituição de baterias</li>
+              <li><i class="fas fa-check"></i> Reparo de botões e conectores</li>
+              <li><i class="fas fa-check"></i> Desbloqueio e formatação</li>
+            </ul>
+            <div class="service-price">A partir de R$ 50</div>
+            <button class="btn-service" onclick="openAppointmentModal('manutencao')">Solicitar Orçamento</button>
+          </div>
+          
+          <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
+            <div class="featured-badge">Mais Procurado</div>
+            <div class="service-icon">
+              <i class="fas fa-laptop"></i>
+            </div>
+            <h3 class="service-title">Informática</h3>
+            <p class="service-description">Suporte completo para computadores, notebooks e sistemas operacionais.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Manutenção preventiva e corretiva</li>
+              <li><i class="fas fa-check"></i> Instalação de sistemas</li>
+              <li><i class="fas fa-check"></i> Recuperação de dados</li>
+              <li><i class="fas fa-check"></i> Upgrade de hardware</li>
+            </ul>
+            <div class="service-price">A partir de R$ 80</div>
+            <button class="btn-service" onclick="openAppointmentModal('informatica')">Solicitar Orçamento</button>
+          </div>
+          
+          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-icon">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h3 class="service-title">Redes e Wi-Fi</h3>
+            <p class="service-description">Instalação e configuração de redes corporativas e residenciais.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Cabeamento estruturado</li>
+              <li><i class="fas fa-check"></i> Configuração de roteadores</li>
+              <li><i class="fas fa-check"></i> Redes Wi-Fi empresariais</li>
+              <li><i class="fas fa-check"></i> Segurança de rede</li>
+            </ul>
+            <div class="service-price">A partir de R$ 120</div>
+            <button class="btn-service" onclick="openAppointmentModal('redes')">Solicitar Orçamento</button>
+          </div>
+          
+          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-icon">
+              <i class="fas fa-video"></i>
+            </div>
+            <h3 class="service-title">Câmeras de Segurança</h3>
+            <p class="service-description">Sistemas completos de monitoramento e segurança eletrônica.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Câmeras IP e analógicas</li>
+              <li><i class="fas fa-check"></i> DVR e NVR</li>
+              <li><i class="fas fa-check"></i> Monitoramento remoto</li>
+              <li><i class="fas fa-check"></i> Alarmes integrados</li>
+            </ul>
+            <div class="service-price">A partir de R$ 200</div>
+            <button class="btn-service" onclick="openAppointmentModal('cameras')">Solicitar Orçamento</button>
+          </div>
+          
+          <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="service-title">Criação de Sites</h3>
+            <p class="service-description">Desenvolvimento de sites profissionais e lojas virtuais modernas.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Sites responsivos</li>
+              <li><i class="fas fa-check"></i> E-commerce completo</li>
+              <li><i class="fas fa-check"></i> SEO otimizado</li>
+              <li><i class="fas fa-check"></i> Hospedagem incluída</li>
+            </ul>
+            <div class="service-price">A partir de R$ 500</div>
+            <button class="btn-service" onclick="openAppointmentModal('sites')">Solicitar Orçamento</button>
+          </div>
+          
+          <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3 class="service-title">Suporte Técnico</h3>
+            <p class="service-description">Atendimento especializado e suporte técnico personalizado.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Suporte remoto</li>
+              <li><i class="fas fa-check"></i> Visita técnica</li>
+              <li><i class="fas fa-check"></i> Consultoria em TI</li>
+              <li><i class="fas fa-check"></i> Treinamento de usuários</li>
+            </ul>
+            <div class="service-price">A partir de R$ 60/hora</div>
+            <button class="btn-service" onclick="openAppointmentModal('suporte')">Solicitar Orçamento</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text" data-aos="fade-right">
+            <h2 class="section-title">Sobre Nós</h2>
+            <p class="about-description">
+              Com mais de 5 anos de experiência no mercado de tecnologia, a Hard Tech 
+              é referência em Sertanópolis-PR quando o assunto é qualidade e confiança em serviços técnicos.
+            </p>
+            <p class="about-description">
+              Nossa equipe é formada por profissionais certificados e apaixonados por tecnologia, 
+              sempre atualizados com as últimas tendências do mercado para oferecer as melhores soluções.
+            </p>
+            <div class="about-features">
+              <div class="feature-item">
+                <i class="fas fa-award"></i>
+                <div>
+                  <h4>Qualidade Garantida</h4>
+                  <p>Todos os serviços com garantia e suporte pós-venda</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <h4>Atendimento Rápido</h4>
+                  <p>Diagnóstico em até 24h e soluções ágeis</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                  <h4>Segurança Total</h4>
+                  <p>Seus dados e equipamentos sempre protegidos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-image" data-aos="fade-left">
+            <div class="image-placeholder">
+              <i class="fas fa-user-tie"></i>
+              <p>Equipe Especializada</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nossos Trabalhos</h2>
+          <p class="section-subtitle">Alguns dos projetos que desenvolvemos com excelência</p>
+        </div>
+        
+        <div class="portfolio-filter">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="sites">Sites</button>
+          <button class="filter-btn" data-filter="redes">Redes</button>
+          <button class="filter-btn" data-filter="seguranca">Segurança</button>
+        </div>
+        
+        <div class="portfolio-grid">
+          <div class="portfolio-item" data-category="sites" data-aos="zoom-in">
+            <div class="portfolio-image">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="portfolio-content">
+              <h4>Site Comercial</h4>
+              <p>E-commerce completo com sistema de pagamento</p>
+              <span class="portfolio-tag">WordPress</span>
+            </div>
+          </div>
+          
+          <div class="portfolio-item" data-category="redes" data-aos="zoom-in" data-aos-delay="100">
+            <div class="portfolio-image">
+              <i class="fas fa-wifi"></i>
+            </div>
+            <div class="portfolio-content">
+              <h4>Rede Empresarial</h4>
+              <p>Infraestrutura completa para empresa de 50 funcionários</p>
+              <span class="portfolio-tag">Cabeamento</span>
+            </div>
+          </div>
+          
+          <div class="portfolio-item" data-category="seguranca" data-aos="zoom-in" data-aos-delay="200">
+            <div class="portfolio-image">
+              <i class="fas fa-camera"></i>
+            </div>
+            <div class="portfolio-content">
+              <h4>Sistema de Monitoramento</h4>
+              <p>16 câmeras IP com acesso remoto</p>
+              <span class="portfolio-tag">CFTV</span>
+            </div>
+          </div>
+          
+          <div class="portfolio-item" data-category="sites" data-aos="zoom-in" data-aos-delay="300">
+            <div class="portfolio-image">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="portfolio-content">
+              <h4>App Mobile</h4>
+              <p>Aplicativo para gestão de estoque</p>
+              <span class="portfolio-tag">React Native</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">O que nossos clientes dizem</h2>
+          <p class="section-subtitle">Depoimentos reais de quem confia em nosso trabalho</p>
+        </div>
+        
+        <div class="testimonials-slider">
+          <div class="testimonial-item active" data-aos="fade-up">
+            <div class="testimonial-content">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p>"Excelente atendimento! Consertaram meu notebook em menos de 2 dias e ficou perfeito. Recomendo muito!"</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="author-info">
+                  <h4>Maria Silva</h4>
+                  <span>Empresária</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-content">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p>"Instalaram toda a rede da minha empresa. Trabalho impecável e preço justo. Equipe muito profissional!"</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="author-info">
+                  <h4>João Santos</h4>
+                  <span>Diretor Comercial</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-content">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p>"Criaram o site da minha loja e as vendas online aumentaram 300%! Trabalho excepcional!"</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="author-info">
+                  <h4>Ana Costa</h4>
+                  <span>Lojista</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-nav">
+          <button class="nav-dot active" onclick="showTestimonial(0)"></button>
+          <button class="nav-dot" onclick="showTestimonial(1)"></button>
+          <button class="nav-dot" onclick="showTestimonial(2)"></button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Entre em Contato</h2>
+          <p class="section-subtitle">Estamos prontos para atender você da melhor forma</p>
+        </div>
+        
+        <div class="contact-content">
+          <div class="contact-info" data-aos="fade-right">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Endereço</h4>
+                <p>Sertanópolis - PR<br>Atendemos toda a região</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Telefone</h4>
+                <p>(43) 99999-9999</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>E-mail</h4>
+                <p>contato@tecnicosolucoes.com.br</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Horário de Funcionamento</h4>
+                <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+              </div>
+            </div>
+            
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+              <a href="https://wa.me/5543999999999" class="social-link"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          
+          <div class="contact-form" data-aos="fade-left">
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" name="name" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" placeholder="Seu e-mail" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="tel" name="phone" placeholder="Seu telefone" oninput="formatPhone(this)">
+              </div>
+              <div class="form-group">
+                <select name="service" required>
+                  <option value="">Selecione um serviço</option>
+                  <option value="manutencao">Manutenção de Celulares</option>
+                  <option value="informatica">Informática</option>
+                  <option value="redes">Redes e Wi-Fi</option>
+                  <option value="cameras">Câmeras de Segurança</option>
+                  <option value="sites">Criação de Sites</option>
+                  <option value="suporte">Suporte Técnico</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea name="message" placeholder="Descreva seu problema ou necessidade" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <span class="btn-text">Enviar Mensagem</span>
+                <span class="loading hidden"></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <i class="fas fa-microchip"></i>
+            <span>Hard Tech</span>
+          </div>
+          <p>Transformando problemas tecnológicos em soluções inovadoras há mais de 5 anos.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/5543999999999"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#services">Manutenção de Celulares</a></li>
+            <li><a href="#services">Informática</a></li>
+            <li><a href="#services">Redes e Wi-Fi</a></li>
+            <li><a href="#services">Câmeras de Segurança</a></li>
+            <li><a href="#services">Criação de Sites</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#about">Sobre Nós</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Depoimentos</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contato</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt"></i> Sertanópolis - PR</p>
+            <p><i class="fas fa-phone"></i> (43) 99999-9999</p>
+            <p><i class="fas fa-envelope"></i> contato@tecnicosolucoes.com.br</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Hard Tech. Todos os direitos reservados.</p>
+        <p>Desenvolvido com ❤️ em Sertanópolis-PR</p>
+      </div>
+    </div>
+  </footer>
+</div>
+  </main>
+</div>
+
+<!-- Toast de notificações -->
 <div class="toast" id="toast" aria-live="polite"></div>
+
+<!-- Chatbot -->
 <div class="chatbot" id="chatbot">
-<div class="chat-header">
-<h3>Como podemos ajudar?</h3>
-<button class="close-chat" aria-label="Fechar chat"><i class="fas fa-times"></i></button>
+  <div class="chat-header">
+    <h3>Como podemos ajudar?</h3>
+    <button class="close-chat" aria-label="Fechar chat" onclick="toggleChat()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="message bot-message">Olá! Sou o assistente virtual da Hard Tech. Como posso ajudar?</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" placeholder="Digite sua mensagem..." id="chatInput" onkeypress="handleChatKeyPress(event)">
+    <button aria-label="Enviar mensagem" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+  </div>
 </div>
-<div class="chat-messages">
-<div class="message bot-message">Olá! Sou o assistente virtual da Técnico Soluções. Como posso ajudar?</div>
-</div>
-<div class="chat-input">
-<input type="text" placeholder="Digite sua mensagem..." id="chat-input">
-<button aria-label="Enviar mensagem"><i class="fas fa-paper-plane"></i></button>
-</div>
-</div>
+
+<!-- Modal de agendamento -->
 <div class="modal" id="appointmentModal">
-<div class="modal-content">
-<button class="close-modal" aria-label="Fechar modal">×</button>
-<h2 class="modal-title">Agendar Serviço</h2>
-<form id="appointmentForm" action="https://formspree.io/f/xeokwpdd" method="POST">
-<div class="form-group">
-<label class="form-label" for="appointment-name">Nome</label>
-<input type="text" class="form-control" id="appointment-name" name="name" required>
-</div>
-<div class="form-group">
-<label class="form-label" for="appointment-phone">Telefone</label>
-<input type="tel" class="form-control" id="appointment-phone" name="phone" required oninput="formatPhone(this)">
-</div>
-<div class="form-group">
-<label class="form-label" for="appointment-service">Serviço</label>
-<select class="form-control" id="appointment-service" name="service" required>
-<option value="">Selecione um serviço</option>
-<option value="manutencao">Manutenção de Celulares</option>
-<option value="informatica">Informática</option>
-<option value="redes">Redes</option>
-<option value="cameras">Câmeras de Segurança</option>
-<option value="sites">Criação de Sites</option>
-</select>
-</div>
-<div class="form-group">
-<label class="form-label" for="appointment-date">Data Preferencial</label>
-<input type="date" class="form-control" id="appointment-date" name="date" required>
-</div>
-<div class="form-group">
-<label class="form-label" for="appointment-message">Mensagem (opcional)</label>
-<textarea class="form-control" id="appointment-message" name="message" rows="3"></textarea>
-</div>
-<button type="submit" class="btn"><i class="fas fa-calendar-check"></i> Agendar</button>
-</form>
-</div>
-</div>
-<div class="service-modal" id="serviceModal">
-  <div class="service-modal-content">
-    <div class="service-modal-header">
-      <h2 class="service-modal-title" id="service-modal-title"></h2>
-      <button class="close-modal" aria-label="Fechar modal" onclick="closeServiceModal()">×</button>
-    </div>
-    <div class="service-modal-icon" id="service-modal-icon"></div>
-    <div class="service-modal-body" id="service-modal-content"></div>
-    <div class="modal-actions">
-      <button class="btn whatsapp-btn" onclick="redirectToWhatsApp()">
-        <i class="fab fa-whatsapp"></i> Solicitar via WhatsApp
-      </button>
-      <button class="btn" onclick="closeServiceModal()">
-        <i class="fas fa-times"></i> Fechar
-      </button>
-    </div>
-  </div>
-</div>
-<div class="login-container" id="loginContainer">
-  <div class="login-content">
-    <div class="login-header">
-      <h2 class="login-title">Acesso ao Sistema</h2>
-      <p class="login-subtitle">Selecione seu tipo de usuário</p>
-    </div>
-    <div class="user-type">
-      <div class="user-type-btn" onclick="selectUserType('cliente')">
-        <i class="fas fa-user"></i>
-        <div>Cliente</div>
-      </div>
-      <div class="user-type-btn" onclick="selectUserType('tecnico')">
-        <i class="fas fa-tools"></i>
-        <div>Técnico</div>
-      </div>
-    </div>
-    <form class="login-form" id="loginForm">
+  <div class="modal-content">
+    <button class="close-modal" aria-label="Fechar modal" onclick="closeAppointmentModal()">×</button>
+    <h2 class="modal-title">Agendar Serviço</h2>
+    <form id="appointmentForm">
       <div class="form-group">
-        <label class="form-label" for="login-email">E-mail</label>
-        <input type="email" class="form-control" id="login-email" required>
+        <label class="form-label" for="appointment-name">Nome</label>
+        <input type="text" class="form-control" id="appointment-name" name="name" required>
       </div>
       <div class="form-group">
-        <label class="form-label" for="login-password">Senha</label>
-        <input type="password" class="form-control" id="login-password" required>
+        <label class="form-label" for="appointment-phone">Telefone</label>
+        <input type="tel" class="form-control" id="appointment-phone" name="phone" required oninput="formatPhone(this)">
       </div>
-      <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+      <div class="form-group">
+        <label class="form-label" for="appointment-service">Serviço</label>
+        <select class="form-control" id="appointment-service" name="service" required>
+          <option value="">Selecione um serviço</option>
+          <option value="manutencao">Manutenção de Celulares</option>
+          <option value="informatica">Informática</option>
+          <option value="redes">Redes</option>
+          <option value="cameras">Câmeras de Segurança</option>
+          <option value="sites">Criação de Sites</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="appointment-date">Data Preferida</label>
+        <input type="date" class="form-control" id="appointment-date" name="date" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="appointment-time">Horário Preferido</label>
+        <select class="form-control" id="appointment-time" name="time" required>
+          <option value="">Selecione um horário</option>
+          <option value="08:00">08:00</option>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="appointment-description">Descrição do Problema</label>
+        <textarea class="form-control" id="appointment-description" name="description" rows="3" placeholder="Descreva brevemente o problema ou serviço desejado"></textarea>
+      </div>
+      <button type="submit" class="btn-primary">
+        <span class="btn-text">Agendar Serviço</span>
+        <span class="loading hidden"></span>
+      </button>
     </form>
-    <div class="login-footer">
-      <p>Não tem conta? <a href="#" onclick="showRegister()">Cadastre-se</a></p>
-    </div>
   </div>
 </div>
-<button class="theme-toggle" aria-label="Alternar modo escuro" onclick="toggleTheme()"><i class="fas fa-moon" id="theme-icon"></i></button>
-<header>
-<div class="container header-container">
-<div class="logo">
-<div class="logo-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
-<div class="logo-text">Técnico <span>Soluções</span></div>
-</div>
-<nav aria-label="Navegação principal">
-<ul>
-<li><a href="#sobre">Sobre</a></li>
-<li><a href="#depoimentos">Depoimentos</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#contato">Contato</a></li>
-<li><a href="#" onclick="openLoginModal()">Login</a></li>
-</ul>
-</nav>
-</div>
-</header>
-<main id="main-content">
-<section class="hero">
-<div class="container">
-<div class="hero-content">
-<h1>Soluções Técnicas de Excelência em Sertanópolis</h1>
-<p>Especialistas em manutenção de celulares, informática, redes, câmeras de segurança e desenvolvimento web. Conectando tecnologia e soluções para sua necessidade.</p>
-<div class="hero-btns">
-<a href="https://wa.me/5543991678501" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Fale Conosco</a>
-<a href="#servicos" class="btn" aria-label="Veja nossos serviços"><i class="fas fa-laptop-code" aria-hidden="true"></i> Nossos Serviços</a>
-<button class="btn" onclick="openAppointmentModal()" aria-label="Agendar serviço"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Agendar Serviço</button>
-</div>
-</div>
-</div>
-</section>
-<section id="servicos" class="section">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Nossos Serviços</h2>
-<p class="section-subtitle">Oferecemos soluções técnicas completas para atender todas as suas necessidades tecnológicas com excelência e profissionalismo.</p>
-</div>
-<div class="services-grid">
-<div class="service-card" onclick="openServiceModal('manutencao')">
-<div class="service-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div>
-<div class="service-content">
-<h3 class="service-title">Manutenção de Celulares</h3>
-<p>Soluções completas para seu dispositivo móvel.</p>
-<ul class="service-list">
-<li>Troca de telas e baterias</li>
-<li>Reparo em conectores e botões</li>
-<li>Limpeza e manutenção interna</li>
-<li>Diagnóstico técnico completo</li>
-</ul>
-<span class="price-tag">A partir de R$ 100</span>
-</div>
-</div>
-<div class="service-card" onclick="openServiceModal('informatica')">
-<div class="service-icon"><i class="fas fa-laptop" aria-hidden="true"></i></div>
-<div class="service-content">
-<h3 class="service-title">Suporte em Informática</h3>
-<p>Soluções para seu computador e periféricos.</p>
-<ul class="service-list">
-<li>Formatação e instalação de sistemas</li>
-<li>Remoção de vírus e otimização</li>
-<li>Configuração de impressoras</li>
-<li>Suporte técnico presencial e remoto</li>
-</ul>
-<span class="price-tag">A partir de R$ 150</span>
-</div>
-</div>
-<div class="service-card" onclick="openServiceModal('redes')">
-<div class="service-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
-<div class="service-content">
-<h3 class="service-title">Redes e Infraestrutura</h3>
-<p>Soluções de conectividade para sua casa ou empresa.</p>
-<ul class="service-list">
-<li>Instalação e configuração de redes</li>
-<li>Cabeamento estruturado</li>
-<li>Otimização de Wi-Fi</li>
-<li>Soluções para grandes áreas</li>
-</ul>
-<span class="price-tag">A partir de R$ 500</span>
-</div>
-</div>
-<div class="service-card" onclick="openServiceModal('cameras')">
-<div class="service-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
-<div class="service-content">
-<h3 class="service-title">Câmeras de Segurança</h3>
-<p>Soluções de monitoramento para sua segurança.</p>
-<ul class="service-list">
-<li>Instalação profissional de câmeras</li>
-<li>Configuração de acesso remoto</li>
-<li>Manutenção preventiva</li>
-<li>Sistemas de gravação e armazenamento</li>
-</ul>
-<span class="price-tag">A partir de R$ 800</span>
-</div>
-</div>
-<div class="service-card" onclick="openServiceModal('sites')">
-<div class="service-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
-<div class="service-content">
-<h3 class="service-title">Desenvolvimento Web</h3>
-<p>Soluções digitais para sua presença online.</p>
-<ul class="service-list">
-<li>Criação de sites institucionais</li>
-<li>Sistemas web personalizados</li>
-<li>Otimização para buscadores (SEO)</li>
-<li>Manutenção e suporte contínuo</li>
-</ul>
-<span class="price-tag">A partir de R$ 1.500</span>
-</div>
-</div>
-<div class="service-card" onclick="openServiceModal('personalizado')">
-<div class="service-icon"><i class="fas fa-puzzle-piece" aria-hidden="true"></i></div>
-<div class="service-content">
-<h3 class="service-title">Soluções Personalizadas</h3>
-<p>Atendimento técnico completo para suas necessidades.</p>
-<ul class="service-list">
-<li>Consultoria especializada</li>
-<li>Soluções multidisciplinares</li>
-<li>Coordenação com profissionais</li>
-<li>Acompanhamento completo</li>
-</ul>
-<span class="price-tag">Sob consulta</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="sobre" class="section about">
-<div class="container">
-<div class="about-container">
-<div class="about-image"><i class="fas fa-building" aria-hidden="true"></i></div>
-<div class="about-content">
-<h2 class="about-title">Sobre a Técnico Soluções Inteligentes</h2>
-<p class="about-text">Com mais de 2 anos de experiência no mercado, somos referência em soluções técnicas em Sertanópolis e região. Nossa missão é oferecer serviços de qualidade que resolvam seus problemas de forma eficiente, com transparência e preços justos.</p>
-<p class="about-text">Nossa equipe é composta por profissionais qualificados e comprometidos com a excelência em cada serviço prestado. Trabalhamos com as melhores ferramentas e tecnologias para garantir resultados superiores.</p>
-<div class="stats">
-<div class="stat-item">
-<div class="stat-number">1+</div>
-<div class="stat-text">Anos de Experiência</div>
-</div>
-<div class="stat-item">
-<div class="stat-number">3+</div>
-<div class="stat-text">Clientes Atendidos</div>
-</div>
-<div class="stat-item">
-<div class="stat-number">100%</div>
-<div class="stat-text">Satisfação dos Clientes</div>
-</div>
-<div class="stat-item">
-<div class="stat-number">6</div>
-<div class="stat-text">Serviços Especializados</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="section partners">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Nossos Parceiros</h2>
-<p class="section-subtitle">Trabalhamos com as melhores marcas e tecnologias do mercado.</p>
-</div>
-<div class="partners-grid">
-<img src="https://via.placeholder.com/150x60?text=Samsung" alt="Samsung" class="partner-logo">
-<img src="https://via.placeholder.com/150x60?text=Apple" alt="Apple" class="partner-logo">
-<img src="https://via.placeholder.com/150x60?text=Microsoft" alt="Microsoft" class="partner-logo">
-<img src="https://via.placeholder.com/150x60?text=Dell" alt="Dell" class="partner-logo">
-<img src="https://via.placeholder.com/150x60?text=TP-Link" alt="TP-Link" class="partner-logo">
-</div>
-</div>
-</section>
-<section id="depoimentos" class="section testimonials">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Depoimentos de Clientes</h2>
-<p class="section-subtitle">Veja o que nossos clientes têm a dizer sobre a qualidade dos nossos serviços e atendimento.</p>
-</div>
-<div class="testimonial-container">
-<div class="testimonial-slider" id="testimonialSlider">
-<div class="testimonial-card">
-<p class="testimonial-text">"Serviço excelente! Resolveu meu problema de rede em menos de 1 hora. Profissionalismo e conhecimento técnico impressionantes."</p>
-<div class="testimonial-author">
-<div class="author-avatar"><i class="fas fa-user" aria-hidden="true"></i></div>
-<div class="author-info">
-<h4>Carlos Silva</h4>
-<p>Empresário</p>
-</div>
-</div>
-</div>
-<div class="testimonial-card">
-<p class="testimonial-text">"Troquei a tela do meu celular e ficou perfeito! Preço justo e atendimento rápido. Recomendo para todos em Sertanópolis."</p>
-<div class="testimonial-author">
-<div class="author-avatar"><i class="fas fa-user" aria-hidden="true"></i></div>
-<div class="author-info">
-<h4>Mariana Oliveira</h4>
-<p>Professora</p>
-</div>
-</div>
-</div>
-<div class="testimonial-card">
-<p class="testimonial-text">"Instalou meu sistema de câmeras com perfeição. Agora posso monitorar meu comércio de qualquer lugar. Atendimento de primeira!"</p>
-<div class="testimonial-author">
-<div class="author-avatar"><i class="fas fa-user" aria-hidden="true"></i></div>
-<div class="author-info">
-<h4>Roberto Santos</h4>
-<p>Comerciante</p>
-</div>
-</div>
-</div>
-<div class="testimonial-card">
-<p class="testimonial-text">"Desenvolveram meu site profissional em tempo recorde. Agora meus clientes encontram meu negócio facilmente na internet. Serviço de alta qualidade!"</p>
-<div class="testimonial-author">
-<div class="author-avatar"><i class="fas fa-user" aria-hidden="true"></i></div>
-<div class="author-info">
-<h4>Patrícia Mendes</h4>
-<p>Empreendedora</p>
-</div>
-</div>
-</div>
-</div>
-<div class="testimonial-nav">
-<button id="prevTestimonial" aria-label="Depoimento anterior"><i class="fas fa-chevron-left"></i></button>
-<button id="nextTestimonial" aria-label="Próximo depoimento"><i class="fas fa-chevron-right"></i></button>
-</div>
-</div>
-</div>
-</section>
-<section id="faq" class="section faq">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Perguntas Frequentes</h2>
-<p class="section-subtitle">Tire suas dúvidas sobre nossos serviços e atendimento.</p>
-</div>
-<div class="faq-container">
-<div class="faq-item">
-<div class="faq-question">Quanto tempo leva para consertar um celular?</div>
-<div class="faq-answer">
-<p>O tempo de reparo varia conforme o problema. Problemas simples como troca de tela ou bateria podem ser resolvidos em até 2 horas. Problemas mais complexos podem levar de 1 a 3 dias úteis. Sempre informamos o prazo estimado antes de iniciar o serviço.</p>
-</div>
-</div>
-<div class="faq-item">
-<div class="faq-question">Vocês oferecem garantia nos serviços?</div>
-<div class="faq-answer">
-<p>Sim, todos os nossos serviços têm garantia. Para manutenção de celulares e computadores, oferecemos 90 dias de garantia. Para instalação de câmeras e redes, a garantia é de 1 ano. Para desenvolvimento de sites, garantimos suporte técnico por 6 meses.</p>
-</div>
-</div>
-<div class="faq-item">
-<div class="faq-question">Atendem em domicílio?</div>
-<div class="faq-answer">
-<p>Sim, oferecemos atendimento domiciliar para serviços de informática, instalação de redes e câmeras de segurança em Sertanópolis e região. Para outros municípios, pode haver custo adicional de deslocamento. Entre em contato para verificar disponibilidade.</p>
-</div>
-</div>
-<div class="faq-item">
-<div class="faq-question">Aceitam quais formas de pagamento?</div>
-<div class="faq-answer">
-<p>Aceitamos diversas formas de pagamento: dinheiro, cartão de crédito/débito, Pix e transferência bancária. Para serviços acima de R$ 500,00, oferecemos opções de parcelamento.</p>
-</div>
-</div>
-<div class="faq-item">
-<div class="faq-question">Como posso acompanhar o andamento do meu serviço?</div>
-<div class="faq-answer">
-<p>Fornecemos um número de protocolo para cada serviço, pelo qual você pode acompanhar o status pelo WhatsApp ou pelo nosso site. Também enviamos atualizações por e-mail ou SMS conforme o serviço avança.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="section newsletter">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Receba Nossas Ofertas</h2>
-<p class="section-subtitle">Assine nossa newsletter e receba promoções exclusivas e dicas de tecnologia.</p>
-</div>
-<form class="newsletter-form">
-<input type="email" placeholder="Seu melhor e-mail" required>
-<button type="submit" class="btn">Assinar</button>
-</form>
-</div>
-</section>
-<section id="contato" class="section">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Entre em Contato</h2>
-<p class="section-subtitle">Estamos prontos para atender suas necessidades técnicas. Entre em contato e solicite um orçamento.</p>
-</div>
-<div class="contact-container">
-<div class="contact-info">
-<h3 class="contact-title">Informações de Contato</h3>
-<div class="contact-details">
-<div class="contact-item">
-<div class="contact-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
-<div class="contact-text">
-<h4>Telefone</h4>
-<a href="tel:+5543991678501" aria-label="Ligar para (43) 99167-8501">(43) 99167-8501</a>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
-<div class="contact-text">
-<h4>E-mail</h4>
-<a href="mailto:contato@tecnicotisolucoes.com" aria-label="Enviar e-mail para contato@tecnicotisolucoes.com">contato@tecnicotisolucoes.com</a>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
-<div class="contact-text">
-<h4>Localização</h4>
-<p>Atendemos em Sertanópolis e região</p>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
-<div class="contact-text">
-<h4>Horário de Atendimento</h4>
-<p>Segunda a Sexta: 8h às 18h</p>
-<p>Sábado: 8h às 12h</p>
-</div>
-</div>
-</div>
-<div class="contact-map">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3661.187038541328!2d-51.03737552495846!3d-23.42485337886013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ec2b4d0d5a1e8f%3A0x4d3a7f4a9d3a3e1d!2sSertan%C3%B3polis%2C%20PR!5e0!3m2!1spt-BR!2sbr!4v1691500000000!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-</div>
-<div class="contact-form">
-<h3 class="contact-title">Envie uma Mensagem</h3>
-<form action="https://formspree.io/f/xeokwpdd" method="POST" aria-label="Formulário de contato">
-<div class="form-group" data-validate="nome">
-<label class="form-label" for="nome">Nome Completo</label>
-<input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome" required aria-describedby="nome-error">
-<span id="nome-error" class="error-message">Por favor, insira seu nome completo.</span>
-</div>
-<div class="form-group" data-validate="email">
-<label class="form-label" for="email">E-mail</label>
-<input type="email" class="form-control" id="email" name="email" placeholder="seu@email.com" required aria-describedby="email-error">
-<span id="email-error" class="error-message">Por favor, insira um e-mail válido.</span>
-</div>
-<div class="form-group" data-validate="telefone">
-<label class="form-label" for="telefone">Telefone</label>
-<input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(43) 99999-9999" pattern="^\(\d{2}\)\s?\d{4,5}-\d{4}$" required aria-describedby="telefone-error" oninput="formatPhone(this)">
-<span id="telefone-error" class="error-message">Por favor, insira um telefone válido (ex.: (43) 99999-9999).</span>
-</div>
-<div class="form-group" data-validate="servico">
-<label class="form-label" for="servico">Serviço de Interesse</label>
-<select class="form-control" id="servico" name="servico" required aria-describedby="servico-error">
-<option value="">Selecione uma opção</option>
-<option value="manutencao">Manutenção de Celulares</option>
-<option value="informatica">Informática</option>
-<option value="redes">Redes</option>
-<option value="cameras">Câmeras de Segurança</option>
-<option value="sites">Criação de Sites</option>
-<option value="outro">Outro</option>
-</select>
-<span id="servico-error" class="error-message">Por favor, selecione um serviço.</span>
-</div>
-<div class="form-group" data-validate="mensagem">
-<label class="form-label" for="mensagem">Mensagem</label>
-<textarea class="form-control" id="mensagem" name="mensagem" placeholder="Descreva como podemos ajudar" rows="5" required aria-describedby="mensagem-error"></textarea>
-<span id="mensagem-error" class="error-message">Por favor, insira uma mensagem.</span>
-</div>
-<button type="submit" class="btn"><i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Mensagem</button>
-<div id="form-feedback" class="form-feedback" role="alert"></div>
-</form>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer>
-<div class="container">
-<div class="footer-grid">
-<div class="footer-col">
-<h3>Técnico Soluções Inteligentes</h3>
-<div class="footer-about">
-<p>Sua solução completa em tecnologia e serviços técnicos em Sertanópolis e região. Qualidade, profissionalismo e atendimento personalizado.</p>
-</div>
-<div class="social-links">
-<a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-<a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-<a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-<a href="https://wa.me/5543991678501" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-<div class="footer-col">
-<h3>Links Rápidos</h3>
-<div class="footer-links">
-<a href="#servicos"><i class="fas fa-chevron-right" aria-hidden="true"></i> Serviços</a>
-<a href="#sobre"><i class="fas fa-chevron-right" aria-hidden="true"></i> Sobre Nós</a>
-<a href="#depoimentos"><i class="fas fa-chevron-right" aria-hidden="true"></i> Depoimentos</a>
-<a href="#faq"><i class="fas fa-chevron-right" aria-hidden="true"></i> FAQ</a>
-<a href="#contato"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contato</a>
-</div>
-</div>
-<div class="footer-col">
-<h3>Contato</h3>
-<div class="footer-contact">
-<p><i class="fas fa-phone-alt" aria-hidden="true"></i> (43) 99167-8501</p>
-<p><i class="fas fa-envelope" aria-hidden="true"></i> contato@tecnicotisolucoes.com</p>
-<p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Sertanópolis - PR</p>
-<p><i class="fas fa-clock" aria-hidden="true"></i> Seg-Mex: 8h-18h | Sáb: 8h-12h</p>
-</div>
-</div>
-</div>
-<div class="copyright">
-<p>© 2023 Técnico Soluções Inteligentes. Todos os direitos reservados.</p>
-<p><a href="#" style="color: #cbd5e0;">Política de Privacidade</a> | <a href="#" style="color: #cbd5e0;">Termos de Serviço</a></p>
-</div>
-</div>
-</footer>
-<div class="floating-btns">
-<a href="https://wa.me/5543991678501" class="floating-btn whatsapp" aria-label="Fale conosco pelo WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-<button class="floating-btn chat" aria-label="Abrir chat" id="openChat"><i class="fas fa-comments" aria-hidden="true"></i></button>
-<button class="floating-btn appointment" aria-label="Agendar serviço" onclick="openAppointmentModal()"><i class="fas fa-calendar-alt" aria-hidden="true"></i></button>
-<button class="floating-btn back-top" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'});"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
-</div>
-<script src="script.js"></script>
-</body>
+
+<!-- Botões flutuantes -->
+<div class="fab-container">
+  <button class="fab fab-chat" onclick="toggleChat()" aria-label="Abrir chat">
+    <i class="fas fa-comments"></i>
+  </button>
+  <a href="https://wa.me/5543999999999" class="fab fab-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="tel:+5543999999999" class="fab fab-phone" aria-label="Ligar">
+    <i class="fas fa-phone"></i>
+  </a>
+</div>
+
+<script>
+// Função para esconder a tela de manutenção
+function hideMaintenance() {
+  document.getElementById('maintenanceOverlay').style.display = 'none';
+  document.getElementById('mainContent').style.display = 'block';
+  
+  // Inicializar animações e funcionalidades
+  initializeWebsite();
+}
+
+// Função para inicializar o website
+function initializeWebsite() {
+  // Smooth scrolling para links de navegação
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+  
+  // Ativar link de navegação baseado na seção visível
+  window.addEventListener('scroll', updateActiveNavLink);
+  
+  // Inicializar slider de depoimentos
+  initTestimonialSlider();
+  
+  // Inicializar filtros do portfolio
+  initPortfolioFilters();
+  
+  // Inicializar animações de scroll
+  initScrollAnimations();
+}
+
+// Função para atualizar link ativo na navegação
+function updateActiveNavLink() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (scrollY >= (sectionTop - 200)) {
+      current = section.getAttribute('id');
+    }
+  });
+  
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+}
+
+// Função para inicializar slider de depoimentos
+function initTestimonialSlider() {
+  let currentTestimonial = 0;
+  const testimonials = document.querySelectorAll('.testimonial-item');
+  const dots = document.querySelectorAll('.nav-dot');
+  
+  // Auto-play slider
+  setInterval(() => {
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    showTestimonial(currentTestimonial);
+  }, 5000);
+}
+
+// Função para mostrar depoimento específico
+function showTestimonial(index) {
+  const testimonials = document.querySelectorAll('.testimonial-item');
+  const dots = document.querySelectorAll('.nav-dot');
+  
+  testimonials.forEach((testimonial, i) => {
+    testimonial.classList.toggle('active', i === index);
+  });
+  
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+// Função para inicializar filtros do portfolio
+function initPortfolioFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      
+      // Atualizar botões ativos
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filtrar itens
+      portfolioItems.forEach(item => {
+        const category = item.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          item.style.display = 'block';
+          item.style.animation = 'fadeIn 0.5s ease-in-out';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+// Função para inicializar animações de scroll
+function initScrollAnimations() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+  
+  // Observar elementos com animação
+  document.querySelectorAll('[data-aos]').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease-out';
+    observer.observe(el);
+  });
+}
+
+// Função para toggle do menu mobile
+function toggleMobileMenu() {
+  const navMenu = document.getElementById('navMenu');
+  const navToggle = document.getElementById('navToggle');
+  
+  navMenu.classList.toggle('active');
+  navToggle.classList.toggle('active');
+}
+
+// Função para mostrar toast
+function showToast(message, type = 'success') {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.className = `toast ${type} show`;
+  
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
+}
+
+// Função para formatar telefone
+function formatPhone(input) {
+  let value = input.value.replace(/\D/g, '');
+  
+  if (value.length <= 11) {
+    value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    if (value.length < 14) {
+      value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+    }
+  }
+  
+  input.value = value;
+}
+
+// Função para toggle do chat
+function toggleChat() {
+  const chatbot = document.getElementById('chatbot');
+  chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
+  
+  if (chatbot.style.display === 'flex') {
+    document.getElementById('chatInput').focus();
+  }
+}
+
+// Função para enviar mensagem no chat
+function sendChatMessage() {
+  const input = document.getElementById('chatInput');
+  const message = input.value.trim();
+  
+  if (message) {
+    addChatMessage(message, 'user');
+    input.value = '';
+    
+    // Simular digitação do bot
+    setTimeout(() => {
+      addChatMessage('Digitando...', 'bot', true);
+    }, 500);
+    
+    // Simular resposta do bot
+    setTimeout(() => {
+      // Remover mensagem de digitação
+      const typingMessage = document.querySelector('.typing-message');
+      if (typingMessage) {
+        typingMessage.remove();
+      }
+      
+      const responses = [
+        'Obrigado pela sua mensagem! Em breve um de nossos técnicos entrará em contato.',
+        'Para um atendimento mais rápido, recomendo entrar em contato pelo WhatsApp.',
+        'Posso ajudar você a agendar um serviço. Qual tipo de serviço você precisa?',
+        'Nosso horário de funcionamento é de segunda a sexta, das 8h às 18h.',
+        'Temos especialistas em todos os serviços. Gostaria de agendar uma visita técnica?'
+      ];
+      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+      addChatMessage(randomResponse, 'bot');
+    }, 2000);
+  }
+}
+
+// Função para adicionar mensagem no chat
+function addChatMessage(message, sender, isTyping = false) {
+  const messagesContainer = document.getElementById('chatMessages');
+  const messageDiv = document.createElement('div');
+  messageDiv.className = `message ${sender}-message ${isTyping ? 'typing-message' : ''}`;
+  
+  if (isTyping) {
+    messageDiv.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+  } else {
+    messageDiv.textContent = message;
+  }
+  
+  messagesContainer.appendChild(messageDiv);
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+// Função para lidar com Enter no chat
+function handleChatKeyPress(event) {
+  if (event.key === 'Enter') {
+    sendChatMessage();
+  }
+}
+
+// Função para abrir modal de agendamento
+function openAppointmentModal(service = '') {
+  const modal = document.getElementById('appointmentModal');
+  const serviceSelect = document.getElementById('appointment-service');
+  
+  if (service) {
+    serviceSelect.value = service;
+  }
+  
+  // Definir data mínima como hoje
+  const today = new Date().toISOString().split('T')[0];
+  const dateInput = document.getElementById('appointment-date');
+  if (dateInput) {
+    dateInput.min = today;
+  }
+  
+  modal.style.display = 'flex';
+  
+  // Focar no primeiro campo
+  setTimeout(() => {
+    document.getElementById('appointment-name').focus();
+  }, 100);
+}
+
+// Função para fechar modal de agendamento
+function closeAppointmentModal() {
+  document.getElementById('appointmentModal').style.display = 'none';
+  document.getElementById('appointmentForm').reset();
+}
+
+// Event Listeners
+document.addEventListener('DOMContentLoaded', function() {
+  // Toggle menu mobile
+  const navToggle = document.getElementById('navToggle');
+  if (navToggle) {
+    navToggle.addEventListener('click', toggleMobileMenu);
+  }
+  
+  // Formulário de agendamento
+  const appointmentForm = document.getElementById('appointmentForm');
+  if (appointmentForm) {
+    appointmentForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const btn = this.querySelector('.btn-primary');
+      const btnText = btn.querySelector('.btn-text');
+      const loading = btn.querySelector('.loading');
+      
+      // Mostrar loading
+      btn.disabled = true;
+      btnText.textContent = 'Agendando...';
+      loading.classList.remove('hidden');
+      
+      // Simular envio
+      setTimeout(() => {
+        showToast('Agendamento realizado com sucesso! Entraremos em contato em breve.', 'success');
+        closeAppointmentModal();
+        
+        // Resetar botão
+        btn.disabled = false;
+        btnText.textContent = 'Agendar Serviço';
+        loading.classList.add('hidden');
+      }, 2000);
+    });
+  }
+  
+  // Formulário de contato
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const btn = this.querySelector('.btn-submit');
+      const btnText = btn.querySelector('.btn-text');
+      const loading = btn.querySelector('.loading');
+      
+      // Mostrar loading
+      btn.disabled = true;
+      btnText.textContent = 'Enviando...';
+      loading.classList.remove('hidden');
+      
+      // Simular envio
+      setTimeout(() => {
+        showToast('Mensagem enviada com sucesso! Responderemos em breve.', 'success');
+        this.reset();
+        
+        // Resetar botão
+        btn.disabled = false;
+        btnText.textContent = 'Enviar Mensagem';
+        loading.classList.add('hidden');
+      }, 2000);
+    });
+  }
+  
+  // Fechar modal ao clicar fora
+  const appointmentModal = document.getElementById('appointmentModal');
+  if (appointmentModal) {
+    appointmentModal.addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeAppointmentModal();
+      }
+    });
+  }
+  
+  // Fechar chat ao clicar fora
+  document.addEventListener('click', function(e) {
+    const chatbot = document.getElementById('chatbot');
+    const fabChat = document.querySelector('.fab-chat');
+    
+    if (chatbot && fabChat && chatbot.style.display === 'flex' && 
+        !chatbot.contains(e.target) && 
+        !fabChat.contains(e.target)) {
+      chatbot.style.display = 'none';
+    }
+  });
+  
+  // Scroll suave para header
+  let lastScrollTop = 0;
+  const header = document.querySelector('.header');
+  
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      // Scrolling down
+      header.style.transform = 'translateY(-100%)';
+    } else {
+      // Scrolling up
+      header.style.transform = 'translateY(0)';
+    }
+    
+    lastScrollTop = scrollTop;
+  });
+  
+  console.log('Site carregado - Hard Tech');
+});
+
+// Adicionar CSS para animações adicionais
+const additionalStyles = `
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .typing-indicator {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  
+  .typing-indicator span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    animation: typing 1.4s infinite ease-in-out;
+  }
+  
+  .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+  .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+  
+  @keyframes typing {
+    0%, 80%, 100% { transform: scale(0); opacity: 0.5; }
+    40% { transform: scale(1); opacity: 1; }
+  }
+  
+  .nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: var(--shadow-lg);
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  .header {
+    transition: transform 0.3s ease;
+  }
+`;
+
+// Adicionar estilos ao documento
+const styleSheet = document.createElement('style');
+styleSheet.textContent = additionalStyles;
+document.head.appendChild(styleSheet);
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96d0b84b12628780',t:'MTc1NDg0MTc3MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
