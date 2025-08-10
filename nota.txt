@@ -1,26 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<!-- Meta tags básicas para SEO e configuração da página -->
 <meta charset="UTF-8">
-<meta name="description" content="Técnico em Sertanópolis-PR: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites. Atendimento rápido e especializado.">
+<meta name="description" content="Hard Tech - Soluções em tecnologia: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="manutenção celulares Sertanópolis, técnico informática PR, redes computadores, câmeras segurança, criação sites">
-<meta name="author" content="Técnico Soluções Inteligentes">
-<link rel="canonical" href="https://www.tecnicotisolucoes.com">
+<meta name="keywords" content="manutenção celulares, técnico informática, Hard Tech, conserto celular">
+<meta name="author" content="Hard Tech Soluções Tecnológicas">
+<title>Hard Tech | Soluções em Tecnologia</title>
 
-<!-- Meta tags para redes sociais (Open Graph) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Técnico Soluções Inteligentes | Manutenção e Tecnologia em Sertanópolis-PR">
-<meta property="og:description" content="Soluções técnicas completas: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites.">
-<meta property="og:image" content="https://www.tecnicotisolucoes.com/og-image.jpg">
-
-<title>Técnico Soluções Inteligentes | Manutenção e Tecnologia em Sertanópolis-PR</title>
-
-<!-- Links para fontes e ícones -->
-<link rel="alternate" hreflang="pt-BR" href="https://www.tecnicotisolucoes.com">
-<meta name="geo.region" content="BR-PR">
-<meta name="geo.placename" content="Sertanópolis">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -30,51 +17,41 @@
 <style>
 /* ========== ESTILOS GERAIS ========== */
 :root {
-  /* Cores principais */
-  --clr-primary: #1a365d;
-  --clr-secondary: #2c5282;
-  --clr-accent: #4299e1;
-  --clr-dark: #1a202c;
-  --clr-light: #f7fafc;
-  --clr-text: #4a5568;
+  /* Cores principais atualizadas - Tema Hard Tech */
+  --clr-primary: #1a1a2e;       /* Azul escuro */
+  --clr-secondary: #4e4e6a;     /* Azul médio */
+  --clr-accent: #fca311;        /* Laranja vibrante */
+  --clr-dark: #0d0d1a;
+  --clr-light: #f8f9fa;
+  --clr-text: #4a4a4a;
   --clr-border: #e2e8f0;
   --clr-card: #ffffff;
-  --clr-gradient: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+  --clr-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   
-  /* Tipografia */
-  --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Playfair Display', serif;
-  
-  /* Efeitos e transições */
+  /* Efeitos especiais */
   --transition: .3s ease-in-out;
   --shadow: 0 10px 30px rgba(0,0,0,0.15);
   --shadow-light: 0 4px 12px rgba(0,0,0,0.08);
-  --border-radius: 16px;
+  --border-radius: 8px;
 }
 
-/* Modo escuro - altera as cores quando ativado */
+/* Modo escuro atualizado */
 [data-theme="dark"] {
-  --clr-primary: #1a202c;
-  --clr-secondary: #2d3748;
-  --clr-accent: #4299e1;
-  --clr-dark: #f7fafc;
-  --clr-light: #1a202c;
+  --clr-primary: #0f172a;
+  --clr-secondary: #1e293b;
+  --clr-accent: #fca311;        /* Mantém o laranja como destaque */
+  --clr-dark: #f8fafc;
+  --clr-light: #0f172a;
   --clr-text: #e2e8f0;
-  --clr-border: #4a5568;
-  --clr-card: #2d3748;
-  --clr-gradient: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-  --footer-bg: #0f172a;
+  --clr-border: #334155;
+  --clr-card: #1e293b;
+  --clr-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --footer-bg: #020617;
   --footer-text: #e2e8f0;
   --footer-border: rgba(226,232,240,0.2);
 }
 
 /* ========== ANIMAÇÕES ========== */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -82,17 +59,18 @@
 
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.02); }
+  50% { transform: scale(1.05); }
 }
 
-/* ========== ESTILOS DA PÁGINA DE MANUTENÇÃO ========== */
+/* ========== PÁGINA DE MANUTENÇÃO ========== */
 .maintenance-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #1a365d;
+  background: var(--clr-gradient);
+  background-size: 200% 200%;
   color: white;
   z-index: 9999;
   display: flex;
@@ -101,14 +79,13 @@
   align-items: center;
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
 }
 
 .maintenance-content {
   max-width: 600px;
   padding: 2rem;
   background: rgba(255,255,255,0.1);
-  border-radius: 16px;
+  border-radius: var(--border-radius);
   backdrop-filter: blur(10px);
   animation: fadeInUp 0.5s ease;
 }
@@ -143,7 +120,7 @@
   border-radius: 50px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition);
   font-size: 1rem;
   text-decoration: none;
 }
@@ -153,7 +130,7 @@
 }
 
 .maintenance-btn.continue {
-  background: #4299e1;
+  background: var(--clr-accent);
 }
 
 .maintenance-btn:hover {
@@ -164,7 +141,7 @@
 .maintenance-icon {
   font-size: 4rem;
   margin-bottom: 1.5rem;
-  color: #4299e1;
+  color: var(--clr-accent);
   animation: pulse 2s infinite;
 }
 
@@ -181,7 +158,7 @@ html {
 }
 
 body {
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background: var(--clr-light);
   color: var(--clr-text);
   line-height: 1.6;
@@ -190,7 +167,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-heading);
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
   color: var(--clr-dark);
   transition: color var(--transition);
@@ -203,7 +180,7 @@ a {
 }
 
 a:hover {
-  color: var(--clr-accent);
+  color: var(--clr-secondary);
 }
 
 a:focus-visible {
@@ -211,7 +188,7 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* Link para pular para o conteúdo (acessibilidade) */
+/* Link para pular para o conteúdo */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -227,7 +204,7 @@ a:focus-visible {
   top: 0;
 }
 
-/* Container principal para centralizar o conteúdo */
+/* Container principal */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -235,7 +212,7 @@ a:focus-visible {
   padding: 0 1.5rem;
 }
 
-/* Estilo base para botões */
+/* Botões */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -253,7 +230,7 @@ a:focus-visible {
 }
 
 .btn:hover {
-  background: #3182ce;
+  background: #e65a2b;
   transform: translateY(-3px);
   box-shadow: var(--shadow-light);
   color: white;
@@ -281,16 +258,17 @@ header {
   align-items: center;
 }
 
-/* Logo */
+/* Logo Hard Tech */
 .logo {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  cursor: pointer;
 }
 
 .logo-icon {
   background: var(--clr-primary);
-  color: white;
+  color: var(--clr-accent);
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -298,20 +276,22 @@ header {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  transition: background var(--transition);
+  transition: all var(--transition);
 }
 
 .logo-text {
-  font-family: var(--font-heading);
+  font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--clr-dark);
   transition: color var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .logo-text span {
   color: var(--clr-accent);
-  transition: color var(--transition);
+  font-weight: 800;
 }
 
 /* Navegação */
@@ -344,12 +324,11 @@ nav a:hover::after, nav a.active::after {
   width: 100%;
 }
 
-/* ========== SEÇÃO HERO (PRINCIPAL) ========== */
+/* ========== SEÇÃO HERO ========== */
 .hero {
   padding: 6rem 0 4rem;
   background: var(--clr-gradient);
   background-size: 200% 200%;
-  animation: gradientShift 15s ease infinite alternate;
   color: white;
   position: relative;
   overflow: hidden;
@@ -381,6 +360,14 @@ nav a:hover::after, nav a.active::after {
   line-height: 1.2;
 }
 
+.hero h1 span {
+  display: inline-block;
+  color: var(--clr-accent);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
 .hero p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
@@ -394,7 +381,7 @@ nav a:hover::after, nav a.active::after {
   flex-wrap: wrap;
 }
 
-/* ========== SEÇÕES GENÉRICAS ========== */
+/* ========== SEÇÕES ========== */
 .section {
   padding: 5rem 0;
   opacity: 0;
@@ -517,7 +504,7 @@ nav a:hover::after, nav a.active::after {
 }
 
 .service-card:hover .service-icon {
-  background: rgba(66,153,225,0.1);
+  background: rgba(252, 163, 17, 0.1);
 }
 
 .price-tag {
@@ -525,11 +512,19 @@ nav a:hover::after, nav a.active::after {
   top: 1rem;
   right: 1rem;
   background: var(--clr-accent);
-  color: var(--clr-primary);
+  color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 50px;
   font-weight: 600;
   font-size: 0.9rem;
+  z-index: 2;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.price-tag:hover {
+  background: #e65a2b;
+  transform: translateY(-3px);
 }
 
 /* ========== SOBRE NÓS ========== */
@@ -559,7 +554,6 @@ nav a:hover::after, nav a.active::after {
   font-size: 5rem;
   transition: background var(--transition), color var(--transition);
   position: relative;
-  animation: pulse 4s ease infinite;
 }
 
 .about-image::before {
@@ -604,7 +598,7 @@ nav a:hover::after, nav a.active::after {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-light);
   border: 1px solid var(--clr-border);
-  transition: background var(--transition), color var(--transition);
+  transition: all var(--transition);
 }
 
 .stat-item:hover {
@@ -698,7 +692,7 @@ nav a:hover::after, nav a.active::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--clr-primary);
+  color: white;
   font-size: 1.2rem;
   transition: background var(--transition);
 }
@@ -724,7 +718,7 @@ nav a:hover::after, nav a.active::after {
 
 .testimonial-nav button {
   background: var(--clr-accent);
-  color: var(--clr-primary);
+  color: white;
   border: none;
   width: 40px;
   height: 40px;
@@ -737,11 +731,11 @@ nav a:hover::after, nav a.active::after {
 }
 
 .testimonial-nav button:hover {
-  background: #3182ce;
+  background: #e65a2b;
   transform: translateY(-3px);
 }
 
-/* ========== FAQ (PERGUNTAS FREQUENTES) ========== */
+/* ========== FAQ ========== */
 .faq {
   background: var(--clr-light);
 }
@@ -777,7 +771,7 @@ nav a:hover::after, nav a.active::after {
 }
 
 .faq-question:hover {
-  background: rgba(66,153,225,0.05);
+  background: rgba(252, 163, 17, 0.05);
 }
 
 .faq-question::after {
@@ -856,7 +850,7 @@ nav a:hover::after, nav a.active::after {
 }
 
 .contact-icon {
-  background: rgba(66,153,225,0.1);
+  background: rgba(252, 163, 17, 0.1);
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -930,7 +924,7 @@ nav a:hover::after, nav a.active::after {
 .form-control:focus {
   outline: none;
   border-color: var(--clr-accent);
-  box-shadow: 0 0 0 3px rgba(66,153,225,0.15);
+  box-shadow: 0 0 0 3px rgba(252, 163, 17, 0.15);
 }
 
 textarea.form-control {
@@ -974,7 +968,7 @@ textarea.form-control {
   color: white;
 }
 
-/* Mapa de localização */
+/* Mapa */
 .contact-map {
   margin-top: 2rem;
   border-radius: var(--border-radius);
@@ -1108,7 +1102,7 @@ footer {
 .social-links a:hover {
   background: var(--clr-accent);
   transform: translateY(-3px);
-  color: var(--clr-primary);
+  color: white;
 }
 
 .copyright {
@@ -1134,13 +1128,11 @@ footer {
   flex-direction: column;
   gap: 1rem;
   z-index: 90;
-  /* Inicialmente escondido */
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Classe que será adicionada quando o usuário rolar a página */
 .floating-btns.visible {
   opacity: 1;
   transform: translateY(0);
@@ -1159,14 +1151,17 @@ footer {
   transition: all var(--transition);
   font-size: 1.5rem;
   color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-.floating-btn.whatsapp {
-  background: #25D366;
+.floating-btn.chat {
+  background: var(--clr-accent);
+  color: white;
 }
 
-.floating-btn.whatsapp:hover {
-  background: #128C7E;
+.floating-btn.chat:hover {
+  background: #e65a2b;
   transform: translateY(-5px);
 }
 
@@ -1178,17 +1173,7 @@ footer {
 .floating-btn.back-top:hover {
   background: var(--clr-accent);
   transform: translateY(-5px);
-  color: var(--clr-primary);
-}
-
-.floating-btn.chat {
-  background: var(--clr-accent);
-  color: var(--clr-primary);
-}
-
-.floating-btn.chat:hover {
-  background: #3182ce;
-  transform: translateY(-5px);
+  color: white;
 }
 
 .floating-btn.appointment {
@@ -1302,13 +1287,13 @@ footer {
 }
 
 .bot-message {
-  background: rgba(66,153,225,0.1);
+  background: rgba(252, 163, 17, 0.1);
   align-self: flex-start;
 }
 
 .user-message {
   background: var(--clr-accent);
-  color: var(--clr-primary);
+  color: white;
   align-self: flex-end;
 }
 
@@ -1329,7 +1314,7 @@ footer {
 
 .chat-input button {
   background: var(--clr-accent);
-  color: var(--clr-primary);
+  color: white;
   border: none;
   padding: 0 1.2rem;
   border-radius: 0 20px 20px 0;
@@ -1337,10 +1322,10 @@ footer {
 }
 
 .chat-input button:hover {
-  background: #3182ce;
+  background: #e65a2b;
 }
 
-/* ========== NOTIFICAÇÕES (TOAST) ========== */
+/* ========== NOTIFICAÇÕES ========== */
 .toast {
   position: fixed;
   bottom: 20px;
@@ -1437,7 +1422,7 @@ footer {
 }
 
 .newsletter-form button:hover {
-  background: #3182ce;
+  background: #e65a2b;
   transform: translateY(-3px);
 }
 
@@ -1462,7 +1447,7 @@ footer {
 
 .theme-toggle:hover {
   background: var(--clr-accent);
-  color: var(--clr-primary);
+  color: white;
 }
 
 .theme-toggle:focus-visible {
@@ -1470,7 +1455,213 @@ footer {
   outline-offset: 2px;
 }
 
-/* ========== MEDIA QUERIES (RESPONSIVIDADE) ========== */
+/* ========== MODAL DE DETALHES DO SERVIÇO ========== */
+.service-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-modal-content {
+  background: var(--clr-card);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.service-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.service-modal-title {
+  font-size: 1.8rem;
+  color: var(--clr-dark);
+}
+
+.service-modal-icon {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--clr-accent);
+  margin: 1rem 0;
+}
+
+.service-modal-body {
+  line-height: 1.8;
+}
+
+.service-modal-body h3 {
+  margin: 1.5rem 0 1rem;
+  color: var(--clr-dark);
+  border-bottom: 2px solid var(--clr-accent);
+  padding-bottom: 0.5rem;
+}
+
+.service-modal-pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.pricing-card {
+  background: rgba(252, 163, 17, 0.05);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--clr-border);
+  transition: all var(--transition);
+}
+
+.pricing-card:hover {
+  border-color: var(--clr-accent);
+  transform: translateY(-5px);
+}
+
+.pricing-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--clr-dark);
+}
+
+.pricing-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr-accent);
+  margin-bottom: 1rem;
+}
+
+.pricing-features {
+  list-style: none;
+}
+
+.pricing-features li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-features li::before {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: var(--clr-accent);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.modal-actions .btn {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* ========== PÁGINA DE LOGIN ========== */
+.login-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-content {
+  background: var(--clr-card);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.3s ease;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-title {
+  font-size: 1.8rem;
+  color: var(--clr-dark);
+  margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+  color: var(--clr-text);
+}
+
+.login-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.user-type {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.user-type-btn {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  border: 2px solid var(--clr-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition);
+  background: var(--clr-card);
+}
+
+.user-type-btn.active {
+  border-color: var(--clr-accent);
+  background: rgba(252, 163, 17, 0.1);
+}
+
+.user-type-btn i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--clr-accent);
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--clr-text);
+}
+
+.login-footer a {
+  color: var(--clr-accent);
+  font-weight: 600;
+}
+
+/* ========== MEDIA QUERIES ========== */
 @media (max-width: 992px) {
   .about-container {
     flex-direction: column;
@@ -1543,6 +1734,12 @@ footer {
     width: 100%;
     justify-content: center;
   }
+  .service-modal-content {
+    padding: 1.5rem;
+  }
+  .login-content {
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1556,6 +1753,12 @@ footer {
   .modal-content {
     padding: 1.5rem;
   }
+  .modal-actions .btn {
+    width: 100%;
+  }
+  .user-type {
+    flex-direction: column;
+  }
 }
 </style>
 </head>
@@ -1568,11 +1771,8 @@ footer {
     </div>
     <h1>Estamos em manutenção!</h1>
     <p>Pedimos desculpas pelo inconveniente, mas estamos trabalhando para trazer um site ainda melhor para você! Em breve, novas tecnologias e recursos estarão disponíveis.</p>
-    <p>Enquanto isso, você pode entrar em contato diretamente pelo WhatsApp ou continuar navegando no site em desenvolvimento.</p>
+    <p>Enquanto isso, você pode continuar navegando no site em desenvolvimento.</p>
     <div class="maintenance-buttons">
-      <a href="https://wa.me/5543991678501" class="maintenance-btn whatsapp" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i> Fale pelo WhatsApp
-      </a>
       <button class="maintenance-btn continue" onclick="hideMaintenance()">
         <i class="fas fa-eye"></i> Continuar para o site
       </button>
@@ -1589,7 +1789,7 @@ footer {
 <button class="close-chat" aria-label="Fechar chat"><i class="fas fa-times"></i></button>
 </div>
 <div class="chat-messages">
-<div class="message bot-message">Olá! Sou o assistente virtual da Técnico Soluções. Como posso ajudar?</div>
+<div class="message bot-message">Olá! Sou o assistente virtual da Hard Tech. Como posso ajudar?</div>
 </div>
 <div class="chat-input">
 <input type="text" placeholder="Digite sua mensagem..." id="chat-input">
@@ -1632,20 +1832,67 @@ footer {
 </form>
 </div>
 </div>
+<div class="service-modal" id="serviceModal">
+  <div class="service-modal-content">
+    <div class="service-modal-header">
+      <h2 class="service-modal-title" id="service-modal-title"></h2>
+      <button class="close-modal" aria-label="Fechar modal" onclick="closeServiceModal()">×</button>
+    </div>
+    <div class="service-modal-icon" id="service-modal-icon"></div>
+    <div class="service-modal-body" id="service-modal-content"></div>
+    <div class="modal-actions">
+      <button class="btn" onclick="closeServiceModal()">
+        <i class="fas fa-times"></i> Fechar
+      </button>
+    </div>
+  </div>
+</div>
+<div class="login-container" id="loginContainer">
+  <div class="login-content">
+    <div class="login-header">
+      <h2 class="login-title">Acesso ao Sistema</h2>
+      <p class="login-subtitle">Selecione seu tipo de usuário</p>
+    </div>
+    <div class="user-type">
+      <div class="user-type-btn" onclick="selectUserType('cliente')">
+        <i class="fas fa-user"></i>
+        <div>Cliente</div>
+      </div>
+      <div class="user-type-btn" onclick="selectUserType('tecnico')">
+        <i class="fas fa-tools"></i>
+        <div>Técnico</div>
+      </div>
+    </div>
+    <form class="login-form" id="loginForm">
+      <div class="form-group">
+        <label class="form-label" for="login-email">E-mail</label>
+        <input type="email" class="form-control" id="login-email" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="login-password">Senha</label>
+        <input type="password" class="form-control" id="login-password" required>
+      </div>
+      <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+    </form>
+    <div class="login-footer">
+      <p>Não tem conta? <a href="#" onclick="showRegister()">Cadastre-se</a></p>
+    </div>
+  </div>
+</div>
 <button class="theme-toggle" aria-label="Alternar modo escuro" onclick="toggleTheme()"><i class="fas fa-moon" id="theme-icon"></i></button>
 <header>
 <div class="container header-container">
 <div class="logo">
 <div class="logo-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
-<div class="logo-text">Técnico <span>Soluções</span></div>
+<div class="logo-text">Hard<span>TECH</span></div>
 </div>
 <nav aria-label="Navegação principal">
 <ul>
-<li><a href="#servicos" class="active">Serviços</a></li>
 <li><a href="#sobre">Sobre</a></li>
 <li><a href="#depoimentos">Depoimentos</a></li>
 <li><a href="#faq">FAQ</a></li>
 <li><a href="#contato">Contato</a></li>
+<li><a href="#" onclick="openLoginModal()">Login</a></li>
 </ul>
 </nav>
 </div>
@@ -1654,10 +1901,9 @@ footer {
 <section class="hero">
 <div class="container">
 <div class="hero-content">
-<h1>Soluções Técnicas de Excelência em Sertanópolis</h1>
-<p>Especialistas em manutenção de celulares, informática, redes, câmeras de segurança e desenvolvimento web. Conectando tecnologia e soluções para sua necessidade.</p>
+<h1>Soluções Tecnológicas <span>HARD TECH</span></h1>
+<p>Especialistas em manutenção de celulares, informática, redes, câmeras de segurança e desenvolvimento web. Tecnologia com qualidade.</p>
 <div class="hero-btns">
-<a href="https://wa.me/5543991678501" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Fale Conosco</a>
 <a href="#servicos" class="btn" aria-label="Veja nossos serviços"><i class="fas fa-laptop-code" aria-hidden="true"></i> Nossos Serviços</a>
 <button class="btn" onclick="openAppointmentModal()" aria-label="Agendar serviço"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Agendar Serviço</button>
 </div>
@@ -1668,91 +1914,91 @@ footer {
 <div class="container">
 <div class="section-header">
 <h2 class="section-title">Nossos Serviços</h2>
-<p class="section-subtitle">Oferecemos soluções técnicas completas para atender todas as suas necessidades tecnológicas com excelência e profissionalismo.</p>
+<p class="section-subtitle">Soluções tecnológicas eficientes para atender todas as suas necessidades com profissionalismo.</p>
 </div>
 <div class="services-grid">
-<div class="service-card" onclick="redirectToWhatsApp('Manutenção de Celulares')">
+<div class="service-card" onclick="openServiceModal('manutencao')">
 <div class="service-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Manutenção de Celulares</h3>
-<p>Soluções completas para seu dispositivo móvel.</p>
+<p>Consertos para seu dispositivo móvel.</p>
 <ul class="service-list">
 <li>Troca de telas e baterias</li>
 <li>Reparo em conectores e botões</li>
 <li>Limpeza e manutenção interna</li>
 <li>Diagnóstico técnico completo</li>
 </ul>
-<span class="price-tag">A partir de R$ 120</span>
+<span class="price-tag" onclick="redirectToWhatsApp('Manutenção de Celulares')">A partir de R$ 100</span>
 </div>
 </div>
-<div class="service-card" onclick="redirectToWhatsApp('Suporte em Informática')">
+<div class="service-card" onclick="openServiceModal('informatica')">
 <div class="service-icon"><i class="fas fa-laptop" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Suporte em Informática</h3>
-<p>Soluções para seu computador e periféricos.</p>
+<p>Soluções para seu computador.</p>
 <ul class="service-list">
 <li>Formatação e instalação de sistemas</li>
 <li>Remoção de vírus e otimização</li>
 <li>Configuração de impressoras</li>
 <li>Suporte técnico presencial e remoto</li>
 </ul>
-<span class="price-tag">A partir de R$ 150</span>
+<span class="price-tag" onclick="redirectToWhatsApp('Suporte em Informática')">A partir de R$ 150</span>
 </div>
 </div>
-<div class="service-card" onclick="redirectToWhatsApp('Redes e Infraestrutura')">
+<div class="service-card" onclick="openServiceModal('redes')">
 <div class="service-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Redes e Infraestrutura</h3>
-<p>Soluções de conectividade para sua casa ou empresa.</p>
+<p>Conectividade para sua casa ou empresa.</p>
 <ul class="service-list">
 <li>Instalação e configuração de redes</li>
 <li>Cabeamento estruturado</li>
 <li>Otimização de Wi-Fi</li>
 <li>Soluções para grandes áreas</li>
 </ul>
-<span class="price-tag">A partir de R$ 300</span>
+<span class="price-tag" onclick="redirectToWhatsApp('Redes e Infraestrutura')">A partir de R$ 500</span>
 </div>
 </div>
-<div class="service-card" onclick="redirectToWhatsApp('Câmeras de Segurança')">
+<div class="service-card" onclick="openServiceModal('cameras')">
 <div class="service-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Câmeras de Segurança</h3>
-<p>Soluções de monitoramento para sua segurança.</p>
+<p>Instalação de sistemas de monitoramento.</p>
 <ul class="service-list">
 <li>Instalação profissional de câmeras</li>
 <li>Configuração de acesso remoto</li>
 <li>Manutenção preventiva</li>
 <li>Sistemas de gravação e armazenamento</li>
 </ul>
-<span class="price-tag">A partir de R$ 500</span>
+<span class="price-tag" onclick="redirectToWhatsApp('Câmeras de Segurança')">A partir de R$ 800</span>
 </div>
 </div>
-<div class="service-card" onclick="redirectToWhatsApp('Desenvolvimento Web')">
+<div class="service-card" onclick="openServiceModal('sites')">
 <div class="service-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Desenvolvimento Web</h3>
-<p>Soluções digitais para sua presença online.</p>
+<p>Soluções digitais para seu negócio.</p>
 <ul class="service-list">
 <li>Criação de sites institucionais</li>
 <li>Sistemas web personalizados</li>
 <li>Otimização para buscadores (SEO)</li>
 <li>Manutenção e suporte contínuo</li>
 </ul>
-<span class="price-tag">A partir de R$ 1.200</span>
+<span class="price-tag" onclick="redirectToWhatsApp('Desenvolvimento Web')">A partir de R$ 1.500</span>
 </div>
 </div>
-<div class="service-card" onclick="redirectToWhatsApp('Soluções Personalizadas')">
+<div class="service-card" onclick="openServiceModal('personalizado')">
 <div class="service-icon"><i class="fas fa-puzzle-piece" aria-hidden="true"></i></div>
 <div class="service-content">
 <h3 class="service-title">Soluções Personalizadas</h3>
-<p>Atendimento técnico completo para suas necessidades.</p>
+<p>Tecnologia sob medida para suas necessidades.</p>
 <ul class="service-list">
 <li>Consultoria especializada</li>
 <li>Soluções multidisciplinares</li>
 <li>Coordenação com profissionais</li>
 <li>Acompanhamento completo</li>
 </ul>
-<span class="price-tag">Sob consulta</span>
+<span class="price-tag" onclick="redirectToWhatsApp('Soluções Personalizadas')">Sob consulta</span>
 </div>
 </div>
 </div>
@@ -1761,22 +2007,22 @@ footer {
 <section id="sobre" class="section about">
 <div class="container">
 <div class="about-container">
-<div class="about-image"><i class="fas fa-building" aria-hidden="true"></i></div>
+<div class="about-image"><i class="fas fa-tools" aria-hidden="true"></i></div>
 <div class="about-content">
-<h2 class="about-title">Sobre a Técnico Soluções Inteligentes</h2>
-<p class="about-text">Com mais de 10 anos de experiência no mercado, somos referência em soluções técnicas em Sertanópolis e região. Nossa missão é oferecer serviços de qualidade que resolvam seus problemas de forma eficiente, com transparência e preços justos.</p>
-<p class="about-text">Nossa equipe é composta por profissionais qualificados e comprometidos com a excelência em cada serviço prestado. Trabalhamos com as melhores ferramentas e tecnologias para garantir resultados superiores.</p>
+<h2 class="about-title">Sobre a Hard Tech</h2>
+<p class="about-text">Somos referência em soluções técnicas em Sertanópolis e região. Nossa missão é resolver seus problemas tecnológicos com qualidade e eficiência.</p>
+<p class="about-text">Nossa equipe é composta por profissionais qualificados e comprometidos com soluções eficientes. Trabalhamos com as melhores ferramentas e tecnologias para garantir resultados duradouros.</p>
 <div class="stats">
 <div class="stat-item">
-<div class="stat-number">10+</div>
+<div class="stat-number">1+</div>
 <div class="stat-text">Anos de Experiência</div>
 </div>
 <div class="stat-item">
-<div class="stat-number">2000+</div>
+<div class="stat-number">3+</div>
 <div class="stat-text">Clientes Atendidos</div>
 </div>
 <div class="stat-item">
-<div class="stat-number">98%</div>
+<div class="stat-number">100%</div>
 <div class="stat-text">Satisfação dos Clientes</div>
 </div>
 <div class="stat-item">
@@ -1807,12 +2053,12 @@ footer {
 <div class="container">
 <div class="section-header">
 <h2 class="section-title">Depoimentos de Clientes</h2>
-<p class="section-subtitle">Veja o que nossos clientes têm a dizer sobre a qualidade dos nossos serviços e atendimento.</p>
+<p class="section-subtitle">Veja o que nossos clientes têm a dizer sobre a qualidade dos nossos serviços.</p>
 </div>
 <div class="testimonial-container">
 <div class="testimonial-slider" id="testimonialSlider">
 <div class="testimonial-card">
-<p class="testimonial-text">"Serviço excelente! Resolveu meu problema de rede em menos de 1 hora. Profissionalismo e conhecimento técnico impressionantes."</p>
+<p class="testimonial-text">"Serviço de qualidade! Resolveu meu problema de rede rapidamente. Profissionalismo e conhecimento técnico impressionantes."</p>
 <div class="testimonial-author">
 <div class="author-avatar"><i class="fas fa-user" aria-hidden="true"></i></div>
 <div class="author-info">
@@ -1822,7 +2068,7 @@ footer {
 </div>
 </div>
 <div class="testimonial-card">
-<p class="testimonial-text">"Troquei a tela do meu celular e ficou perfeito! Preço justo e atendimento rápido. Recomendo para todos em Sertanópolis."</p>
+<p class="testimonial-text">"Troquei a tela do meu celular e ficou perfeito! Atendimento rápido e preço justo. Recomendo a Hard Tech para todos."</p>
 <div class="testimonial-author">
 <div class="author-avatar"><i class="fas fa-user" aria-hidden="true"></i></div>
 <div class="author-info">
@@ -1869,7 +2115,7 @@ footer {
 <div class="faq-item">
 <div class="faq-question">Quanto tempo leva para consertar um celular?</div>
 <div class="faq-answer">
-<p>O tempo de reparo varia conforme o problema. Problemas simples como troca de tela ou bateria podem ser resolvidos em até 2 horas. Problemas mais complexos podem levar de 1 a 3 dias úteis. Sempre informamos o prazo estimado antes de iniciar o serviço.</p>
+<p>Na Hard Tech, problemas simples como troca de tela ou bateria são resolvidos em até 2 horas. Problemas mais complexos podem levar de 1 a 3 dias úteis. Nosso diferencial é sempre informar o prazo estimado antes de iniciar o serviço.</p>
 </div>
 </div>
 <div class="faq-item">
@@ -1932,7 +2178,7 @@ footer {
 <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
 <div class="contact-text">
 <h4>E-mail</h4>
-<a href="mailto:contato@tecnicotisolucoes.com" aria-label="Enviar e-mail para contato@tecnicotisolucoes.com">contato@tecnicotisolucoes.com</a>
+<a href="mailto:contato@hardtech.com.br" aria-label="Enviar e-mail para contato@hardtech.com.br">contato@hardtech.com.br</a>
 </div>
 </div>
 <div class="contact-item">
@@ -2003,15 +2249,14 @@ footer {
 <div class="container">
 <div class="footer-grid">
 <div class="footer-col">
-<h3>Técnico Soluções Inteligentes</h3>
+<h3>Hard Tech</h3>
 <div class="footer-about">
-<p>Sua solução completa em tecnologia e serviços técnicos em Sertanópolis e região. Qualidade, profissionalismo e atendimento personalizado.</p>
+<p>Soluções tecnológicas eficientes para Sertanópolis e região. Qualidade e atendimento personalizado.</p>
 </div>
 <div class="social-links">
 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
 <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
 <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-<a href="https://wa.me/5543991678501" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
 </div>
 </div>
 <div class="footer-col">
@@ -2028,20 +2273,19 @@ footer {
 <h3>Contato</h3>
 <div class="footer-contact">
 <p><i class="fas fa-phone-alt" aria-hidden="true"></i> (43) 99167-8501</p>
-<p><i class="fas fa-envelope" aria-hidden="true"></i> contato@tecnicotisolucoes.com</p>
+<p><i class="fas fa-envelope" aria-hidden="true"></i> contato@hardtech.com.br</p>
 <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Sertanópolis - PR</p>
 <p><i class="fas fa-clock" aria-hidden="true"></i> Seg-Mex: 8h-18h | Sáb: 8h-12h</p>
 </div>
 </div>
 </div>
 <div class="copyright">
-<p>© 2023 Técnico Soluções Inteligentes. Todos os direitos reservados.</p>
+<p>© 2023 Hard Tech Soluções Tecnológicas. Todos os direitos reservados.</p>
 <p><a href="#" style="color: #cbd5e0;">Política de Privacidade</a> | <a href="#" style="color: #cbd5e0;">Termos de Serviço</a></p>
 </div>
 </div>
 </footer>
 <div class="floating-btns">
-<a href="https://wa.me/5543991678501" class="floating-btn whatsapp" aria-label="Fale conosco pelo WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
 <button class="floating-btn chat" aria-label="Abrir chat" id="openChat"><i class="fas fa-comments" aria-hidden="true"></i></button>
 <button class="floating-btn appointment" aria-label="Agendar serviço" onclick="openAppointmentModal()"><i class="fas fa-calendar-alt" aria-hidden="true"></i></button>
 <button class="floating-btn back-top" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'});"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
@@ -2052,12 +2296,12 @@ footer {
 // Função para esconder a página de manutenção
 function hideMaintenance() {
   document.getElementById('maintenanceOverlay').style.display = 'none';
-  document.body.style.overflow = 'auto'; // Habilita o scroll novamente
+  document.body.style.overflow = 'auto';
 }
 
 // Verifica se o usuário já viu a mensagem de manutenção
 if (!localStorage.getItem('maintenanceSeen')) {
-  document.body.style.overflow = 'hidden'; // Desabilita o scroll
+  document.body.style.overflow = 'hidden';
 } else {
   document.getElementById('maintenanceOverlay').style.display = 'none';
 }
@@ -2071,6 +2315,7 @@ document.querySelector('.maintenance-btn.continue').addEventListener('click', fu
 function redirectToWhatsApp(service) {
   const message = `Olá, gostaria de informações sobre ${service}`;
   window.open(`https://wa.me/5543991678501?text=${encodeURIComponent(message)}`, '_blank');
+  event.stopPropagation(); // Impede que o modal seja aberto
 }
 
 // ========== ANIMAÇÃO DE SCROLL ==========
@@ -2345,6 +2590,425 @@ appointmentForm.addEventListener('submit', async (e) => {
   }
 });
 
+// ========== MODAL DE DETALHES DO SERVIÇO ==========
+const serviceModal = document.getElementById('serviceModal');
+let currentService = '';
+
+// Dados detalhados dos serviços
+const servicesData = {
+  manutencao: {
+    title: "Manutenção de Celulares",
+    icon: '<i class="fas fa-mobile-alt" aria-hidden="true"></i>',
+    description: "Soluções para seu dispositivo móvel, desde reparos simples até problemas complexos.",
+    details: `
+      <p>Na Hard Tech, oferecemos serviços especializados para diversos modelos e marcas de celulares, com peças de qualidade e garantia de 90 dias.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Troca de telas e vidros em até 2 horas</li>
+        <li>Substituição de baterias originais</li>
+        <li>Reparo de conectores de carga</li>
+        <li>Conserto de botões e microfones</li>
+        <li>Limpeza interna completa</li>
+        <li>Recuperação de dados</li>
+        <li>Desbloqueio e liberação</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Básico</div>
+          <div class="pricing-price">R$ 100 - R$ 300</div>
+          <ul class="pricing-features">
+            <li>Troca de bateria</li>
+            <li>Limpeza interna</li>
+            <li>Reparo de conectores</li>
+            <li>Garantia de 90 dias</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Intermediário</div>
+          <div class="pricing-price">R$ 200 - R$ 500</div>
+          <ul class="pricing-features">
+            <li>Troca de tela LCD</li>
+            <li>Substituição de módulo de câmera</li>
+            <li>Reparo de placa lógica básico</li>
+            <li>Garantia de 90 dias</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Avançado</div>
+          <div class="pricing-price">R$ 300 - R$ 800</div>
+          <ul class="pricing-features">
+            <li>Troca de tela OLED</li>
+            <li>Reparo avançado de placa lógica</li>
+            <li>Recuperação de dados</li>
+            <li>Garantia de 120 dias</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  informatica: {
+    title: "Suporte em Informática",
+    icon: '<i class="fas fa-laptop" aria-hidden="true"></i>',
+    description: "Soluções para computadores, notebooks e periféricos.",
+    details: `
+      <p>Oferecemos serviços especializados para diversos modelos e marcas de computadores e notebooks, com peças de qualidade e garantia de 90 dias.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Formatação e instalação de sistemas operacionais em até 1 hora</li>
+        <li>Remoção de vírus e malware</li>
+        <li>Otimização de desempenho</li>
+        <li>Substituição de componentes</li>
+        <li>Recuperação de dados</li>
+        <li>Configuração de redes locais</li>
+        <li>Suporte remoto e presencial</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Básico</div>
+          <div class="pricing-price">R$ 150 - R$ 250</div>
+          <ul class="pricing-features">
+            <li>Formatação e instalação de SO</li>
+            <li>Remoção de vírus</li>
+            <li>Otimização básica</li>
+            <li>Garantia de 30 dias</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Intermediário</div>
+          <div class="pricing-price">R$ 200 - R$ 400</div>
+          <ul class="pricing-features">
+            <li>Substituição de HD/SSD</li>
+            <li>Upgrade de memória RAM</li>
+            <li>Limpeza interna completa</li>
+            <li>Garantia de 60 dias</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Avançado</div>
+          <div class="pricing-price">R$ 300 - R$ 600</div>
+          <ul class="pricing-features">
+            <li>Reparo de placa-mãe</li>
+            <li>Substituição de tela de notebook</li>
+            <li>Recuperação de dados</li>
+            <li>Garantia de 90 dias</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  redes: {
+    title: "Redes e Infraestrutura",
+    icon: '<i class="fas fa-network-wired" aria-hidden="true"></i>',
+    description: "Soluções para redes de computadores em residências e empresas.",
+    details: `
+      <p>Implementamos e configuramos redes eficientes para garantir conectividade estável e segura para seu negócio ou residência.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Projeto e implementação de redes</li>
+        <li>Cabeamento estruturado profissional</li>
+        <li>Configuração de roteadores e switches</li>
+        <li>Otimização de Wi-Fi</li>
+        <li>Soluções para grandes áreas</li>
+        <li>Segurança de rede</li>
+        <li>Monitoramento e manutenção contínua</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Residencial</div>
+          <div class="pricing-price">R$ 500 - R$ 1.500</div>
+          <ul class="pricing-features">
+            <li>Instalação básica de rede</li>
+            <li>Configuração de roteador</li>
+            <li>Otimização de Wi-Fi</li>
+            <li>Garantia de 1 ano</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Pequena Empresa</div>
+          <div class="pricing-price">R$ 1.000 - R$ 3.000</div>
+          <ul class="pricing-features">
+            <li>Cabeamento estruturado</li>
+            <li>Configuração de rede local</li>
+            <li>Segurança básica</li>
+            <li>Garantia de 1 ano</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Empresarial</div>
+          <div class="pricing-price">R$ 2.500 - R$ 8.000</div>
+          <ul class="pricing-features">
+            <li>Infraestrutura completa</li>
+            <li>Roteadores profissionais</li>
+            <li>Sistemas de segurança avançada</li>
+            <li>Monitoramento 24/7</li>
+            <li>Garantia de 2 anos</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  cameras: {
+    title: "Câmeras de Segurança",
+    icon: '<i class="fas fa-video" aria-hidden="true"></i>',
+    description: "Sistemas completos de vigilância instalados para sua segurança.",
+    details: `
+      <p>Instalamos e configuramos sistemas de segurança com câmeras de alta qualidade para proteger seu patrimônio.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Projeto personalizado de segurança</li>
+        <li>Instalação de câmeras IP e analógicas</li>
+        <li>Configuração de DVR/NVR</li>
+        <li>Acesso remoto via smartphone</li>
+        <li>Sistemas de gravação em nuvem</li>
+        <li>Manutenção preventiva</li>
+        <li>Atualizações de firmware</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Kit Básico</div>
+          <div class="pricing-price">R$ 800 - R$ 1.500</div>
+          <ul class="pricing-features">
+            <li>2 câmeras HD</li>
+            <li>DVR básico</li>
+            <li>Instalação em 4 horas</li>
+            <li>Garantia de 1 ano</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Kit Intermediário</div>
+          <div class="pricing-price">R$ 1.500 - R$ 3.000</div>
+          <ul class="pricing-features">
+            <li>4 câmeras Full HD</li>
+            <li>DVR com armazenamento</li>
+            <li>Acesso remoto</li>
+            <li>Garantia de 2 anos</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Kit Premium</div>
+          <div class="pricing-price">R$ 3.000 - R$ 8.000</div>
+          <ul class="pricing-features">
+            <li>8+ câmeras 4K</li>
+            <li>NVR profissional</li>
+            <li>Armazenamento em nuvem</li>
+            <li>Monitoramento inteligente</li>
+            <li>Garantia de 3 anos</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  sites: {
+    title: "Desenvolvimento Web",
+    icon: '<i class="fas fa-globe" aria-hidden="true"></i>',
+    description: "Soluções digitais para sua presença online.",
+    details: `
+      <p>Criamos sites e sistemas web personalizados para atender às necessidades específicas do seu negócio.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Desenvolvimento de sites institucionais</li>
+        <li>Lojas virtuais (e-commerce) completas</li>
+        <li>Sistemas web personalizados</li>
+        <li>Otimização para buscadores (SEO)</li>
+        <li>Design responsivo</li>
+        <li>Hospedagem e domínio</li>
+        <li>Manutenção e suporte</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Site Institucional</div>
+          <div class="pricing-price">R$ 1.500 - R$ 3.000</div>
+          <ul class="pricing-features">
+            <li>Até 5 páginas</li>
+            <li>Design responsivo</li>
+            <li>Formulário de contato</li>
+            <li>Otimização básica SEO</li>
+            <li>Suporte por 3 meses</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">E-commerce</div>
+          <div class="pricing-price">R$ 3.000 - R$ 8.000</div>
+          <ul class="pricing-features">
+            <li>Catálogo de produtos</li>
+            <li>Carrinho de compras</li>
+            <li>Integração com pagamentos</li>
+            <li>Painel administrativo</li>
+            <li>Suporte por 6 meses</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Sistema Personalizado</div>
+          <div class="pricing-price">R$ 5.000 - R$ 15.000+</div>
+          <ul class="pricing-features">
+            <li>Desenvolvimento sob medida</li>
+            <li>Integrações com APIs</li>
+            <li>Banco de dados personalizado</li>
+            <li>Treinamento de uso</li>
+            <li>Suporte por 1 ano</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  personalizado: {
+    title: "Soluções Personalizadas",
+    icon: '<i class="fas fa-puzzle-piece" aria-hidden="true"></i>',
+    description: "Serviços técnicos sob medida para necessidades específicas.",
+    details: `
+      <p>Desenvolvemos soluções técnicas personalizadas para atender demandas específicas que não se encaixam em categorias tradicionais.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Consultoria técnica especializada</li>
+        <li>Soluções integradas multidisciplinares</li>
+        <li>Desenvolvimento de projetos customizados</li>
+        <li>Implantação de sistemas complexos</li>
+        <li>Coordenação com outros profissionais</li>
+        <li>Acompanhamento contínuo</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Consultoria</div>
+          <div class="pricing-price">R$ 150/hora</div>
+          <ul class="pricing-features">
+            <li>Análise de necessidades</li>
+            <li>Proposta de solução</li>
+            <li>Plano de implementação</li>
+            <li>Relatório técnico</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Projeto Personalizado</div>
+          <div class="pricing-price">Sob consulta</div>
+          <ul class="pricing-features">
+            <li>Levantamento de requisitos</li>
+            <li>Desenvolvimento de solução</li>
+            <li>Implantação completa</li>
+            <li>Treinamento de usuários</li>
+            <li>Suporte pós-implantação</li>
+          </ul>
+        </div>
+      </div>
+      
+      <p><strong>Entre em contato</strong> para discutir sua necessidade específica e receber um orçamento personalizado.</p>
+    `
+  }
+};
+
+function openServiceModal(serviceId) {
+  const service = servicesData[serviceId];
+  if (!service) return;
+  
+  document.getElementById('service-modal-title').textContent = service.title;
+  document.getElementById('service-modal-icon').innerHTML = service.icon;
+  document.getElementById('service-modal-content').innerHTML = `
+    <p>${service.description}</p>
+    ${service.details}
+  `;
+  
+  // Armazenar o serviço atual para o botão do WhatsApp
+  currentService = service.title;
+  
+  // Exibir o modal
+  serviceModal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  
+  // Rolar para o topo do modal
+  document.querySelector('.service-modal-content').scrollTop = 0;
+}
+
+function closeServiceModal() {
+  serviceModal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Fechar modal ao clicar fora
+window.addEventListener('click', (e) => {
+  if (e.target === serviceModal) closeServiceModal();
+});
+
+// ========== PÁGINA DE LOGIN ==========
+const loginContainer = document.getElementById('loginContainer');
+const loginForm = document.getElementById('loginForm');
+
+function openLoginModal() {
+  loginContainer.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLoginModal() {
+  loginContainer.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function selectUserType(type) {
+  document.querySelectorAll('.user-type-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.closest('.user-type-btn').classList.add('active');
+}
+
+function showRegister() {
+  showToast('Funcionalidade de cadastro em desenvolvimento!', 'info');
+}
+
+loginForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
+  
+  // Validação básica
+  if (!email || !password) {
+    showToast('Por favor, preencha todos os campos.', 'error');
+    return;
+  }
+  
+  // Simulação de login
+  showToast('Login realizado com sucesso!', 'success');
+  setTimeout(() => {
+    closeLoginModal();
+  }, 2000);
+});
+
+// Fechar modal ao clicar fora
+window.addEventListener('click', (e) => {
+  if (e.target === loginContainer) closeLoginModal();
+});
+
+// ========== NOTIFICAÇÕES (TOAST) ==========
+function showToast(message, type) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.className = `toast ${type} show`;
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 5000);
+}
+
 // ========== CHATBOT ==========
 const chatbot = document.getElementById('chatbot');
 const openChatBtn = document.getElementById('openChat');
@@ -2406,15 +3070,15 @@ function generateBotResponse(message) {
   const lowerMessage = message.toLowerCase();
   
   if (lowerMessage.includes('ola') || lowerMessage.includes('olá') || lowerMessage.includes('oi')) {
-    return "Olá! Como posso ajudar você hoje?";
+    return "Olá! Sou o assistente da Hard Tech. Como posso ajudar você hoje?";
   }
   
   if (lowerMessage.includes('serviço') || lowerMessage.includes('servico')) {
-    return "Oferecemos serviços de manutenção de celulares, informática, redes, câmeras de segurança e criação de sites. Qual serviço você precisa?";
+    return "Na Hard Tech oferecemos serviços de manutenção de celulares, informática, redes, câmeras de segurança e criação de sites. Qual serviço você precisa?";
   }
   
   if (lowerMessage.includes('preço') || lowerMessage.includes('preco') || lowerMessage.includes('valor')) {
-    return "Os preços variam conforme o serviço e o equipamento. Posso encaminhar seu contato para um orçamento personalizado?";
+    return "Os preços variam conforme o serviço e o equipamento. Posso encaminhar seu contato para um orçamento personalizado sem compromisso?";
   }
   
   if (lowerMessage.includes('agendar') || lowerMessage.includes('marcar')) {
@@ -2422,7 +3086,7 @@ function generateBotResponse(message) {
   }
   
   if (lowerMessage.includes('contato') || lowerMessage.includes('telefone') || lowerMessage.includes('whatsapp')) {
-    return "Nosso telefone é (43) 99167-8501. Você também pode falar conosco pelo WhatsApp clicando no ícone flutuante.";
+    return "Nosso telefone é (43) 99167-8501. Você também pode falar conosco pelo WhatsApp.";
   }
   
   if (lowerMessage.includes('local') || lowerMessage.includes('endereço') || lowerMessage.includes('endereco')) {
@@ -2433,17 +3097,7 @@ function generateBotResponse(message) {
     return "Nosso horário de atendimento é de segunda a sexta das 8h às 18h, e sábados das 8h às 12h.";
   }
   
-  return "Entendi sua solicitação. Para informações mais detalhadas, sugiro entrar em contato diretamente pelo WhatsApp ou preencher nosso formulário de contato.";
-}
-
-// ========== NOTIFICAÇÕES (TOAST) ==========
-function showToast(message, type) {
-  const toast = document.getElementById('toast');
-  toast.textContent = message;
-  toast.className = `toast ${type} show`;
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 5000);
+  return "Entendi sua solicitação. Para informações mais detalhadas, sugiro entrar em contato diretamente pelo telefone ou preencher nosso formulário de contato.";
 }
 
 // ========== NEWSLETTER ==========
@@ -2458,49 +3112,23 @@ document.querySelector('.newsletter-form').addEventListener('submit', function(e
   }
 });
 
-// ========== SCHEMA MARKUP (SEO) ==========
-const schemaScript = document.createElement('script');
-schemaScript.type = 'application/ld+json';
-schemaScript.text = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Técnico Soluções Inteligentes",
-  "image": "https://www.tecnicotisolucoes.com/og-image.jpg",
-  "telephone": "+5543991678501",
-  "email": "contato@tecnicotisolucoes.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Sertanópolis",
-    "addressRegion": "PR",
-    "addressCountry": "BR"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "08:00",
-      "closes": "18:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Saturday"],
-      "opens": "08:00",
-      "closes": "12:00"
-    }
-  ],
-  "priceRange": "$$",
-  "serviceArea": {
-    "@type": "Place",
-    "name": "Sertanópolis e região"
+// Efeito de digitação no título
+function typeWriter(element, text, i = 0) {
+  if (i < text.length) {
+    element.innerHTML = text.substring(0, i+1) + '<span aria-hidden="true" style="border-right: 2px solid var(--clr-accent);"></span>';
+    setTimeout(() => typeWriter(element, text, i + 1), 100);
+  } else {
+    element.innerHTML = text;
+  }
+}
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+  const heroTitle = document.querySelector('.hero h1 span');
+  if (heroTitle) {
+    typeWriter(heroTitle, heroTitle.textContent);
   }
 });
-document.head.appendChild(schemaScript);
-
-// ========== GOOGLE ANALYTICS ==========
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');
 </script>
 </body>
 </html>
