@@ -1,27 +1,3274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gadgets Doctor</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="description" content="HardTech - Soluções rápidas em tecnologia em Sertanópolis-PR: manutenção de celulares, informática, redes, câmeras de segurança e criação de sites.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="manutenção celulares Sertanópolis, técnico informática PR, HardTech, conserto rápido celular">
+<meta name="author" content="HardTech Soluções Tecnológicas">
+<title>HardTech | Soluções Rápidas em Tecnologia | Sertanópolis-PR</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+
+<style>
+/* ========== ESTILOS GERAIS ========== */
+:root {
+  /* Cores principais atualizadas - Tema FlashTech */
+  --primary: #1a237e;       /* Azul escuro */
+  --primary-light: #3949ab; /* Azul médio */
+  --secondary: #6a1b9a;     /* Roxo escuro */
+  --accent: #ff9800;        /* Laranja para detalhes */
+  --danger: #e53935;        /* Vermelho para alertas/detalhes */
+  --warning: #ffd600;       /* Amarelo para detalhes sutis */
+  --black: #111217;
+  --white: #fff;
+  --gray-dark: #23272f;
+  --gray: #444857;
+  --gray-light: #b0b3bb;
+  --gray-lighter: #e0e0e0;
+  --glass: rgba(34, 36, 44, 0.7);
+  --shadow: 0 8px 32px 0 rgba(16, 18, 27, 0.25);
+}
+
+/* Modo escuro atualizado */
+[data-theme="dark"] {
+  --clr-primary: #0f172a;
+  --clr-secondary: #1e3a8a;
+  --clr-accent: #ff6b35;        /* Mantém o laranja como destaque */
+  --clr-dark: #f7fafc;
+  --clr-light: #0f172a;
+  --clr-text: #e2e8f0;
+  --clr-border: #4a5568;
+  --clr-card: #1e293b;
+  --clr-gradient: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  --footer-bg: #020617;
+  --footer-text: #e2e8f0;
+  --footer-border: rgba(226,232,240,0.2);
+}
+
+/* ========== ANIMAÇÕES FLASHTECH ========== */
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; box-shadow: var(--flash-effect); }
+}
+
+@keyframes lightning {
+  0% { transform: translateY(-5px); opacity: 0; }
+  50% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(5px); opacity: 0; }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); box-shadow: var(--flash-effect); }
+}
+
+.flash-animate {
+  animation: flash 3s infinite;
+}
+
+.lightning {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: white;
+  opacity: 0;
+}
+
+/* ========== PÁGINA DE MANUTENÇÃO ========== */
+.maintenance-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr-gradient);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite alternate;
+  color: white;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.maintenance-content {
+  max-width: 600px;
+  padding: 2rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.maintenance-content::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    transparent 45%,
+    rgba(255,255,255,0.1) 50%,
+    transparent 55%
+  );
+  animation: lightning 4s linear infinite;
+}
+
+.maintenance-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  position: relative;
+}
+
+.maintenance-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.maintenance-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.maintenance-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.maintenance-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    transparent 45%,
+    rgba(255,255,255,0.3) 50%,
+    transparent 55%
+  );
+  animation: lightning 6s linear infinite;
+}
+
+.maintenance-btn.whatsapp {
+  background: #25D366;
+}
+
+.maintenance-btn.continue {
+  background: var(--clr-accent);
+}
+
+.maintenance-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.maintenance-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: var(--clr-accent);
+  animation: pulse 2s infinite;
+}
+
+/* ========== ESTILOS BASE ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background var(--transition), color var(--transition);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--clr-dark);
+  transition: color var(--transition);
+}
+
+a {
+  color: var(--clr-accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--clr-secondary);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+
+/* Link para pular para o conteúdo */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--clr-primary);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  z-index: 9999;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Container principal */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--clr-accent);
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-size: 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    transparent 45%,
+    rgba(255,255,255,0.3) 50%,
+    transparent 55%
+  );
+  animation: lightning 8s linear infinite;
+}
+
+.btn:hover {
+  background: #e65a2b;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-light);
+  color: white;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+
+/* ========== CABEÇALHO ========== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--black);
+  color: var(--white);
+  padding: 1.2rem 0;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo FlashTech */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.logo-icon {
+  background: var(--clr-primary);
+  color: var(--clr-accent);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all var(--transition);
+  animation: pulse 3s infinite;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr-dark);
+  transition: color var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logo-text span {
+  color: var(--secondary);
+  font-weight: 800;
+}
+
+/* Navegação */
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav a {
+  position: relative;
+  font-weight: 500;
+  color: var(--clr-dark);
+  padding: 0.5rem 0;
+  transition: color var(--fast-transition);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--clr-accent);
+  transition: width var(--fast-transition);
+}
+
+nav a:hover::after, nav a.active::after {
+  width: 100%;
+}
+
+/* ========== SEÇÃO HERO ========== */
+.hero {
+  padding: 6rem 0 4rem;
+  background: linear-gradient(120deg, var(--primary-light) 60%, var(--secondary) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="none" width="200" height="200"/><path fill="rgba(255,255,255,0.1)" d="M42.8,-42.8C54.6,-31.1,63.1,-15.5,64.8,1.9C66.6,19.3,61.5,38.6,49.7,49.7C37.9,60.8,19,63.8,2.4,61.4C-14.3,59,-28.5,51.2,-39.8,40.1C-51,29,-59.2,14.5,-59.8,-0.4C-60.4,-15.3,-53.5,-30.6,-42.3,-42.3C-31.1,-54,-15.5,-62.1,0.6,-62.7C16.8,-63.3,33.6,-56.4,42.8,-42.8Z" transform="translate(100 100)"/></svg>') no-repeat;
+  background-size: cover;
+  opacity: 0.15;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  animation: fadeInUp 1s ease;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero h1 span {
+  display: inline-block;
+  color: var(--clr-accent);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ========== SEÇÕES ========== */
+.section {
+  padding: 5rem 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+  background: var(--gray-dark);
+  color: var(--white);
+  border-radius: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  transition: color var(--transition);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--clr-accent);
+  border-radius: 2px;
+  transition: background var(--transition);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--clr-text);
+  max-width: 600px;
+  margin: 0 auto;
+  transition: color var(--transition);
+}
+
+/* ========== SERVIÇOS ========== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: var(--gray);
+  color: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: all var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+  border-color: var(--clr-accent);
+}
+
+.service-icon {
+  background: rgba(66,153,225,0.05);
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--clr-accent);
+  transition: background var(--transition), color var(--transition);
+}
+
+.service-content {
+  padding: 1.8rem;
+  flex-grow: 1;
+  transition: color var(--transition);
+}
+
+.service-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  transition: color var(--transition);
+}
+
+.service-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  transition: color var(--transition);
+}
+
+.service-list li::before {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: var(--clr-accent);
+  transition: color var(--transition);
+}
+
+.service-card:hover .service-icon {
+  background: rgba(255,107,53,0.1);
+}
+
+.price-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--clr-accent);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 2;
+}
+
+/* ========== SOBRE NÓS ========== */
+.about {
+  background: var(--clr-light);
+  transition: background var(--transition);
+}
+
+.about-container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: rgba(66,153,225,0.05);
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-accent);
+  font-size: 5rem;
+  transition: background var(--transition), color var(--transition);
+  position: relative;
+  animation: pulse 4s ease infinite;
+}
+
+.about-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr-gradient);
+  opacity: 0.1;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  transition: color var(--transition);
+}
+
+.about-text {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  transition: color var(--transition);
+}
+
+/* Estatísticas */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  background: var(--gray);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--clr-border);
+  transition: all var(--transition);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--clr-accent);
+}
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--warning);
+  margin-bottom: 0.5rem;
+  transition: color var(--transition);
+}
+
+.stat-text {
+  font-size: 0.95rem;
+  color: var(--clr-text);
+  transition: color var(--transition);
+}
+
+/* ========== DEPOIMENTOS ========== */
+.testimonials {
+  background: var(--clr-card);
+  transition: background var(--transition);
+}
+
+.testimonial-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.testimonial-card {
+  background: var(--clr-card);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  position: relative;
+  border: 1px solid var(--clr-border);
+  transition: all var(--transition);
+  transform: translateY(0);
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+  border-color: var(--clr-accent);
+}
+
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 5rem;
+  color: var(--clr-accent);
+  opacity: 0.1;
+  font-family: serif;
+  line-height: 1;
+  transition: color var(--transition);
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+  transition: color var(--transition);
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--clr-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: background var(--transition);
+}
+
+.author-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  transition: color var(--transition);
+}
+
+.author-info p {
+  color: var(--clr-text);
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+
+.testimonial-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.testimonial-nav button {
+  background: var(--clr-accent);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+
+.testimonial-nav button:hover {
+  background: #e65a2b;
+  transform: translateY(-3px);
+}
+
+/* ========== FAQ ========== */
+.faq {
+  background: var(--clr-light);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background: var(--clr-card);
+  transition: all var(--transition);
+}
+
+.faq-item:hover {
+  border-color: var(--clr-accent);
+}
+
+.faq-question {
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: var(--clr-dark);
+  background: var(--gray-light);
+  transition: all var(--transition);
+}
+
+.faq-question:hover {
+  background: rgba(255,107,53,0.05);
+}
+
+.faq-question::after {
+  content: '\f107';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  transition: transform var(--transition);
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  padding: 0 1.5rem 1.5rem;
+  max-height: 500px;
+}
+
+/* ========== CONTATO ========== */
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.contact-info {
+  background: var(--clr-card);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--clr-border);
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.contact-info:hover {
+  transform: translateY(-5px);
+  border-color: var(--clr-accent);
+}
+
+.contact-title {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+  transition: color var(--transition);
+}
+
+.contact-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--clr-accent);
+  transition: background var(--transition);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  background: rgba(255,107,53,0.1);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-accent);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: background var(--transition), color var(--transition);
+}
+
+.contact-text {
+  flex-grow: 1;
+}
+
+.contact-text h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: var(--clr-dark);
+  transition: color var(--transition);
+}
+
+.contact-text a, .contact-text p {
+  color: var(--clr-text);
+  font-size: 1rem;
+  transition: color var(--transition);
+}
+
+/* Formulário de contato */
+.contact-form {
+  background: var(--clr-card);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--clr-border);
+  position: relative;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.contact-form:hover {
+  transform: translateY(-5px);
+  border-color: var(--clr-accent);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--clr-dark);
+  transition: color var(--transition);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all var(--transition);
+  background: var(--gray-light);
+  color: var(--black);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(255,107,53,0.15);
+}
+
+textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.error-message {
+  display: none;
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  transition: color var(--transition);
+}
+
+.form-group.invalid .form-control {
+  border-color: #dc3545;
+}
+
+.form-group.invalid .error-message {
+  display: block;
+}
+
+.form-feedback {
+  display: none;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.form-feedback.success {
+  background: #28a745;
+  color: white;
+}
+
+.form-feedback.error {
+  background: #dc3545;
+  color: white;
+}
+
+/* Mapa */
+.contact-map {
+  margin-top: 2rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  height: 300px;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--clr-border);
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  loading: lazy;
+}
+
+/* ========== RODAPÉ ========== */
+footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 4rem 0 2rem;
+  transition: background var(--transition), color var(--transition);
+}
+
+[data-theme="dark"] footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  border-top: 1px solid var(--footer-border);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col h3 {
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+  transition: color var(--transition);
+}
+
+[data-theme="dark"] .footer-col h3 {
+  color: var(--footer-text);
+}
+
+.footer-col h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--clr-accent);
+  transition: background var(--transition);
+}
+
+.footer-about p {
+  margin-bottom: 1.5rem;
+  color: #cbd5e0;
+  transition: color var(--transition);
+}
+
+[data-theme="dark"] .footer-about p {
+  color: var(--footer-text);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-links a {
+  color: #cbd5e0;
+  transition: color var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[data-theme="dark"] .footer-links a {
+  color: var(--footer-text);
+}
+
+.footer-links a:hover {
+  color: var(--clr-accent);
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: #cbd5e0;
+  transition: color var(--transition);
+}
+
+[data-theme="dark"] .footer-contact p {
+  color: var(--footer-text);
+}
+
+.footer-contact i {
+  color: var(--clr-accent);
+  width: 20px;
+  transition: color var(--transition);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  transition: all var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--clr-accent);
+  transform: translateY(-3px);
+  color: white;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #a0aec0;
+  font-size: 0.9rem;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+[data-theme="dark"] .copyright {
+  color: var(--footer-text);
+  border-top: 1px solid var(--footer-border);
+}
+
+/* ========== BOTÕES FLUTUANTES ========== */
+.floating-btns {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 90;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.floating-btns.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.floating-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-size: 1.5rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-btn::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    transparent 45%,
+    rgba(255,255,255,0.3) 50%,
+    transparent 55%
+  );
+  animation: lightning 6s linear infinite;
+}
+
+.floating-btn.whatsapp {
+  background: #25D366;
+}
+
+.floating-btn.whatsapp:hover {
+  background: #128C7E;
+  transform: translateY(-5px);
+}
+
+.floating-btn.back-top {
+  background: var(--clr-primary);
+  display: none;
+}
+
+.floating-btn.back-top:hover {
+  background: var(--clr-accent);
+  transform: translateY(-5px);
+  color: white;
+}
+
+.floating-btn.chat {
+  background: var(--clr-accent);
+  color: white;
+}
+
+.floating-btn.chat:hover {
+  background: #e65a2b;
+  transform: translateY(-5px);
+}
+
+.floating-btn.appointment {
+  background: #9F7AEA;
+  display: none;
+}
+
+.floating-btn.appointment:hover {
+  background: #805AD5;
+  transform: translateY(-5px);
+}
+
+/* ========== MODAL DE AGENDAMENTO ========== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: var(--clr-card);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.3s ease;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--clr-text);
+}
+
+.modal-title {
+  margin-bottom: 1.5rem;
+  color: var(--clr-text)
+}
+
+/* ========== CHATBOT ========== */
+.chatbot {
+  position: fixed;
+  right: 2rem;
+  bottom: 7rem;
+  width: 350px;
+  max-height: 70vh;
+  background: var(--clr-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  border: 1px solid var(--clr-border);
+}
+
+.chatbot.active {
+  transform: translateY(0);
+  opacity: 1;
+  display: flex;
+}
+
+.chat-header {
+  background: var(--clr-primary);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-chat {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-height: 300px;
+}
+
+.message {
+  padding: 0.8rem;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+.bot-message {
+  background: rgba(255,107,53,0.1);
+  align-self: flex-start;
+}
+
+.user-message {
+  background: var(--clr-accent);
+  color: white;
+  align-self: flex-end;
+}
+
+.chat-input {
+  display: flex;
+  padding: 1rem;
+  border-top: 1px solid var(--clr-border);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 20px 0 0 20px;
+  background: var(--clr-card);
+  color: var(--clr-text);
+}
+
+.chat-input button {
+  background: var(--clr-accent);
+  color: white;
+  border: none;
+  padding: 0 1.2rem;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background: #e65a2b;
+}
+
+/* ========== NOTIFICAÇÕES ========== */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  z-index: 3000;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.3s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.success {
+  background-color: #28a745;
+}
+
+.toast.error {
+  background-color: #dc3545;
+}
+
+.toast.info {
+  background-color: #17a2b8;
+}
+
+/* ========== PARCEIROS ========== */
+.partners {
+  background: var(--clr-card);
+  padding: 4rem 0;
+}
+
+.partners-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.partner-logo {
+  max-width: 150px;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all var(--transition);
+}
+
+.partner-logo:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* ========== NEWSLETTER ========== */
+.newsletter {
+  background: var(--clr-gradient);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.newsletter-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  background: var(--clr-accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.newsletter-form button:hover {
+  background: #e65a2b;
+  transform: translateY(-3px);
+}
+
+/* ========== BOTÃO DE TEMA ========== */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background var(--transition), border-color var(--transition);
+  box-shadow: var(--shadow-light);
+}
+
+.theme-toggle:hover {
+  background: var(--clr-accent);
+  color: white;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+
+/* ========== MODAL DE DETALHES DO SERVIÇO ========== */
+.service-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-modal-content {
+  background: var(--clr-card);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.service-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.service-modal-title {
+  font-size: 1.8rem;
+  color: var(--clr-dark);
+}
+
+.service-modal-icon {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--clr-accent);
+  margin: 1rem 0;
+}
+
+.service-modal-body {
+  line-height: 1.8;
+}
+
+.service-modal-body h3 {
+  margin: 1.5rem 0 1rem;
+  color: var(--clr-dark);
+  border-bottom: 2px solid var(--clr-accent);
+  padding-bottom: 0.5rem;
+}
+
+.service-modal-pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.pricing-card {
+  background: rgba(255,107,53,0.05);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--clr-border);
+  transition: all var(--transition);
+}
+
+.pricing-card:hover {
+  border-color: var(--clr-accent);
+  transform: translateY(-5px);
+}
+
+.pricing-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--clr-dark);
+}
+
+.pricing-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr-accent);
+  margin-bottom: 1rem;
+}
+
+.pricing-features {
+  list-style: none;
+}
+
+.pricing-features li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-features li::before {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: var(--clr-accent);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.modal-actions .btn {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.whatsapp-btn {
+  background: #25D366 !important;
+}
+
+.whatsapp-btn:hover {
+  background: #128C7E !important;
+}
+
+/* ========== PÁGINA DE LOGIN ========== */
+.login-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-content {
+  background: var(--clr-card);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.3s ease;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-title {
+  font-size: 1.8rem;
+  color: var(--clr-dark);
+  margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+  color: var(--clr-text);
+}
+
+.login-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.user-type {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.user-type-btn {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  border: 2px solid var(--clr-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition);
+  background: var(--clr-card);
+}
+
+.user-type-btn.active {
+  border-color: var(--clr-accent);
+  background: rgba(255,107,53,0.1);
+}
+
+.user-type-btn i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--clr-accent);
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--clr-text);
+}
+
+.login-footer a {
+  color: var(--clr-accent);
+  font-weight: 600;
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+  }
+  .about-image {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  nav ul {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero {
+    padding: 4rem 0;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .section {
+    padding: 4rem 0;
+  }
+  .floating-btns {
+    right: 1rem;
+    bottom: 1rem;
+  }
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+  .chatbot {
+    width: 90%;
+    right: 1rem;
+    left: 1rem;
+    margin: 0 auto;
+  }
+  .toast {
+    left: 1rem;
+    right: 1rem;
+    width: calc(100% - 2rem);
+  }
+  .newsletter-form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .newsletter-form input {
+    width: 100%;
+  }
+  .maintenance-content {
+    padding: 1.5rem;
+  }
+  .maintenance-content h1 {
+    font-size: 1.8rem;
+  }
+  .maintenance-content p {
+    font-size: 1rem;
+  }
+  .maintenance-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .maintenance-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .service-modal-content {
+    padding: 1.5rem;
+  }
+  .login-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-btns {
+    flex-direction: column;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .modal-content {
+    padding: 1.5rem;
+  }
+  .modal-actions .btn {
+    width: 100%;
+  }
+  .user-type {
+    flex-direction: column;
+  }
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Gadgets Doctor</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Our Services</h2>
-            <p>We provide top-notch repair services for all your gadgets.</p>
-        </section>
-        <section>
-            <h2>Contact Us</h2>
-            <p>Email us at: support@gadgetsdoctor.com</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Gadgets Doctor. All rights reserved.</p>
-    </footer>
+<!-- Página de manutenção -->
+<div class="maintenance-overlay" id="maintenanceOverlay">
+  <div class="maintenance-content">
+    <div class="maintenance-icon">
+      <i class="fas fa-bolt"></i>
+    </div>
+    <h1>Estamos em manutenção!</h1>
+    <p>Pedimos desculpas pelo inconveniente, mas estamos trabalhando para trazer um site ainda melhor para você! Em breve, novas tecnologias e recursos estarão disponíveis.</p>
+    <p>Enquanto isso, você pode entrar em contato diretamente pelo WhatsApp ou continuar navegando no site em desenvolvimento.</p>
+    <div class="maintenance-buttons">
+      <a href="https://wa.me/5543991678501" class="maintenance-btn whatsapp" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> Fale pelo WhatsApp
+      </a>
+      <button class="maintenance-btn continue" onclick="hideMaintenance()">
+        <i class="fas fa-eye"></i> Continuar para o site
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Restante do conteúdo do site -->
+<a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
+<div class="toast" id="toast" aria-live="polite"></div>
+<div class="chatbot" id="chatbot">
+<div class="chat-header">
+<h3>Como podemos ajudar?</h3>
+<button class="close-chat" aria-label="Fechar chat"><i class="fas fa-times"></i></button>
+</div>
+<div class="chat-messages">
+<div class="message bot-message">Olá! Sou o assistente virtual da FlashTech. Como posso ajudar?</div>
+</div>
+<div class="chat-input">
+<input type="text" placeholder="Digite sua mensagem..." id="chat-input">
+<button aria-label="Enviar mensagem"><i class="fas fa-paper-plane"></i></button>
+</div>
+</div>
+<div class="modal" id="appointmentModal">
+<div class="modal-content">
+<button class="close-modal" aria-label="Fechar modal">×</button>
+<h2 class="modal-title">Agendar Serviço</h2>
+<form id="appointmentForm" action="https://formspree.io/f/xeokwpdd" method="POST">
+<div class="form-group">
+<label class="form-label" for="appointment-name">Nome</label>
+<input type="text" class="form-control" id="appointment-name" name="name" required>
+</div>
+<div class="form-group">
+<label class="form-label" for="appointment-phone">Telefone</label>
+<input type="tel" class="form-control" id="appointment-phone" name="phone" required oninput="formatPhone(this)">
+</div>
+<div class="form-group">
+<label class="form-label" for="appointment-service">Serviço</label>
+<select class="form-control" id="appointment-service" name="service" required>
+<option value="">Selecione um serviço</option>
+<option value="manutencao">Manutenção de Celulares</option>
+<option value="informatica">Informática</option>
+<option value="redes">Redes</option>
+<option value="cameras">Câmeras de Segurança</option>
+<option value="sites">Criação de Sites</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label" for="appointment-date">Data Preferencial</label>
+<input type="date" class="form-control" id="appointment-date" name="date" required>
+</div>
+<div class="form-group">
+<label class="form-label" for="appointment-message">Mensagem (opcional)</label>
+<textarea class="form-control" id="appointment-message" name="message" rows="3"></textarea>
+</div>
+<button type="submit" class="btn"><i class="fas fa-calendar-check"></i> Agendar</button>
+</form>
+</div>
+</div>
+<div class="service-modal" id="serviceModal">
+  <div class="service-modal-content">
+    <div class="service-modal-header">
+      <h2 class="service-modal-title" id="service-modal-title"></h2>
+      <button class="close-modal" aria-label="Fechar modal" onclick="closeServiceModal()">×</button>
+    </div>
+    <div class="service-modal-icon" id="service-modal-icon"></div>
+    <div class="service-modal-body" id="service-modal-content"></div>
+    <div class="modal-actions">
+      <button class="btn whatsapp-btn" onclick="redirectToWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Solicitar via WhatsApp
+      </button>
+      <button class="btn" onclick="closeServiceModal()">
+        <i class="fas fa-times"></i> Fechar
+      </button>
+    </div>
+  </div>
+</div>
+<div class="login-container" id="loginContainer">
+  <div class="login-content">
+    <div class="login-header">
+      <h2 class="login-title">Acesso ao Sistema</h2>
+      <p class="login-subtitle">Selecione seu tipo de usuário</p>
+    </div>
+    <div class="user-type">
+      <div class="user-type-btn" onclick="selectUserType('cliente')">
+        <i class="fas fa-user"></i>
+        <div>Cliente</div>
+      </div>
+      <div class="user-type-btn" onclick="selectUserType('tecnico')">
+        <i class="fas fa-tools"></i>
+        <div>Técnico</div>
+      </div>
+    </div>
+    <form class="login-form" id="loginForm">
+      <div class="form-group">
+        <label class="form-label" for="login-email">E-mail</label>
+        <input type="email" class="form-control" id="login-email" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="login-password">Senha</label>
+        <input type="password" class="form-control" id="login-password" required>
+      </div>
+      <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+    </form>
+    <div class="login-footer">
+      <p>Não tem conta? <a href="#" onclick="showRegister()">Cadastre-se</a></p>
+    </div>
+  </div>
+</div>
+<button class="theme-toggle" aria-label="Alternar modo escuro" onclick="toggleTheme()"><i class="fas fa-moon" id="theme-icon"></i></button>
+<header>
+<div class="container header-container">
+<div class="logo">
+<div class="logo-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+<div class="logo-text">Hard<span>TECH</span></div>
+</div>
+<nav aria-label="Navegação principal">
+<ul>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#depoimentos">Depoimentos</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#contato">Contato</a></li>
+<li><a href="#" onclick="openLoginModal()">Login</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main-content">
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<h1>Soluções Tecnológicas <span>HARDTECH</span></h1>
+<p>Especialistas em manutenção de celulares, informática, redes, câmeras de segurança e desenvolvimento web. Tecnologia com velocidade e qualidade.</p>
+<div class="hero-btns">
+<a href="https://wa.me/5543991678501" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Fale Conosco</a>
+<a href="#servicos" class="btn" aria-label="Veja nossos serviços"><i class="fas fa-laptop-code" aria-hidden="true"></i> Nossos Serviços</a>
+<button class="btn" onclick="openAppointmentModal()" aria-label="Agendar serviço"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Agendar Serviço</button>
+</div>
+</div>
+</div>
+</section>
+<section id="servicos" class="section">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Nossos Serviços</h2>
+<p class="section-subtitle">Soluções tecnológicas rápidas e eficientes para atender todas as suas necessidades com agilidade e profissionalismo.</p>
+</div>
+<div class="services-grid">
+<div class="service-card" onclick="openServiceModal('manutencao')">
+<div class="service-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div>
+<div class="service-content">
+<h3 class="service-title">Manutenção de Celulares</h3>
+<p>Consertos rápidos para seu dispositivo móvel.</p>
+<ul class="service-list">
+<li>Troca de telas e baterias</li>
+<li>Reparo em conectores e botões</li>
+<li>Limpeza e manutenção interna</li>
+<li>Diagnóstico técnico completo</li>
+</ul>
+<span class="price-tag">A partir de R$ 100</span>
+</div>
+</div>
+<div class="service-card" onclick="openServiceModal('informatica')">
+<div class="service-icon"><i class="fas fa-laptop" aria-hidden="true"></i></div>
+<div class="service-content">
+<h3 class="service-title">Suporte em Informática</h3>
+<p>Soluções ágeis para seu computador.</p>
+<ul class="service-list">
+<li>Formatação e instalação de sistemas</li>
+<li>Remoção de vírus e otimização</li>
+<li>Configuração de impressoras</li>
+<li>Suporte técnico presencial e remoto</li>
+</ul>
+<span class="price-tag">A partir de R$ 150</span>
+</div>
+</div>
+<div class="service-card" onclick="openServiceModal('redes')">
+<div class="service-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
+<div class="service-content">
+<h3 class="service-title">Redes e Infraestrutura</h3>
+<p>Conectividade rápida para sua casa ou empresa.</p>
+<ul class="service-list">
+<li>Instalação e configuração de redes</li>
+<li>Cabeamento estruturado</li>
+<li>Otimização de Wi-Fi</li>
+<li>Soluções para grandes áreas</li>
+</ul>
+<span class="price-tag">A partir de R$ 500</span>
+</div>
+</div>
+<div class="service-card" onclick="openServiceModal('cameras')">
+<div class="service-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
+<div class="service-content">
+<h3 class="service-title">Câmeras de Segurança</h3>
+<p>Instalação rápida de sistemas de monitoramento.</p>
+<ul class="service-list">
+<li>Instalação profissional de câmeras</li>
+<li>Configuração de acesso remoto</li>
+<li>Manutenção preventiva</li>
+<li>Sistemas de gravação e armazenamento</li>
+</ul>
+<span class="price-tag">A partir de R$ 800</span>
+</div>
+</div>
+<div class="service-card" onclick="openServiceModal('sites')">
+<div class="service-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
+<div class="service-content">
+<h3 class="service-title">Desenvolvimento Web</h3>
+<p>Soluções digitais rápidas para seu negócio.</p>
+<ul class="service-list">
+<li>Criação de sites institucionais</li>
+<li>Sistemas web personalizados</li>
+<li>Otimização para buscadores (SEO)</li>
+<li>Manutenção e suporte contínuo</li>
+</ul>
+<span class="price-tag">A partir de R$ 1.500</span>
+</div>
+</div>
+<div class="service-card" onclick="openServiceModal('personalizado')">
+<div class="service-icon"><i class="fas fa-puzzle-piece" aria-hidden="true"></i></div>
+<div class="service-content">
+<h3 class="service-title">Soluções Personalizadas</h3>
+<p>Tecnologia sob medida para suas necessidades.</p>
+<ul class="service-list">
+<li>Consultoria especializada</li>
+<li>Soluções multidisciplinares</li>
+<li>Coordenação com profissionais</li>
+<li>Acompanhamento completo</li>
+</ul>
+<span class="price-tag">Sob consulta</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sobre" class="section about">
+<div class="container">
+<div class="about-container">
+<div class="about-image"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+<div class="about-content">
+<h2 class="about-title">Sobre a HardTech</h2>
+<p class="about-text">Com mais de 2 anos de experiência no mercado, somos referência em soluções técnicas em Sertanópolis e região. Nossa missão é resolver seus problemas tecnológicos com qualidade e eficiência. Na HardTech, ampliamos ainda mais nosso compromisso com inovação.</p>
+<p class="about-text">Nossa equipe é composta por profissionais qualificados e comprometidos com soluções ágeis e eficientes. Trabalhamos com as melhores ferramentas e tecnologias para garantir resultados rápidos e duradouros.</p>
+<div class="stats">
+<div class="stat-item">
+<div class="stat-number">1+</div>
+<div class="stat-text">Anos de Experiência</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">3+</div>
+<div class="stat-text">Clientes Atendidos</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">100%</div>
+<div class="stat-text">Satisfação dos Clientes</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">6</div>
+<div class="stat-text">Serviços Especializados</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section partners">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Nossos Parceiros</h2>
+<p class="section-subtitle">Trabalhamos com as melhores marcas e tecnologias do mercado.</p>
+</div>
+<div class="partners-grid">
+<img src="https://via.placeholder.com/150x60?text=Samsung" alt="Samsung" class="partner-logo">
+<img src="https://via.placeholder.com/150x60?text=Apple" alt="Apple" class="partner-logo">
+<img src="https://via.placeholder.com/150x60?text=Microsoft" alt="Microsoft" class="partner-logo">
+<img src="https://via.placeholder.com/150x60?text=Dell" alt="Dell" class="partner-logo">
+<img src="https://via.placeholder.com/150x60?text=TP-Link" alt="TP-Link" class="partner-logo">
+</div>
+</div>
+</section>
+<section id="depoimentos" class="section testimonials">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Depoimentos de Clientes</h2>
+<p class="section-subtitle">Veja o que nossos clientes têm a dizer sobre a qualidade e velocidade dos nossos serviços.</p>
+</div>
+<div class="testimonial-container">
+<div class="testimonial-slider" id="testimonialSlider">
+<div class="testimonial-card">
+<p class="testimonial-text">"Serviço rápido como um raio! Resolveu meu problema de rede em menos de 1 hora. Profissionalismo e conhecimento técnico impressionantes."</p>
+<div class="testimonial-author">
+<div class="author-avatar"><i class="fas fa-user" aria-hidden="true"></i></div>
+<div class="author-info">
+<h4>Carlos Silva</h4>
+<p>Empresário</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<p class="testimonial-text">"Troquei a tela do meu celular e ficou perfeito! Atendimento rápido e preço justo. Recomendo a FlashTech para todos em Sertanópolis."</p>
+<div class="testimonial-author">
+<div class="author-avatar"><i class="fas fa-user" aria-hidden="true"></i></div>
+<div class="author-info">
+<h4>Mariana Oliveira</h4>
+<p>Professora</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<p class="testimonial-text">"Instalou meu sistema de câmeras com perfeição e rapidez. Agora posso monitorar meu comércio de qualquer lugar. Atendimento de primeira!"</p>
+<div class="testimonial-author">
+<div class="author-avatar"><i class="fas fa-user" aria-hidden="true"></i></div>
+<div class="author-info">
+<h4>Roberto Santos</h4>
+<p>Comerciante</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<p class="testimonial-text">"Desenvolveram meu site profissional em tempo recorde. Agora meus clientes encontram meu negócio facilmente na internet. Serviço rápido e de alta qualidade!"</p>
+<div class="testimonial-author">
+<div class="author-avatar"><i class="fas fa-user" aria-hidden="true"></i></div>
+<div class="author-info">
+<h4>Patrícia Mendes</h4>
+<p>Empreendedora</p>
+</div>
+</div>
+</div>
+</div>
+<div class="testimonial-nav">
+<button id="prevTestimonial" aria-label="Depoimento anterior"><i class="fas fa-chevron-left"></i></button>
+<button id="nextTestimonial" aria-label="Próximo depoimento"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+</div>
+</section>
+<section id="faq" class="section faq">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Perguntas Frequentes</h2>
+<p class="section-subtitle">Tire suas dúvidas sobre nossos serviços e atendimento rápido.</p>
+</div>
+<div class="faq-container">
+<div class="faq-item">
+<div class="faq-question">Quanto tempo leva para consertar um celular?</div>
+<div class="faq-answer">
+<p>Na FlashTech, problemas simples como troca de tela ou bateria são resolvidos em até 2 horas. Problemas mais complexos podem levar de 1 a 3 dias úteis. Nosso diferencial é sempre informar o prazo estimado antes de iniciar o serviço.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Vocês oferecem garantia nos serviços?</div>
+<div class="faq-answer">
+<p>Sim, todos os nossos serviços têm garantia. Para manutenção de celulares e computadores, oferecemos 90 dias de garantia. Para instalação de câmeras e redes, a garantia é de 1 ano. Para desenvolvimento de sites, garantimos suporte técnico por 6 meses.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Atendem em domicílio?</div>
+<div class="faq-answer">
+<p>Sim, oferecemos atendimento domiciliar rápido para serviços de informática, instalação de redes e câmeras de segurança em Sertanópolis e região. Para outros municípios, pode haver custo adicional de deslocamento. Entre em contato para verificar disponibilidade.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Aceitam quais formas de pagamento?</div>
+<div class="faq-answer">
+<p>Aceitamos diversas formas de pagamento: dinheiro, cartão de crédito/débito, Pix e transferência bancária. Para serviços acima de R$ 500,00, oferecemos opções de parcelamento.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Como posso acompanhar o andamento do meu serviço?</div>
+<div class="faq-answer">
+<p>Fornecemos um número de protocolo para cada serviço, pelo qual você pode acompanhar o status pelo WhatsApp ou pelo nosso site. Também enviamos atualizações por e-mail ou SMS conforme o serviço avança.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section newsletter">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Receba Nossas Ofertas</h2>
+<p class="section-subtitle">Assine nossa newsletter e receba promoções exclusivas e dicas de tecnologia.</p>
+</div>
+<form class="newsletter-form">
+<input type="email" placeholder="Seu melhor e-mail" required>
+<button type="submit" class="btn">Assinar</button>
+</form>
+</div>
+</section>
+<section id="contato" class="section">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Entre em Contato</h2>
+<p class="section-subtitle">Estamos prontos para atender suas necessidades técnicas com rapidez. Entre em contato e solicite um orçamento.</p>
+</div>
+<div class="contact-container">
+<div class="contact-info">
+<h3 class="contact-title">Informações de Contato</h3>
+<div class="contact-details">
+<div class="contact-item">
+<div class="contact-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
+<div class="contact-text">
+<h4>Telefone</h4>
+<a href="tel:+5543991678501" aria-label="Ligar para (43) 99167-8501">(43) 99167-8501</a>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+<div class="contact-text">
+<h4>E-mail</h4>
+<a href="mailto:contato@flashtech.com.br" aria-label="Enviar e-mail para contato@flashtech.com.br">contato@flashtech.com.br</a>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+<div class="contact-text">
+<h4>Localização</h4>
+<p>Atendemos em Sertanópolis e região</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+<div class="contact-text">
+<h4>Horário de Atendimento</h4>
+<p>Segunda a Sexta: 8h às 18h</p>
+<p>Sábado: 8h às 12h</p>
+</div>
+</div>
+</div>
+<div class="contact-map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3661.187038541328!2d-51.03737552495846!3d-23.42485337886013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ec2b4d0d5a1e8f%3A0x4d3a7f4a9d3a3e1d!2sSertan%C3%B3polis%2C%20PR!5e0!3m2!1spt-BR!2sbr!4v1691500000000!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+<div class="contact-form">
+<h3 class="contact-title">Envie uma Mensagem</h3>
+<form action="https://formspree.io/f/xeokwpdd" method="POST" aria-label="Formulário de contato">
+<div class="form-group" data-validate="nome">
+<label class="form-label" for="nome">Nome Completo</label>
+<input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome" required aria-describedby="nome-error">
+<span id="nome-error" class="error-message">Por favor, insira seu nome completo.</span>
+</div>
+<div class="form-group" data-validate="email">
+<label class="form-label" for="email">E-mail</label>
+<input type="email" class="form-control" id="email" name="email" placeholder="seu@email.com" required aria-describedby="email-error">
+<span id="email-error" class="error-message">Por favor, insira um e-mail válido.</span>
+</div>
+<div class="form-group" data-validate="telefone">
+<label class="form-label" for="telefone">Telefone</label>
+<input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(43) 99999-9999" pattern="^\(\d{2}\)\s?\d{4,5}-\d{4}$" required aria-describedby="telefone-error" oninput="formatPhone(this)">
+<span id="telefone-error" class="error-message">Por favor, insira um telefone válido (ex.: (43) 99999-9999).</span>
+</div>
+<div class="form-group" data-validate="servico">
+<label class="form-label" for="servico">Serviço de Interesse</label>
+<select class="form-control" id="servico" name="servico" required aria-describedby="servico-error">
+<option value="">Selecione uma opção</option>
+<option value="manutencao">Manutenção de Celulares</option>
+<option value="informatica">Informática</option>
+<option value="redes">Redes</option>
+<option value="cameras">Câmeras de Segurança</option>
+<option value="sites">Criação de Sites</option>
+<option value="outro">Outro</option>
+</select>
+<span id="servico-error" class="error-message">Por favor, selecione um serviço.</span>
+</div>
+<div class="form-group" data-validate="mensagem">
+<label class="form-label" for="mensagem">Mensagem</label>
+<textarea class="form-control" id="mensagem" name="mensagem" placeholder="Descreva como podemos ajudar" rows="5" required aria-describedby="mensagem-error"></textarea>
+<span id="mensagem-error" class="error-message">Por favor, insira uma mensagem.</span>
+</div>
+<button type="submit" class="btn"><i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Mensagem</button>
+<div id="form-feedback" class="form-feedback" role="alert"></div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h3>HardTech</h3>
+<div class="footer-about">
+<p>Soluções tecnológicas eficientes para Sertanópolis e região. Qualidade, inovação e atendimento personalizado.</p>
+</div>
+<div class="social-links">
+<a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+<a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+<a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+<a href="https://wa.me/5543991678501" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+</div>
+</div>
+<div class="footer-col">
+<h3>Links Rápidos</h3>
+<div class="footer-links">
+<a href="#servicos"><i class="fas fa-chevron-right" aria-hidden="true"></i> Serviços</a>
+<a href="#sobre"><i class="fas fa-chevron-right" aria-hidden="true"></i> Sobre Nós</a>
+<a href="#depoimentos"><i class="fas fa-chevron-right" aria-hidden="true"></i> Depoimentos</a>
+<a href="#faq"><i class="fas fa-chevron-right" aria-hidden="true"></i> FAQ</a>
+<a href="#contato"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contato</a>
+</div>
+</div>
+<div class="footer-col">
+<h3>Contato</h3>
+<div class="footer-contact">
+<p><i class="fas fa-phone-alt" aria-hidden="true"></i> (43) 99167-8501</p>
+<p><i class="fas fa-envelope" aria-hidden="true"></i> contato@flashtech.com.br</p>
+<p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Sertanópolis - PR</p>
+<p><i class="fas fa-clock" aria-hidden="true"></i> Seg-Mex: 8h-18h | Sáb: 8h-12h</p>
+</div>
+</div>
+</div>
+<div class="copyright">
+<p>© 2025 HardTech Soluções Tecnológicas. Todos os direitos reservados.</p>
+<p><a href="#" style="color: #cbd5e0;">Política de Privacidade</a> | <a href="#" style="color: #cbd5e0;">Termos de Serviço</a></p>
+</div>
+</div>
+</footer>
+<div class="floating-btns">
+<a href="https://wa.me/5543991678501" class="floating-btn whatsapp" aria-label="Fale conosco pelo WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+<button class="floating-btn chat" aria-label="Abrir chat" id="openChat"><i class="fas fa-comments" aria-hidden="true"></i></button>
+<button class="floating-btn appointment" aria-label="Agendar serviço" onclick="openAppointmentModal()"><i class="fas fa-calendar-alt" aria-hidden="true"></i></button>
+<button class="floating-btn back-top" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'});"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+</div>
+<script>
+// ========== FUNÇÕES GERAIS ==========
+
+// Função para esconder a página de manutenção
+function hideMaintenance() {
+  document.getElementById('maintenanceOverlay').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Verifica se o usuário já viu a mensagem de manutenção
+if (!localStorage.getItem('maintenanceSeen')) {
+  document.body.style.overflow = 'hidden';
+} else {
+  document.getElementById('maintenanceOverlay').style.display = 'none';
+}
+
+// Quando o usuário clica para continuar, marca como visto
+document.querySelector('.maintenance-btn.continue').addEventListener('click', function() {
+  localStorage.setItem('maintenanceSeen', 'true');
+});
+
+// Redireciona para o WhatsApp com mensagem pré-definida
+function redirectToWhatsApp(service) {
+  const message = `Olá, gostaria de informações sobre ${service}`;
+  window.open(`https://wa.me/5543991678501?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+// ========== ANIMAÇÃO DE SCROLL ==========
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  
+  // Observa todas as seções
+  document.querySelectorAll('.section').forEach(section => observer.observe(section));
+} else {
+  // Fallback para navegadores sem suporte a IntersectionObserver
+  document.querySelectorAll('.section').forEach(section => section.classList.add('visible'));
+}
+
+// ========== NAVEGAÇÃO SUAVE ==========
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    window.scrollTo({
+      top: targetElement.offsetTop - 80,
+      behavior: 'smooth'
+    });
+    document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ========== CONTROLE DOS BOTÕES FLUTUANTES ==========
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+  let current = '';
+  
+  // Atualiza a navegação ativa conforme o scroll
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= (sectionTop - 150)) {
+      current = section.getAttribute('id');
+    }
+  });
+  
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+  
+  // Controle dos botões flutuantes
+  const floatingBtns = document.querySelector('.floating-btns');
+  const backTopBtn = document.querySelector('.floating-btn.back-top');
+  const appointmentBtn = document.querySelector('.floating-btn.appointment');
+  
+  // Mostra os botões flutuantes apenas após o usuário começar a rolar
+  if (window.scrollY > 100) {
+    floatingBtns.classList.add('visible');
+  } else {
+    floatingBtns.classList.remove('visible');
+  }
+  
+  // Mostra/oculta botões específicos conforme a posição do scroll
+  if (window.scrollY > 300) {
+    backTopBtn.style.display = 'flex';
+    appointmentBtn.style.display = 'flex';
+  } else {
+    backTopBtn.style.display = 'none';
+    appointmentBtn.style.display = 'none';
+  }
+});
+
+// ========== ALTERNAR TEMA (CLARO/ESCURO) ==========
+function toggleTheme() {
+  const body = document.body;
+  const themeIcon = document.getElementById('theme-icon');
+  if (body.getAttribute('data-theme') === 'dark') {
+    body.removeAttribute('data-theme');
+    themeIcon.className = 'fas fa-moon';
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    themeIcon.className = 'fas fa-sun';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+
+// Verifica o tema salvo no localStorage
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  document.body.setAttribute('data-theme', 'dark');
+  document.getElementById('theme-icon').className = 'fas fa-sun';
+}
+
+// ========== FORMULÁRIO DE CONTATO ==========
+const contactForm = document.querySelector('.contact-form form');
+if (contactForm) {
+  const formGroups = contactForm.querySelectorAll('.form-group');
+  const formFeedback = document.getElementById('form-feedback');
+  
+  // Adiciona validação em tempo real para cada campo
+  formGroups.forEach(group => {
+    const input = group.querySelector('.form-control');
+    input.addEventListener('input', () => {
+      validateField(group, input);
+    });
+  });
+  
+  // Formata o número de telefone
+  function formatPhone(input) {
+    let value = input.value.replace(/\D/g, '');
+    if (value.length > 10) value = value.substring(0, 11);
+    if (value.length > 2) {
+      value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
+    }
+    if (value.length > 9) {
+      value = value.replace(/(\(\d{2}\)\s\d{4,5})(\d{4})/, '$1-$2');
+    }
+    input.value = value;
+    validateField(group, input);
+  }
+  
+  // Envio do formulário
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    let isValid = true;
+    
+    // Valida todos os campos antes do envio
+    formGroups.forEach(group => {
+      const input = group.querySelector('.form-control');
+      if (!validateField(group, input)) isValid = false;
+    });
+    
+    if (isValid) {
+      const formData = new FormData(contactForm);
+      try {
+        const response = await fetch('https://formspree.io/f/xeokwpdd', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          showToast('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
+          contactForm.reset();
+        } else {
+          throw new Error('Erro ao enviar o formulário.');
+        }
+      } catch (error) {
+        showToast('Erro ao enviar. Tente novamente ou entre em contato diretamente.', 'error');
+      }
+    }
+  });
+  
+  // Validação de campos individuais
+  function validateField(group, input) {
+    const fieldName = group.dataset.validate;
+    let isValid = true;
+    
+    switch (fieldName) {
+      case 'nome':
+        isValid = input.value.trim().length > 0;
+        break;
+      case 'email':
+        isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+        break;
+      case 'telefone':
+        isValid = /^\(\d{2}\)\s?\d{4,5}-\d{4}$/.test(input.value.trim());
+        break;
+      case 'servico':
+        isValid = input.value !== '';
+        break;
+      case 'mensagem':
+        isValid = input.value.trim().length > 0;
+        break;
+    }
+    
+    group.classList.toggle('invalid', !isValid);
+    return isValid;
+  }
+}
+
+// ========== SLIDER DE DEPOIMENTOS ==========
+const testimonialSlider = document.getElementById('testimonialSlider');
+const prevBtn = document.getElementById('prevTestimonial');
+const nextBtn = document.getElementById('nextTestimonial');
+let currentSlide = 0;
+const slideCount = testimonialSlider.children.length;
+
+// Mostra um slide específico
+function showSlide(index) {
+  if (index < 0) index = slideCount - 1;
+  if (index >= slideCount) index = 0;
+  testimonialSlider.style.transform = `translateX(-${index * 100}%)`;
+  currentSlide = index;
+}
+
+// Navegação entre slides
+prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+
+// Auto-play (avança a cada 5 segundos)
+setInterval(() => showSlide(currentSlide + 1), 5000);
+
+// ========== FAQ (ACORDEÃO) ==========
+document.querySelectorAll('.faq-item').forEach(item => {
+  const question = item.querySelector('.faq-question');
+  question.addEventListener('click', () => {
+    item.classList.toggle('active');
+  });
+});
+
+// ========== MODAL DE AGENDAMENTO ==========
+const appointmentModal = document.getElementById('appointmentModal');
+const appointmentForm = document.getElementById('appointmentForm');
+
+function openAppointmentModal() {
+  appointmentModal.style.display = 'flex';
+}
+
+function closeAppointmentModal() {
+  appointmentModal.style.display = 'none';
+}
+
+// Fecha o modal ao clicar no X ou fora do conteúdo
+document.querySelector('.close-modal').addEventListener('click', closeAppointmentModal);
+appointmentModal.addEventListener('click', (e) => {
+  if (e.target === appointmentModal) closeAppointmentModal();
+});
+
+// Envio do formulário de agendamento
+appointmentForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const name = document.getElementById('appointment-name').value;
+  const phone = document.getElementById('appointment-phone').value;
+  const service = document.getElementById('appointment-service').value;
+  const date = document.getElementById('appointment-date').value;
+  
+  // Validação básica
+  if (!name || !phone || !service || !date) {
+    showToast('Por favor, preencha todos os campos obrigatórios.', 'error');
+    return;
+  }
+  
+  try {
+    const formData = new FormData(appointmentForm);
+    const response = await fetch('https://formspree.io/f/xeokwpdd', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    
+    if (response.ok) {
+      showToast('Agendamento enviado com sucesso! Entraremos em contato para confirmar.', 'success');
+      appointmentForm.reset();
+      closeAppointmentModal();
+    } else {
+      throw new Error('Erro no envio');
+    }
+  } catch (error) {
+    showToast('Erro ao enviar agendamento. Tente novamente ou entre em contato via WhatsApp.', 'error');
+  }
+});
+
+// ========== MODAL DE DETALHES DO SERVIÇO ==========
+const serviceModal = document.getElementById('serviceModal');
+let currentService = '';
+
+// Dados detalhados dos serviços
+const servicesData = {
+  manutencao: {
+    title: "Manutenção de Celulares",
+    icon: '<i class="fas fa-mobile-alt" aria-hidden="true"></i>',
+    description: "Soluções rápidas para seu dispositivo móvel, desde reparos simples até problemas complexos.",
+    details: `
+      <p>Na FlashTech, oferecemos serviços especializados para diversos modelos e marcas de celulares, com peças de qualidade e garantia de 90 dias. Nosso diferencial é a velocidade no atendimento.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Troca de telas e vidros em até 2 horas</li>
+        <li>Substituição de baterias originais</li>
+        <li>Reparo de conectores de carga</li>
+        <li>Conserto de botões e microfones</li>
+        <li>Limpeza interna completa</li>
+        <li>Recuperação de dados</li>
+        <li>Desbloqueio e liberação</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Básico</div>
+          <div class="pricing-price">R$ 100 - R$ 300</div>
+          <ul class="pricing-features">
+            <li>Troca de bateria</li>
+            <li>Limpeza interna</li>
+            <li>Reparo de conectores</li>
+            <li>Garantia de 90 dias</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Intermediário</div>
+          <div class="pricing-price">R$ 200 - R$ 500</div>
+          <ul class="pricing-features">
+            <li>Troca de tela LCD</li>
+            <li>Substituição de módulo de câmera</li>
+            <li>Reparo de placa lógica básico</li>
+            <li>Garantia de 90 dias</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Avançado</div>
+          <div class="pricing-price">R$ 300 - R$ 800</div>
+          <ul class="pricing-features">
+            <li>Troca de tela OLED</li>
+            <li>Reparo avançado de placa lógica</li>
+            <li>Recuperação de dados</li>
+            <li>Garantia de 120 dias</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  informatica: {
+    title: "Suporte em Informática",
+    icon: '<i class="fas fa-laptop" aria-hidden="true"></i>',
+    description: "Soluções ágeis para computadores, notebooks e periféricos.",
+    details: `
+      <p>Oferecemos serviços especializados para diversos modelos e marcas de computadores e notebooks, com peças de qualidade e garantia de 90 dias. Atendimento rápido e eficiente.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Formatação e instalação de sistemas operacionais em até 1 hora</li>
+        <li>Remoção de vírus e malware</li>
+        <li>Otimização de desempenho</li>
+        <li>Substituição de componentes</li>
+        <li>Recuperação de dados</li>
+        <li>Configuração de redes locais</li>
+        <li>Suporte remoto e presencial</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Básico</div>
+          <div class="pricing-price">R$ 150 - R$ 250</div>
+          <ul class="pricing-features">
+            <li>Formatação e instalação de SO</li>
+            <li>Remoção de vírus</li>
+            <li>Otimização básica</li>
+            <li>Garantia de 30 dias</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Intermediário</div>
+          <div class="pricing-price">R$ 200 - R$ 400</div>
+          <ul class="pricing-features">
+            <li>Substituição de HD/SSD</li>
+            <li>Upgrade de memória RAM</li>
+            <li>Limpeza interna completa</li>
+            <li>Garantia de 60 dias</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Serviço Avançado</div>
+          <div class="pricing-price">R$ 300 - R$ 600</div>
+          <ul class="pricing-features">
+            <li>Reparo de placa-mãe</li>
+            <li>Substituição de tela de notebook</li>
+            <li>Recuperação de dados</li>
+            <li>Garantia de 90 dias</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  redes: {
+    title: "Redes e Infraestrutura",
+    icon: '<i class="fas fa-network-wired" aria-hidden="true"></i>',
+    description: "Soluções rápidas para redes de computadores em residências e empresas.",
+    details: `
+      <p>Implementamos e configuramos redes eficientes para garantir conectividade estável e segura para seu negócio ou residência. Instalação rápida e sem complicações.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Projeto e implementação de redes em 1 dia</li>
+        <li>Cabeamento estruturado profissional</li>
+        <li>Configuração de roteadores e switches</li>
+        <li>Otimização de Wi-Fi</li>
+        <li>Soluções para grandes áreas</li>
+        <li>Segurança de rede</li>
+        <li>Monitoramento e manutenção contínua</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Residencial</div>
+          <div class="pricing-price">R$ 500 - R$ 1.500</div>
+          <ul class="pricing-features">
+            <li>Instalação básica de rede</li>
+            <li>Configuração de roteador</li>
+            <li>Otimização de Wi-Fi</li>
+            <li>Garantia de 1 ano</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Pequena Empresa</div>
+          <div class="pricing-price">R$ 1.000 - R$ 3.000</div>
+          <ul class="pricing-features">
+            <li>Cabeamento estruturado</li>
+            <li>Configuração de rede local</li>
+            <li>Segurança básica</li>
+            <li>Garantia de 1 ano</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Empresarial</div>
+          <div class="pricing-price">R$ 2.500 - R$ 8.000</div>
+          <ul class="pricing-features">
+            <li>Infraestrutura completa</li>
+            <li>Roteadores profissionais</li>
+            <li>Sistemas de segurança avançada</li>
+            <li>Monitoramento 24/7</li>
+            <li>Garantia de 2 anos</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  cameras: {
+    title: "Câmeras de Segurança",
+    icon: '<i class="fas fa-video" aria-hidden="true"></i>',
+    description: "Sistemas completos de vigilância instalados rapidamente para sua segurança.",
+    details: `
+      <p>Instalamos e configuramos sistemas de segurança com câmeras de alta qualidade para proteger seu patrimônio. Instalação em até 1 dia útil.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Projeto personalizado de segurança</li>
+        <li>Instalação rápida de câmeras IP e analógicas</li>
+        <li>Configuração de DVR/NVR</li>
+        <li>Acesso remoto via smartphone</li>
+        <li>Sistemas de gravação em nuvem</li>
+        <li>Manutenção preventiva</li>
+        <li>Atualizações de firmware</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Kit Básico</div>
+          <div class="pricing-price">R$ 800 - R$ 1.500</div>
+          <ul class="pricing-features">
+            <li>2 câmeras HD</li>
+            <li>DVR básico</li>
+            <li>Instalação em 4 horas</li>
+            <li>Garantia de 1 ano</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Kit Intermediário</div>
+          <div class="pricing-price">R$ 1.500 - R$ 3.000</div>
+          <ul class="pricing-features">
+            <li>4 câmeras Full HD</li>
+            <li>DVR com armazenamento</li>
+            <li>Acesso remoto</li>
+            <li>Garantia de 2 anos</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Kit Premium</div>
+          <div class="pricing-price">R$ 3.000 - R$ 8.000</div>
+          <ul class="pricing-features">
+            <li>8+ câmeras 4K</li>
+            <li>NVR profissional</li>
+            <li>Armazenamento em nuvem</li>
+            <li>Monitoramento inteligente</li>
+            <li>Garantia de 3 anos</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  sites: {
+    title: "Desenvolvimento Web",
+    icon: '<i class="fas fa-globe" aria-hidden="true"></i>',
+    description: "Soluções digitais rápidas para sua presença online.",
+    details: `
+      <p>Criamos sites e sistemas web personalizados para atender às necessidades específicas do seu negócio. Sites prontos em até 7 dias úteis.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Desenvolvimento de sites institucionais</li>
+        <li>Lojas virtuais (e-commerce) completas</li>
+        <li>Sistemas web personalizados</li>
+        <li>Otimização para buscadores (SEO)</li>
+        <li>Design responsivo</li>
+        <li>Hospedagem e domínio</li>
+        <li>Manutenção e suporte</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Site Institucional</div>
+          <div class="pricing-price">R$ 1.500 - R$ 3.000</div>
+          <ul class="pricing-features">
+            <li>Até 5 páginas</li>
+            <li>Design responsivo</li>
+            <li>Formulário de contato</li>
+            <li>Otimização básica SEO</li>
+            <li>Suporte por 3 meses</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">E-commerce</div>
+          <div class="pricing-price">R$ 3.000 - R$ 8.000</div>
+          <ul class="pricing-features">
+            <li>Catálogo de produtos</li>
+            <li>Carrinho de compras</li>
+            <li>Integração com pagamentos</li>
+            <li>Painel administrativo</li>
+            <li>Suporte por 6 meses</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Sistema Personalizado</div>
+          <div class="pricing-price">R$ 5.000 - R$ 15.000+</div>
+          <ul class="pricing-features">
+            <li>Desenvolvimento sob medida</li>
+            <li>Integrações com APIs</li>
+            <li>Banco de dados personalizado</li>
+            <li>Treinamento de uso</li>
+            <li>Suporte por 1 ano</li>
+          </ul>
+        </div>
+      </div>
+    `
+  },
+  personalizado: {
+    title: "Soluções Personalizadas",
+    icon: '<i class="fas fa-puzzle-piece" aria-hidden="true"></i>',
+    description: "Serviços técnicos sob medida para necessidades específicas.",
+    details: `
+      <p>Desenvolvemos soluções técnicas personalizadas para atender demandas específicas que não se encaixam em categorias tradicionais. Consultoria rápida e eficiente.</p>
+      
+      <h3>Serviços Incluídos</h3>
+      <ul>
+        <li>Consultoria técnica especializada</li>
+        <li>Soluções integradas multidisciplinares</li>
+        <li>Desenvolvimento de projetos customizados</li>
+        <li>Implantação de sistemas complexos</li>
+        <li>Coordenação com outros profissionais</li>
+        <li>Acompanhamento contínuo</li>
+      </ul>
+      
+      <div class="service-modal-pricing">
+        <div class="pricing-card">
+          <div class="pricing-title">Consultoria</div>
+          <div class="pricing-price">R$ 150/hora</div>
+          <ul class="pricing-features">
+            <li>Análise de necessidades</li>
+            <li>Proposta de solução</li>
+            <li>Plano de implementação</li>
+            <li>Relatório técnico</li>
+          </ul>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-title">Projeto Personalizado</div>
+          <div class="pricing-price">Sob consulta</div>
+          <ul class="pricing-features">
+            <li>Levantamento de requisitos</li>
+            <li>Desenvolvimento de solução</li>
+            <li>Implantação completa</li>
+            <li>Treinamento de usuários</li>
+            <li>Suporte pós-implantação</li>
+          </ul>
+        </div>
+      </div>
+      
+      <p><strong>Entre em contato</strong> para discutir sua necessidade específica e receber um orçamento personalizado.</p>
+    `
+  }
+};
+
+function openServiceModal(serviceId) {
+  const service = servicesData[serviceId];
+  if (!service) return;
+  
+  document.getElementById('service-modal-title').textContent = service.title;
+  document.getElementById('service-modal-icon').innerHTML = service.icon;
+  document.getElementById('service-modal-content').innerHTML = `
+    <p>${service.description}</p>
+    ${service.details}
+  `;
+  
+  // Armazenar o serviço atual para o botão do WhatsApp
+  currentService = service.title;
+  
+  // Exibir o modal
+  serviceModal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  
+  // Rolar para o topo do modal
+  document.querySelector('.service-modal-content').scrollTop = 0;
+}
+
+function closeServiceModal() {
+  serviceModal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Fechar modal ao clicar fora
+window.addEventListener('click', (e) => {
+  if (e.target === serviceModal) closeServiceModal();
+});
+
+// Redirecionar para o WhatsApp com o serviço atual
+function redirectToWhatsApp() {
+  const message = `Olá, gostaria de solicitar um orçamento para ${currentService}`;
+  window.open(`https://wa.me/5543991678501?text=${encodeURIComponent(message)}`, '_blank');
+  closeServiceModal();
+}
+
+// ========== PÁGINA DE LOGIN ==========
+const loginContainer = document.getElementById('loginContainer');
+const loginForm = document.getElementById('loginForm');
+
+function openLoginModal() {
+  loginContainer.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLoginModal() {
+  loginContainer.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function selectUserType(type) {
+  document.querySelectorAll('.user-type-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.closest('.user-type-btn').classList.add('active');
+}
+
+function showRegister() {
+  showToast('Funcionalidade de cadastro em desenvolvimento!', 'info');
+}
+
+loginForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
+  
+  // Validação básica
+  if (!email || !password) {
+    showToast('Por favor, preencha todos os campos.', 'error');
+    return;
+  }
+  
+  // Simulação de login
+  showToast('Login realizado com sucesso!', 'success');
+  setTimeout(() => {
+    closeLoginModal();
+  }, 2000);
+});
+
+// Fechar modal ao clicar fora
+window.addEventListener('click', (e) => {
+  if (e.target === loginContainer) closeLoginModal();
+});
+
+// ========== NOTIFICAÇÕES (TOAST) ==========
+function showToast(message, type) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.className = `toast ${type} show`;
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 5000);
+}
+
+// ========== CHATBOT ==========
+const chatbot = document.getElementById('chatbot');
+const openChatBtn = document.getElementById('openChat');
+const closeChatBtn = document.querySelector('.close-chat');
+const chatInput = document.getElementById('chat-input');
+
+// Abre/fecha o chatbot
+openChatBtn.addEventListener('click', () => {
+  chatbot.classList.add('active');
+});
+
+closeChatBtn.addEventListener('click', () => {
+  chatbot.classList.remove('active');
+});
+
+// Envia mensagem ao pressionar Enter
+chatInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    sendMessage();
+  }
+});
+
+// Envia mensagem ao clicar no botão
+document.querySelector('.chat-input button').addEventListener('click', sendMessage);
+
+// Função para enviar mensagem no chat
+function sendMessage() {
+  const message = chatInput.value.trim();
+  if (message) {
+    const messagesContainer = document.querySelector('.chat-messages');
+    const userMessageDiv = document.createElement('div');
+    userMessageDiv.className = 'message user-message';
+    userMessageDiv.textContent = message;
+    messagesContainer.appendChild(userMessageDiv);
+    chatInput.value = '';
+    
+    // Mostra indicador de "digitando"
+    const typingIndicator = document.createElement('div');
+    typingIndicator.className = 'message bot-message';
+    typingIndicator.textContent = 'Digitando...';
+    messagesContainer.appendChild(typingIndicator);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    
+    // Simula resposta após 1.5 segundos
+    setTimeout(() => {
+      messagesContainer.removeChild(typingIndicator);
+      const botMessage = generateBotResponse(message);
+      const botMessageDiv = document.createElement('div');
+      botMessageDiv.className = 'message bot-message';
+      botMessageDiv.textContent = botMessage;
+      messagesContainer.appendChild(botMessageDiv);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }, 1500);
+  }
+}
+
+// Gera respostas automáticas baseadas nas mensagens do usuário
+function generateBotResponse(message) {
+  const lowerMessage = message.toLowerCase();
+  
+  if (lowerMessage.includes('ola') || lowerMessage.includes('olá') || lowerMessage.includes('oi')) {
+    return "Olá! Sou o assistente da FlashTech. Como posso ajudar você hoje?";
+  }
+  
+  if (lowerMessage.includes('serviço') || lowerMessage.includes('servico')) {
+    return "Na FlashTech oferecemos serviços de manutenção de celulares, informática, redes, câmeras de segurança e criação de sites. Todos com atendimento rápido! Qual serviço você precisa?";
+  }
+  
+  if (lowerMessage.includes('preço') || lowerMessage.includes('preco') || lowerMessage.includes('valor')) {
+    return "Os preços variam conforme o serviço e o equipamento. Posso encaminhar seu contato para um orçamento personalizado sem compromisso?";
+  }
+  
+  if (lowerMessage.includes('agendar') || lowerMessage.includes('marcar')) {
+    return "Para agendar um serviço rápido, você pode clicar no botão 'Agendar Serviço' no site ou me informar seus dados que eu encaminho para nossa equipe.";
+  }
+  
+  if (lowerMessage.includes('contato') || lowerMessage.includes('telefone') || lowerMessage.includes('whatsapp')) {
+    return "Nosso telefone é (43) 99167-8501. Você também pode falar conosco rapidamente pelo WhatsApp clicando no ícone flutuante.";
+  }
+  
+  if (lowerMessage.includes('local') || lowerMessage.includes('endereço') || lowerMessage.includes('endereco')) {
+    return "Atendemos em Sertanópolis-PR e região. Para serviços em domicílio, podemos agendar uma visita técnica rápida.";
+  }
+  
+  if (lowerMessage.includes('horário') || lowerMessage.includes('horario') || lowerMessage.includes('funciona')) {
+    return "Nosso horário de atendimento rápido é de segunda a sexta das 8h às 18h, e sábados das 8h às 12h.";
+  }
+  
+  return "Entendi sua solicitação. Para informações mais detalhadas e atendimento rápido, sugiro entrar em contato diretamente pelo WhatsApp ou preencher nosso formulário de contato.";
+}
+
+// ========== NEWSLETTER ==========
+document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = this.querySelector('input').value;
+  if (email && email.includes('@')) {
+    showToast('Obrigado por assinar nossa newsletter!', 'success');
+    this.querySelector('input').value = '';
+  } else {
+    showToast('Por favor, insira um e-mail válido.', 'error');
+  }
+});
+
+// Efeito de digitação no título
+function typeWriter(element, text, i = 0) {
+  if (i < text.length) {
+    element.innerHTML = text.substring(0, i+1) + '<span aria-hidden="true" style="border-right: 2px solid var(--clr-accent);"></span>';
+    setTimeout(() => typeWriter(element, text, i + 1), 100);
+  } else {
+    element.innerHTML = text;
+  }
+}
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+  const heroTitle = document.querySelector('.hero h1 span');
+  if (heroTitle) {
+    typeWriter(heroTitle, heroTitle.textContent);
+  }
+  
+  // Adiciona classe flash em elementos ao scroll
+  const flashElements = document.querySelectorAll('.service-card, .btn');
+  flashElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      el.classList.add('flash-animate');
+    });
+    el.addEventListener('mouseleave', () => {
+      el.classList.remove('flash-animate');
+    });
+  });
+});
+</script>
 </body>
 </html>
