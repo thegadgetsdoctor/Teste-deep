@@ -1,0 +1,24 @@
+
+# Como iniciar o sistema Portaria
+
+## Pré-requisito
+- Ter o Node.js instalado: https://nodejs.org/
+
+## Início rápido
+1. Abra a pasta `portaria` na sua área de trabalho.
+2. Dê um duplo clique no arquivo **start-tudo.bat**.
+   - Isso abrirá dois terminais: um para o backend e outro para o frontend.
+   - Aguarde as mensagens de inicialização.
+3. O navegador abrirá automaticamente em http://localhost:3000
+4. Faça login:
+   - Usuário: **admin**
+   - Senha: **admin**
+
+Pronto! O sistema estará funcionando.
+
+## Dicas
+- Mantenha os dois terminais abertos enquanto usa o sistema.
+- Para registrar novos usuários, use a tela de registro.
+- Os dados são apagados ao reiniciar o backend (versão simples, sem banco de dados).
+
+Se precisar de ajuda, consulte este arquivo ou peça suporte ao desenvolvedor.

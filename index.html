@@ -1,0 +1,316 @@
+<!-- conflito resolvido manualmente -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Controle de Portaria</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-flex">
+            <h1>Controle de Portaria</h1>
+            <span id="usuario-logado-header" class="usuario-logado-header"></span>
+        </div>
+    </header>
+    <div class="container main-content">
+    <div id="login-area" class="auth-area card" style="display:none;">
+            <h2 class="auth-title">Login</h2>
+            <form id="login-form" onsubmit="login(event)">
+                <div class="form-group">
+                    <label for="login-usuario">Usuário:</label>
+                    <input type="text" id="login-usuario" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="login-senha">Senha:</label>
+                    <input type="password" id="login-senha" required autocomplete="off">
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
+            <div id="login-msg" class="msg"></div>
+            <p style="margin-top:18px;">Não tem conta? <a href="#" onclick="mostrarRegistro()">Registre-se</a></p>
+        </div>
+    <div id="registro-area" class="auth-area card" style="display:none;">
+            <h2 class="auth-title">Registrar Usuário</h2>
+            <form id="registro-form" onsubmit="registrarUsuario(event)">
+                <div class="form-group">
+                    <label for="reg-usuario">Usuário:</label>
+                    <input type="text" id="reg-usuario" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="reg-senha">Senha:</label>
+                    <input type="password" id="reg-senha" required autocomplete="off" minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}">
+                </div>
+                <div class="form-group">
+                    <label for="reg-senha2">Confirme a Senha:</label>
+                    <input type="password" id="reg-senha2" required autocomplete="off">
+                </div>
+                <button type="submit">Registrar</button>
+            const usuario = sanitize(document.getElementById('login-usuario').value.trim());
+            const senha = document.getElementById('login-senha').value;
+            const msgDiv = document.getElementById('login-msg');
+            msgDiv.innerHTML = '';
+
+            // Bloqueio temporário por usuário
+            if (bloqueios[usuario] && Date.now() < bloqueios[usuario]) {
+                msgDiv.innerHTML = '<span class="msg-erro">Muitas tentativas. Tente novamente em 1 minuto.</span>';
+                document.getElementById('login-senha').value = '';
+                return;
+            }
+
+            const usuarios = getUsuarios();
+            const senhaHash = await hashSenha(senha);
+            const user = usuarios.find(u => u.usuario === usuario && u.senha === senhaHash);
+            if (user) {
+                setUsuarioLogado(usuario);
+                tentativasLogin[usuario] = 0;
+                localStorage.setItem('tentativasLogin', JSON.stringify(tentativasLogin));
+                document.getElementById('login-senha').value = '';
+                // Descriptografar visitas
+                const visitasCripto = localStorage.getItem('visitasCripto');
+                if (visitasCripto) {
+                    visitas = await decryptData(visitasCripto, senhaHash);
+                } else {
+                    visitas = [];
+                }
+                iniciarSessaoTimeout();
+                mostrarSistema();
+            } else {
+                tentativasLogin[usuario] = (tentativasLogin[usuario] || 0) + 1;
+                localStorage.setItem('tentativasLogin', JSON.stringify(tentativasLogin));
+                document.getElementById('login-senha').value = '';
+                if (tentativasLogin[usuario] >= LIMITE_TENTATIVAS) {
+                    bloqueios[usuario] = Date.now() + 60000; // 1 minuto
+                    localStorage.setItem('bloqueiosLogin', JSON.stringify(bloqueios));
+                    msgDiv.innerHTML = '<span class="msg-erro">Muitas tentativas. Tente novamente em 1 minuto.</span>';
+                } else {
+                    msgDiv.innerHTML = '<span class="msg-erro">Usuário ou senha inválidos!</span>';
+                }
+            }
+        }
+
+        async function registrarUsuario(event) {
+            event.preventDefault();
+            const usuario = sanitize(document.getElementById('reg-usuario').value.trim());
+            const senha = document.getElementById('reg-senha').value;
+            const senha2 = document.getElementById('reg-senha2').value;
+            const msgDiv = document.getElementById('registro-msg');
+            msgDiv.innerHTML = '';
+            const nomesProibidos = ['admin', 'root', 'administrator', 'user', 'teste', 'portaria'];
+            if (!usuario || !senha || !senha2) {
+                msgDiv.innerHTML = '<span class="msg-erro">Preencha todos os campos!</span>';
+                return;
+            }
+            if (usuario.length < 3 || senha.length < 8) {
+                msgDiv.innerHTML = '<span class="msg-erro">Usuário ou senha muito curtos.</span>';
+                return;
+            }
+            if (nomesProibidos.includes(usuario.toLowerCase())) {
+                msgDiv.innerHTML = '<span class="msg-erro">Nome de usuário não permitido.</span>';
+                return;
+            }
+            if (!senhaForte(senha)) {
+                msgDiv.innerHTML = '<span class="msg-erro">A senha deve ter pelo menos 8 caracteres, incluindo maiúscula, minúscula, número e símbolo.</span>';
+                return;
+            }
+            if (senha !== senha2) {
+                msgDiv.innerHTML = '<span class="msg-erro">As senhas não coincidem.</span>';
+                return;
+            }
+            let usuarios = getUsuarios();
+            if (usuarios.find(u => u.usuario === usuario)) {
+                msgDiv.innerHTML = '<span class="msg-erro">Usuário já existe!</span>';
+                return;
+            }
+            const senhaHash = await hashSenha(senha);
+            usuarios.push({ usuario, senha: senhaHash });
+            setUsuarios(usuarios);
+            document.getElementById('reg-senha').value = '';
+            document.getElementById('reg-senha2').value = '';
+            msgDiv.innerHTML = '<span class="msg-sucesso">Usuário registrado com sucesso! Faça login.</span>';
+            setTimeout(() => { mostrarLogin(); }, 1200);
+        }
+
+        // Validação de senha forte
+        function senhaForte(s) {
+            return /[A-Z]/.test(s) && /[a-z]/.test(s) && /\d/.test(s) && /[!@#$%^&*]/.test(s) && s.length >= 8;
+        }
+
+        // Sanitização básica
+        function sanitize(str) {
+            return str.replace(/[<>"'`]/g, '');
+        }
+
+        // Expiração de sessão por inatividade
+        function iniciarSessaoTimeout() {
+            if (sessaoTimeout) clearTimeout(sessaoTimeout);
+            sessaoTimeout = setTimeout(() => {
+                logout();
+                alert('Sessão expirada por inatividade. Faça login novamente.');
+            }, TEMPO_SESSAO_MIN * 60 * 1000);
+        }
+
+        // Funções das abas
+        function openTab(evt, tabName) {
+            const tabcontent = document.getElementsByClassName("tabcontent");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            const tablinks = document.getElementsByClassName("tablinks");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Registrar entrada
+        async function registrarEntrada(event) {
+            if (event) event.preventDefault();
+            const nome = document.getElementById('nome').value.trim();
+            const unidade = document.getElementById('unidade').value.trim();
+            if (!nome || !unidade) {
+                alert('Preencha os campos obrigatórios: Nome e Unidade/Responsável.');
+                return;
+            }
+            const visita = {
+                nome: nome,
+                cpf: document.getElementById('cpf').value.trim(),
+                placa: document.getElementById('placa').value.trim(),
+                motivo: document.getElementById('motivo').value,
+                unidade: unidade,
+                entrada: new Date().toLocaleString(),
+                saida: ""
+            };
+            visitas.push(visita);
+            // Salvar criptografado
+            const usuario = getUsuarioLogado();
+            const usuarios = getUsuarios();
+            const user = usuarios.find(u => u.usuario === usuario);
+            if (user) {
+                const visitasCripto = await encryptData(visitas, user.senha);
+                localStorage.setItem('visitasCripto', visitasCripto);
+            }
+            alert('Entrada registrada com sucesso!');
+            document.getElementById('entrada-form').reset();
+            atualizarRelatorio();
+        }
+
+        // Buscar visitante para saída
+        function buscarVisitante() {
+            const termo = document.getElementById('buscaSaida').value.toLowerCase();
+            // Filtra e armazena o índice real de cada visita
+            const resultados = visitas
+                .map((v, idx) => ({...v, idx}))
+                .filter(v => !v.saida && (v.nome.toLowerCase().includes(termo) || v.cpf.includes(termo)));
+
+            let html = '';
+            if (resultados.length === 0) {
+                html = '<p>Nenhuma visita em aberto encontrada.</p>';
+            } else {
+                html = '<table><tr><th>Nome</th><th>Entrada</th><th>Ação</th></tr>';
+                resultados.forEach((visita) => {
+                    html += `
+                        <tr>
+                            <td>${visita.nome}</td>
+                            <td>${visita.entrada}</td>
+                            <td><button onclick="registrarSaida(' + visita.idx + ')">Registrar Saída</button></td>
+                        </tr>
+                    `;
+                });
+                html += '</table>';
+            }
+            document.getElementById('resultadoBusca').innerHTML = html;
+        }
+
+        // Registrar saída
+        async function registrarSaida(index) {
+            if (visitas[index]) {
+                visitas[index].saida = new Date().toLocaleString();
+                // Salvar criptografado
+                const usuario = getUsuarioLogado();
+                const usuarios = getUsuarios();
+                const user = usuarios.find(u => u.usuario === usuario);
+                if (user) {
+                    const visitasCripto = await encryptData(visitas, user.senha);
+                    localStorage.setItem('visitasCripto', visitasCripto);
+                }
+                alert('Saída registrada com sucesso!');
+                buscarVisitante();
+                atualizarRelatorio();
+            }
+        }
+
+        // Atualizar relatório
+        function atualizarRelatorio() {
+            const corpo = document.getElementById('corpoRelatorio');
+            corpo.innerHTML = '';
+            visitas.forEach(visita => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${visita.nome}</td>
+                    <td>${visita.cpf}</td>
+                    <td>${visita.placa}</td>
+                    <td>${visita.entrada}</td>
+                    <td>${visita.saida || 'Em andamento'}</td>
+                    <td>${visita.motivo}</td>
+                    <td>${visita.unidade}</td>
+                `;
+                corpo.appendChild(row);
+            });
+        }
+
+        // Exportar para CSV
+        function exportarCSV() {
+            let csv = 'Nome,CPF,Placa,Entrada,Saída,Motivo,Unidade\n';
+            visitas.forEach(visita => {
+                csv += `"${visita.nome}","${visita.cpf}","${visita.placa}","${visita.entrada}","${visita.saida}","${visita.motivo}","${visita.unidade}"\n`;
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.setAttribute('hidden', '');
+            a.setAttribute('href', url);
+            a.setAttribute('download', 'visitas_portaria.csv');
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        // Inicializar
+        window.onload = async function() {
+            await resetarUsuariosAdmin();
+            localStorage.removeItem('usuarioLogado');
+            if (getUsuarioLogado()) {
+                mostrarSistema();
+            } else {
+                mostrarLogin();
+            }
+            // Foco no campo de busca ao abrir a aba de saída
+            document.querySelectorAll('.tablinks').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    if (this.textContent.includes('Saída')) {
+                        setTimeout(() => {
+                            document.getElementById('buscaSaida').focus();
+                        }, 100);
+                    }
+                });
+            });
+        };
+    </script>
+</body>
+</html> 
+=======
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Portaria</title>
+    <link rel="stylesheet" href="stmand abvalayles.css">
+</head>
+<body>
+    <header>
+>>>>>>> e43a026 (Primeiro commit do sistema portaria)
