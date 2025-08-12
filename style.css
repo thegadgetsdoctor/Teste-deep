@@ -1,53 +1,206 @@
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
-    background: #f8f9fa;
+    background: #f6f8fa;
+    color: #222;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 32px;
+    color: #2c3e50;
+    letter-spacing: 1px;
 }
 
 .container {
-    max-width: 700px;
-    margin: 30px auto;
+    max-width: 600px;
+    margin: 32px auto 0 auto;
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px 0 #0001;
+    padding: 32px 24px 24px 24px;
 }
 
-/* Abas (tab) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px #0001;
+}
+
+th, td {
+    border: none;
+    padding: 12px 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #e3eafc;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+tr:nth-child(even) { background: #f7fafd; }
+tr:hover { background: #eaf3ff; }
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input[type="text"], select {
+    padding: 8px 10px;
+    border: 1px solid #bfc9d1;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #fafdff;
+    transition: border 0.2s;
+}
+
+input[type="text"]:focus, select:focus {
+    border: 1.5px solid #4f8cff;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #4f8cff 60%, #6ed0fa 100%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 1px 4px #0001;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #357ae8 60%, #4f8cff 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+
 .tab {
     overflow: hidden;
     border-radius: 8px 8px 0 0;
-    border: 1px solid #ccc;
-    background-color: #e9ecef;
+    background: #e3eafc;
+    display: flex;
     margin-bottom: 0;
+    box-shadow: 0 1px 4px #0001;
 }
 
 .tab button {
-    background-color: inherit;
+    background: none;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 12px 20px;
-    font-size: 1em;
-    color: #34495e;
-    transition: background 0.2s, color 0.2s;
+    padding: 14px 24px;
+    font-size: 1rem;
+    color: #2c3e50;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    border-radius: 8px 8px 0 0;
+    transition: background 0.2s, border-bottom 0.2s;
 }
 
-.tab button.active, 
-.tab button:hover {
-    background-color: #007bff;
+.tab button.active {
+    background: #fff;
+    border-bottom: 3px solid #4f8cff;
+    color: #357ae8;
+}
+
+.tabcontent {
+    display: none;
+    padding: 28px 0 0 0;
+    min-height: 200px;
+}
+
+@media (max-width: 700px) {
+    .container {
+        max-width: 98vw;
+        padding: 10px 2vw 20px 2vw;
+    }
+    .tab button {
+        padding: 10px 8px;
+        font-size: 0.95rem;
+    }
+    th, td {
+        padding: 8px 4px;
+    }
+}
+
+#resultadoBusca table {
+    margin-top: 10px;
+}
+
+#resultadoBusca td, #resultadoBusca th {
+    padding: 8px 6px;
+}
+
+.csv-btn {
+    float: right;
+    margin-bottom: 10px;
+    background: #6ed0fa;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.csv-btn:hover {
+    background: #4f8cff;
     color: #fff;
 }
 
-/* Conteúdo das abas */
-.tabcontent {
-    display: none;
-    padding: 25px 0 0 0;
+.auth-area {
+    max-width: 350px;
+    margin: 40px auto 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px 0 #0001;
+    padding: 32px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Formulários */
-.form-group {
-    margin-bottom: 15px;
+.auth-title {
+    color: #357ae8;
+    margin-bottom: 18px;
+    text-align: center;
 }
 
-/* ... (continue com todos os estilos do original) */
+.msg {
+    margin-top: 12px;
+    min-height: 22px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.msg-erro {
+    color: #c0392b;
+    background: #ffeaea;
+    border-radius: 5px;
+    padding: 6px 10px;
+}
+
+.msg-sucesso {
+    color: #207d3a;
+    background: #eaffea;
+    border-radius: 5px;
+    padding: 6px 10px;
+}
+
+.btn-voltar {
+    background: #bfc9d1 !important;
+    color: #222 !important;
+    margin-left: 10px;
+    min-width: 90px;
+}
