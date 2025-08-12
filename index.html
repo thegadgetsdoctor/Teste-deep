@@ -139,7 +139,56 @@
 
     <script>
         // Banco de dados local
-        let visitas = JSON.parse(localStorage.getItem('visitas')) || [];
+        // Funções de criptografia AES-GCM
+async function deriveKey(password) {
+    const enc = new TextEncoder();
+    const salt = enc.encode('portaria-salt');
+    const keyMaterial = await window.crypto.subtle.importKey(
+        'raw', enc.encode(password), {name: 'PBKDF2'}, false, ['deriveKey']
+    );
+    return window.crypto.subtle.deriveKey(
+        {
+            name: 'PBKDF2',
+            salt: salt,
+            iterations: 100000,
+            hash: 'SHA-256'
+        },
+        keyMaterial,
+        { name: 'AES-GCM', length: 256 },
+        false,
+        ['encrypt', 'decrypt']
+    );
+}
+
+async function encryptData(data, password) {
+    const key = await deriveKey(password);
+    const iv = window.crypto.getRandomValues(new Uint8Array(12));
+    const enc = new TextEncoder();
+    const encoded = enc.encode(JSON.stringify(data));
+    const ciphertext = await window.crypto.subtle.encrypt(
+        { name: 'AES-GCM', iv }, key, encoded
+    );
+    return btoa(String.fromCharCode(...iv) + String.fromCharCode(...new Uint8Array(ciphertext)));
+}
+
+async function decryptData(ciphertextB64, password) {
+    try {
+        const data = atob(ciphertextB64);
+        const iv = Uint8Array.from(data.slice(0, 12), c => c.charCodeAt(0));
+        const ciphertext = Uint8Array.from(data.slice(12), c => c.charCodeAt(0));
+        const key = await deriveKey(password);
+        const decrypted = await window.crypto.subtle.decrypt(
+            { name: 'AES-GCM', iv }, key, ciphertext
+        );
+        const dec = new TextDecoder();
+        return JSON.parse(dec.decode(decrypted));
+    } catch (e) {
+        return [];
+    }
+}
+
+// Carregar visitas descriptografadas após login
+let visitas = [];
 
         // Usuários (login)
         function getUsuarios() {
@@ -172,6 +221,7 @@
         function logout() {
             localStorage.removeItem('usuarioLogado');
             if (sessaoTimeout) clearTimeout(sessaoTimeout);
+            visitas = [];
             mostrarLogin();
         }
 
@@ -232,6 +282,13 @@
                 tentativasLogin[usuario] = 0;
                 localStorage.setItem('tentativasLogin', JSON.stringify(tentativasLogin));
                 document.getElementById('login-senha').value = '';
+                // Descriptografar visitas
+                const visitasCripto = localStorage.getItem('visitasCripto');
+                if (visitasCripto) {
+                    visitas = await decryptData(visitasCripto, senhaHash);
+                } else {
+                    visitas = [];
+                }
                 iniciarSessaoTimeout();
                 mostrarSistema();
             } else {
@@ -324,7 +381,7 @@
         }
 
         // Registrar entrada
-        function registrarEntrada(event) {
+        async function registrarEntrada(event) {
             if (event) event.preventDefault();
             const nome = document.getElementById('nome').value.trim();
             const unidade = document.getElementById('unidade').value.trim();
@@ -342,7 +399,14 @@
                 saida: ""
             };
             visitas.push(visita);
-            localStorage.setItem('visitas', JSON.stringify(visitas));
+            // Salvar criptografado
+            const usuario = getUsuarioLogado();
+            const usuarios = getUsuarios();
+            const user = usuarios.find(u => u.usuario === usuario);
+            if (user) {
+                const visitasCripto = await encryptData(visitas, user.senha);
+                localStorage.setItem('visitasCripto', visitasCripto);
+            }
             alert('Entrada registrada com sucesso!');
             document.getElementById('entrada-form').reset();
             atualizarRelatorio();
@@ -376,10 +440,17 @@
         }
 
         // Registrar saída
-        function registrarSaida(index) {
+        async function registrarSaida(index) {
             if (visitas[index]) {
                 visitas[index].saida = new Date().toLocaleString();
-                localStorage.setItem('visitas', JSON.stringify(visitas));
+                // Salvar criptografado
+                const usuario = getUsuarioLogado();
+                const usuarios = getUsuarios();
+                const user = usuarios.find(u => u.usuario === usuario);
+                if (user) {
+                    const visitasCripto = await encryptData(visitas, user.senha);
+                    localStorage.setItem('visitasCripto', visitasCripto);
+                }
                 alert('Saída registrada com sucesso!');
                 buscarVisitante();
                 atualizarRelatorio();
