@@ -2,94 +2,211 @@
 <html>
 <head>
     <title>Controle de Portaria</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .form-group { margin-bottom: 10px; }
-        button { padding: 8px 12px; cursor: pointer; }
-        .tab { overflow: hidden; border: 1px solid #ccc; background-color: #f1f1f1; }
-        .tab button { background-color: inherit; border: none; outline: none; cursor: pointer; padding: 10px 16px; }
-        .tab button.active { background-color: #ddd; }
-        .tabcontent { display: none; padding: 20px 0; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Controle de Portaria</h1>
-    
-    <div class="tab">
-        <button class="tablinks active" onclick="openTab(event, 'entrada')">Registrar Entrada</button>
-        <button class="tablinks" onclick="openTab(event, 'saida')">Registrar Saída</button>
-        <button class="tablinks" onclick="openTab(event, 'relatorio')">Relatório</button>
-    </div>
-
-    <!-- Aba de Entrada -->
-    <div id="entrada" class="tabcontent" style="display: block;">
-        <h2>Registrar Entrada</h2>
-        <form id="entrada-form" onsubmit="registrarEntrada(event)">
-            <div class="form-group">
-                <label for="nome">Nome:<span style="color:red">*</span></label>
-                <input type="text" id="nome" required autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label for="placa">Placa do Veículo (opcional):</label>
-                <input type="text" id="placa" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label for="motivo">Motivo:</label>
-                <select id="motivo">
-                    <option value="Visita">Visita</option>
-                    <option value="Entrega">Entrega</option>
-                    <option value="Serviço">Serviço</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="unidade">Unidade/Responsável:<span style="color:red">*</span></label>
-                <input type="text" id="unidade" required autocomplete="off">
-            </div>
-            <button type="submit">Salvar Entrada</button>
-        </form>
-    </div>
-
-    <!-- Aba de Saída -->
-    <div id="saida" class="tabcontent">
-        <h2>Registrar Saída</h2>
-        <div class="form-group">
-            <label>CPF ou Nome:</label>
-            <input type="text" id="buscaSaida" placeholder="Digite para buscar">
+    <div class="container">
+        <div id="login-area" class="auth-area" style="display:none;">
+            <h2 class="auth-title">Login</h2>
+            <form id="login-form" onsubmit="login(event)">
+                <div class="form-group">
+                    <label for="login-usuario">Usuário:</label>
+                    <input type="text" id="login-usuario" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="login-senha">Senha:</label>
+                    <input type="password" id="login-senha" required autocomplete="off">
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
+            <div id="login-msg" class="msg"></div>
+            <p style="margin-top:18px;">Não tem conta? <a href="#" onclick="mostrarRegistro()">Registre-se</a></p>
         </div>
-        <button onclick="buscarVisitante()">Buscar</button>
-        <div id="resultadoBusca" style="margin-top: 20px;"></div>
-    </div>
-
-    <!-- Aba de Relatório -->
-    <div id="relatorio" class="tabcontent">
-        <h2>Relatório de Visitas</h2>
-        <button onclick="exportarCSV()">Exportar para CSV</button>
-        <table id="tabelaRelatorio">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>Placa</th>
-                    <th>Entrada</th>
-                    <th>Saída</th>
-                    <th>Motivo</th>
-                    <th>Unidade</th>
-                </tr>
-            </thead>
-            <tbody id="corpoRelatorio"></tbody>
-        </table>
+        <div id="registro-area" class="auth-area" style="display:none;">
+            <h2 class="auth-title">Registrar Usuário</h2>
+            <form id="registro-form" onsubmit="registrarUsuario(event)">
+                <div class="form-group">
+                    <label for="reg-usuario">Usuário:</label>
+                    <input type="text" id="reg-usuario" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="reg-senha">Senha:</label>
+                    <input type="password" id="reg-senha" required autocomplete="off">
+                </div>
+                <button type="submit">Registrar</button>
+                <button type="button" class="btn-voltar" onclick="mostrarLogin()">Voltar</button>
+            </form>
+            <div id="registro-msg" class="msg"></div>
+        </div>
+        <div id="sistema-area" style="display:none;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; flex-wrap:wrap; gap:10px;">
+                <div class="tab">
+                    <button class="tablinks active" onclick="openTab(event, 'entrada')">Registrar Entrada</button>
+                    <button class="tablinks" onclick="openTab(event, 'saida')">Registrar Saída</button>
+                    <button class="tablinks" onclick="openTab(event, 'relatorio')">Relatório</button>
+                </div>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <span id="usuario-logado" style="color:#357ae8; font-weight:600;"></span>
+                    <button onclick="logout()" class="btn-voltar">Sair</button>
+                </div>
+            </div>
+            <!-- Aba de Entrada -->
+            <div id="entrada" class="tabcontent" style="display: block;">
+                <h2 style="margin-bottom:18px; color:#357ae8;">Registrar Entrada</h2>
+                <form id="entrada-form" onsubmit="registrarEntrada(event)">
+                    <div class="form-group">
+                        <label for="nome">Nome:<span style="color:red">*</span></label>
+                        <input type="text" id="nome" required autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="placa">Placa do Veículo (opcional):</label>
+                        <input type="text" id="placa" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="motivo">Motivo:</label>
+                        <select id="motivo">
+                            <option value="Visita">Visita</option>
+                            <option value="Entrega">Entrega</option>
+                            <option value="Serviço">Serviço</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="unidade">Unidade/Responsável:<span style="color:red">*</span></label>
+                        <input type="text" id="unidade" required autocomplete="off">
+                    </div>
+                    <button type="submit">Salvar Entrada</button>
+                </form>
+            </div>
+            <!-- Aba de Saída -->
+            <div id="saida" class="tabcontent">
+                <h2 style="margin-bottom:18px; color:#357ae8;">Registrar Saída</h2>
+                <div class="form-group">
+                    <label for="buscaSaida">CPF ou Nome:</label>
+                    <input type="text" id="buscaSaida" placeholder="Digite para buscar">
+                </div>
+                <button onclick="buscarVisitante()">Buscar</button>
+                <div id="resultadoBusca" style="margin-top: 20px;"></div>
+            </div>
+            <!-- Aba de Relatório -->
+            <div id="relatorio" class="tabcontent">
+                <h2 style="margin-bottom:18px; color:#357ae8;">Relatório de Visitas</h2>
+                <button class="csv-btn" onclick="exportarCSV()">Exportar para CSV</button>
+                <div style="clear:both"></div>
+                <table id="tabelaRelatorio">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Placa</th>
+                            <th>Entrada</th>
+                            <th>Saída</th>
+                            <th>Motivo</th>
+                            <th>Unidade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoRelatorio"></tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <script>
         // Banco de dados local
         let visitas = JSON.parse(localStorage.getItem('visitas')) || [];
+
+        // Usuários (login)
+        function getUsuarios() {
+            return JSON.parse(localStorage.getItem('usuarios')) || [];
+        }
+        function setUsuarios(usuarios) {
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        }
+        // Reseta usuários e cria apenas admin/admin
+        function resetarUsuariosAdmin() {
+            const admin = [{ usuario: 'admin', senha: 'admin' }];
+            setUsuarios(admin);
+        }
+
+        // Controle de sessão
+        function setUsuarioLogado(usuario) {
+            localStorage.setItem('usuarioLogado', usuario);
+        }
+        function getUsuarioLogado() {
+            return localStorage.getItem('usuarioLogado');
+        }
+        function logout() {
+            localStorage.removeItem('usuarioLogado');
+            mostrarLogin();
+        }
+
+        // Exibição de áreas
+        function mostrarLogin() {
+            document.getElementById('login-area').style.display = '';
+            document.getElementById('registro-area').style.display = 'none';
+            document.getElementById('sistema-area').style.display = 'none';
+            document.getElementById('login-form').reset();
+            document.getElementById('login-msg').innerHTML = '';
+        }
+        function mostrarRegistro() {
+            document.getElementById('login-area').style.display = 'none';
+            document.getElementById('registro-area').style.display = '';
+            document.getElementById('sistema-area').style.display = 'none';
+            document.getElementById('registro-form').reset();
+            document.getElementById('registro-msg').innerHTML = '';
+        }
+        function mostrarSistema() {
+            document.getElementById('login-area').style.display = 'none';
+            document.getElementById('registro-area').style.display = 'none';
+            document.getElementById('sistema-area').style.display = '';
+            atualizarRelatorio();
+            // Exibe usuário logado
+            const usuario = getUsuarioLogado();
+            document.getElementById('usuario-logado').textContent = usuario ? `Usuário: ${usuario}` : '';
+        }
+
+        // Login
+        function login(event) {
+            event.preventDefault();
+            const usuario = document.getElementById('login-usuario').value.trim();
+            const senha = document.getElementById('login-senha').value;
+            const usuarios = getUsuarios();
+            const user = usuarios.find(u => u.usuario === usuario && u.senha === senha);
+            const msgDiv = document.getElementById('login-msg');
+            msgDiv.innerHTML = '';
+            if (user) {
+                setUsuarioLogado(usuario);
+                mostrarSistema();
+            } else {
+                msgDiv.innerHTML = '<span class="msg-erro">Usuário ou senha inválidos!</span>';
+            }
+        }
+
+        // Registro
+        function registrarUsuario(event) {
+            event.preventDefault();
+            const usuario = document.getElementById('reg-usuario').value.trim();
+            const senha = document.getElementById('reg-senha').value;
+            const msgDiv = document.getElementById('registro-msg');
+            msgDiv.innerHTML = '';
+            if (!usuario || !senha) {
+                msgDiv.innerHTML = '<span class="msg-erro">Preencha todos os campos!</span>';
+                return;
+            }
+            let usuarios = getUsuarios();
+            if (usuarios.find(u => u.usuario === usuario)) {
+                msgDiv.innerHTML = '<span class="msg-erro">Usuário já existe!</span>';
+                return;
+            }
+            usuarios.push({ usuario, senha });
+            setUsuarios(usuarios);
+            msgDiv.innerHTML = '<span class="msg-sucesso">Usuário registrado com sucesso! Faça login.</span>';
+            setTimeout(() => { mostrarLogin(); }, 1200);
+        }
 
         // Funções das abas
         function openTab(evt, tabName) {
@@ -207,7 +324,13 @@
 
         // Inicializar
         window.onload = function() {
-            atualizarRelatorio();
+            resetarUsuariosAdmin();
+            localStorage.removeItem('usuarioLogado');
+            if (getUsuarioLogado()) {
+                mostrarSistema();
+            } else {
+                mostrarLogin();
+            }
             // Foco no campo de busca ao abrir a aba de saída
             document.querySelectorAll('.tablinks').forEach(btn => {
                 btn.addEventListener('click', function(e) {
